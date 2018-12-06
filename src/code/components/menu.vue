@@ -1,9 +1,9 @@
 <template src="../views/menu.html"></template>
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
-import { vueEvent } from "../common_var";
+import { vueEvent,VueWithRoute } from "../common_var";
 @Component
-export default class Menu extends Vue {
+export default class Menu extends VueWithRoute {
   activeVersion = 1;
 
   mounted() {
