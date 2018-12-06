@@ -1,0 +1,12 @@
+.treeview-parent {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.treeview-parent .text {
+    display: inline-block;
+}
+
+.treeview-parent i.material-icons {
+    vertical-align: bottom;
+}

@@ -1,0 +1,12 @@
+#################
+## Directories
+#################
+
+node_modules
+.nuxt
+build
+deploy_key
+dist
+# src/pages/example
+# src/pages/tutorial
+# src/pages/v1

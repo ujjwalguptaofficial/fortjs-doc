@@ -1,0 +1,109 @@
+#divTutorialContent {
+    padding-left: 20px;
+}
+
+.link-active {
+    background-color: #e1e0e0;
+    font-weight: bold;
+}
+
+#divMenuContainer a {
+    color: black;
+}
+
+#divMenuContainer {
+    background-color: #f9f9f9;
+}
+
+#divMenuContainer ul {
+    list-style: none;
+    margin-left: 20px;
+}
+
+#divMenuContainer ul li {
+    padding: 5px;
+}
+
+#divMenuContainer ul li a {
+    color: rgba(0, 0, 0, 0.87);
+    display: block;
+}
+
+#divMenuContainer ul li:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+#divMenuContainer ul li.search i {
+    vertical-align: middle;
+}
+
+#divMenuContainer ul li #txtSearch {
+    width: 80%;
+    border: none;
+    text-align: center;
+    margin: 0px;
+    height: 45px;
+}
+
+#btnMenuToggle {
+    margin-left: 10px;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+#btnMenuToggle i {
+    font-size: 30px;
+}
+
+.show-menu {
+    display: block !important;
+    z-index: 1000;
+    position: absolute;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+.show-menu ul {
+    border-right: none !important;
+    margin-left: 15px;
+}
+
+.search .search-wrapper a:hover {
+    background-color: #eee;
+    outline: none;
+}
+
+pre {
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+    margin: 20px 0;
+    padding: .01em 16px;
+    display: inline-block;
+    min-width: 70%;
+}
+
+pre code {
+    background-color: #FFF;
+    margin: 20px 0;
+    padding-left: 1.5rem;
+    border-left: 5px solid #ee6e73;
+    padding: 5px 20px;
+    display: block;
+    color: black;
+    font-family: monospace;
+    font-size: 100%;
+    font-weight: normal;
+}
+
+.search-results {
+    webkit-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+}
+
+.right-side-button {
+    padding: 15px;
+    height: 50px;
+    text-align: center;
+}
