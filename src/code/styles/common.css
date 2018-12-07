@@ -219,3 +219,7 @@
 .not-visible {
     visibility: hidden;
 }
+
+.margin-bottom-50px {
+    margin-bottom: 50px;
+}
