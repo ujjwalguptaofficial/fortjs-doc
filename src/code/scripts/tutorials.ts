@@ -46,5 +46,17 @@ export const tutorialLinks = [
                 url: "guard"
             }
         ]
+    }, {
+        id: 7,
+        text: "Types",
+        childs: [{
+            id: 1,
+            text: "HttpResult",
+            url: "http-result"
+        },{
+            id:2,
+            text:"AppOption",
+            url:"app-option"
+        }]
     }
 ] as TreeViewItem[];

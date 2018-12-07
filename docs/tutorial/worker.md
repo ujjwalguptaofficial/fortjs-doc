@@ -9,18 +9,8 @@ A worker method -
 * must be async or return a promise (since async is built on top of promises).
 * The result retruned by worker method must be of type [HttpResult](http-result).
 
-FortJs provides some helper method which return result of type HttpResult. These are - 
-
-* textResult - used to return text result.
-* jsonResult - used to return json result.
-* htmlResult - used to return html result.
-* viewResult - used to return a view.
-* fileResult - used to return a file which will be rendered by browser.
-* downloadResult - used to return a file which will be downloaded by browser.
-* redirectResult - used to return a result which will tell browser to redirect url.
-
 <br>
-Since a worker is part of controller, it have the access to all the things which a controller have i.e - 
+Since a worker is part of controller, it have the access to all the things which a controller has i.e - 
 
 * Request - `this.request`
 * Response - `this.response`
