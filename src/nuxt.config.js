@@ -139,7 +139,7 @@ module.exports = {
     src: '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>'
   }],
   build: {
-    vendor: ['vuetify']
+   
   },
   modules: [
     "~/modules/typescript.js"
