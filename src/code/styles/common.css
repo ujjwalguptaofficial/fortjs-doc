@@ -223,3 +223,8 @@
 .margin-bottom-50px {
     margin-bottom: 50px;
 }
+
+.app-name-menu {
+    color: white;
+    font-size: 45px;
+}

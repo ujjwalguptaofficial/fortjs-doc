@@ -5,4 +5,10 @@
 <style scoped>
 @import url("~/styles/index.css");
 </style>
+<style>
+.logo {
+    visibility: hidden;
+}
+</style>
+
 
