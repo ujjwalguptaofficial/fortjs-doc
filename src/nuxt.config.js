@@ -77,7 +77,7 @@ module.exports = {
         content: "FortJs"
       }, {
         property: "og:description",
-        content: "JsStore is an IndexedDB Wrapper. It makes IndexedDB super easy with its SQL like apis."
+        content: "Fort based MVC web framework for nodejs targeting good code structures & modularity."
       }, {
         property: "og:image",
         content: "/img/fort_js_logo_1200_630.png"
@@ -89,7 +89,7 @@ module.exports = {
         content: "FortJs - Fort Based MVC Web Framework For Nodejs"
       }, {
         name: "twitter:description",
-        content: "JsStore is an IndexedDB Wrapper. It makes IndexedDB super easy with its SQL like apis."
+        content: "Fort based MVC web framework for nodejs targeting good code structures & modularity."
       }, {
         name: "twitter:image",
         content: "http://fortjs.info/img/fort_js_logo_1200_630.png"

@@ -14,7 +14,7 @@
     </table>
 
     <p class="margin-top-50px">
-      <b>Note:- </b> The teams are people who code for jsstore, you should have particular position in a team. So if you think we are missing you, add an issue at github mentioning your details.
+      <b>Note:- </b> The teams are people who code for fortjs, you should have particular position in a team. So if you think we are missing you, add an issue at github mentioning your details.
     </p>
   </div>
 </template>
@@ -27,7 +27,7 @@ export default class extends Vue {
   teams: ITeam[] = [
     {
       name: "Ujjwal Gupta",
-      about: "Creator of jsstore, idbstudio.",
+      about: "Creator of jsstore, fortjs, sqlweb, idbstudio.",
       link: "/about-ujjwal",
       imageUrl:
         "https://www.gravatar.com/avatar/ce4cbe03db6a0214f47217f05d0582c2?s=400&d=mm"
