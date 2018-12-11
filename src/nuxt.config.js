@@ -28,17 +28,23 @@ module.exports = {
     dir: '../build/'
   },
   head: {
-    title: "JsStore - Think in SQL and do in JS",
+    title: "FortJs - Fort Based MVC Web Framework For Nodejs",
     meta: [{
         name: "theme-color",
-        content: "#42a5f5"
+        content: "#ffffff"
       }, {
+        name: "msapplication-TileColor",
+        content: "#ffffff"
+      }, {
+        name: "msapplication-TileImage",
+        content: "/ms-icon-144x144.png"
+      },{
         name: "keywords",
-        content: "jsstore, indexeddb, sql, like, wrapper, library"
+        content: "fort, node, javascript, mvc, framework, typescript"
       },
       {
         name: "description",
-        content: "JsStore is an IndexedDB Wrapper. It makes IndexedDB super easy with its SQL like apis."
+        content: "Fort based MVC web framework for nodejs targeting good code structures & modularity."
       }, {
         name: "robots",
         content: "index, follow"
@@ -59,46 +65,88 @@ module.exports = {
         content: "width=device-width, initial-scale=1.0"
       }, {
         property: "og:title",
-        content: "JsStore - Think in SQL and do in JS"
+        content: "FortJs - Fort Based MVC Web Framework For Nodejs"
       }, {
         property: "og:type",
-        content: "IndexedDB wrapper"
+        content: "Node MVC Framework"
       }, {
         property: "og:url",
-        content: "http://jsstore.net/"
+        content: "http://fortjs.info/"
       }, {
         property: "og:site_name",
-        content: "JsStore"
+        content: "FortJs"
       }, {
         property: "og:description",
         content: "JsStore is an IndexedDB Wrapper. It makes IndexedDB super easy with its SQL like apis."
       }, {
         property: "og:image",
-        content: "/img/JsStore_1200_630.png"
+        content: "/img/fort_js_logo_1200_630.png"
       }, {
         name: "twitter:creator",
         content: "@ujjwal_kr_gupta"
       }, {
         name: "twitter:title",
-        content: "JsStore - Think in SQL and do in JS"
+        content: "FortJs - Fort Based MVC Web Framework For Nodejs"
       }, {
         name: "twitter:description",
         content: "JsStore is an IndexedDB Wrapper. It makes IndexedDB super easy with its SQL like apis."
       }, {
         name: "twitter:image",
-        content: "http://jsstore.net/img/JsStore_1200_630.png"
+        content: "http://fortjs.info/img/fort_js_logo_1200_630.png"
       }
     ],
     link: [{
       rel: "apple-touch-icon",
-      sizes: "180x180",
-      href: "/apple-touch-icon.png"
+      sizes: "57x57",
+      href: "/apple-icon-57x57.png"
     }, {
+      rel: "apple-touch-icon",
+      sizes: "60x60",
+      href: "/apple-icon-60x60.png"
+    }, {
+      rel: "apple-touch-icon",
+      sizes: "72x72",
+      href: "/apple-icon-72x72.png"
+    },{
+      rel: "apple-touch-icon",
+      sizes: "76x76",
+      href: "/apple-icon-76x76.png"
+    },{
+      rel: "apple-touch-icon",
+      sizes: "114x114",
+      href: "/apple-icon-114x114.png"
+    },{
+      rel: "apple-touch-icon",
+      sizes: "120x120",
+      href: "/apple-icon-120x120.png"
+    },{
+      rel: "apple-touch-icon",
+      sizes: "144x144",
+      href: "/apple-icon-144x144.png"
+    },{
+      rel: "apple-touch-icon",
+      sizes: "152x152",
+      href: "/apple-icon-152x152.png"
+    },{
+      rel: "apple-touch-icon",
+      sizes: "180x180",
+      href: "/apple-icon-180x180.png"
+    },{
+      rel: "icon",
+      type: "image/png",
+      sizes: "192x192",
+      href: "/favicon-192x192.png"
+    },{
       rel: "icon",
       type: "image/png",
       sizes: "32x32",
       href: "/favicon-32x32.png"
     }, {
+      rel: "icon",
+      type: "image/png",
+      sizes: "96x96",
+      href: "/favicon-96x96.png"
+    },{
       rel: "icon",
       type: "image/png",
       sizes: "16x16",
@@ -138,9 +186,6 @@ module.exports = {
   scripts: [{
     src: '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>'
   }],
-  build: {
-   
-  },
   modules: [
     "~/modules/typescript.js"
   ],

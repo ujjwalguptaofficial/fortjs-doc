@@ -8,7 +8,7 @@
                 <b>Not able to understand something or needs some clarification -</b> In this case please ask question at different forums like - stackoverflow.com, codeproject etc.
             </li>
             <li>
-                <b>You found some issue in jsstore -</b> Please raise an issue at official github page.
+                <b>You found some issue in fortjs -</b> Please raise an issue at official github page.
             </li>
             <li>
                 <b>Need some new feature -</b> Add an issue at github page, describing what you want.

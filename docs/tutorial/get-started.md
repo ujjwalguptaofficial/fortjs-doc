@@ -8,11 +8,16 @@ FortJs is built using typescript and uses es6 pattern. That's why we need webpac
 
 But dont worry about all the configuration, we we have created different starter template for you. You just need to download/clone the repo based on your preferred language and start writing your code.
 
-* Typescript - 
-* Javascript - 
+* Typescript - <https://github.com/ujjwalguptaofficial/fortjs-typescript-starter>
+* Javascript - <https://github.com/ujjwalguptaofficial/fortjs-javascript-starter>
 
 <br>
-After downloading the repo - open the console, move to project directory and run the command `npm run start` . It will run the app and open the url in a browser.
+After downloading the repo - open the console, move to project directory and run the commands -
+* `npm install` - It will install all the dependency
+* `npm run start` - It will run the app.
+
+<br>
+Browser the url mentioned in the console.
 
 ## Understanding project
 
@@ -58,12 +63,21 @@ In the above code -
 * We have used a decorator `defaultWorker` from fortjs. A worker makes the method visible so that it can be called by http request. A default worker is a worker which add the route "/" for target method. Please take a look at [worker](worker) doc.
 
 <br>
-Now We need to add our controller to app. Open 'app.ts' or 'app.js' (inside src folder) - this contains code to bootstrap the app. You can take a look at [bootstrap](bootstrap) doc.
+Now We need to add our controller to app. Open 'routes.ts' or 'routes.js' (inside src folder) - this contains list of routes.
 
-Let's add the `UserController` to routes list. Update the app.ts by below code -
+Let's add the `UserController` to routes list. Update the routes.ts by below code -
 
 ```
+import { DefaultController } from "./controllers/default_controller";
+import { UserController } from "./controllers/user_controller";
 
+export const routes = [{
+    path: "/default",
+    controller: DefaultController
+},{
+    path: "/user", 
+    controller: UserController
+}]
 ```
 
 Now open the url - [localhost:4000/user](localhost:4000/user). You can see the output which is returned from default method inside "UserController".
@@ -206,11 +220,11 @@ In the above code - we have created an extra method - "addUser" which takes data
 
 We are not doing any validation for the user. It might be that invalid data is supplied in post request. Well, we can write code inside the method "addUser" or create another function to validate and validate the user.
 
-But A/c to fort (fortjs works on the principle of fort) says - a worker method should only have code related to its main purpose and extra code should be written into components. Please take a look at  [component](component) docs.
+But A/c to [fort](https://github.com/ujjwalguptaofficial/fort) (fortjs works on the principle of fort) - a worker method should only have code related to its main purpose and extra code should be written into components. Please take a look at  [component](component) docs.
 
 Let's see how we can validate user by creating a component. Since we are doing operation on worker level, we need to use [Guard](guard) component.
 
-Create a file "model_user_guard.ts" for typescript projects or "model_user_guard.js" for js projects and write the below code inside it - 
+Create a file "model_user_guard.ts" for typescript projects or "model_user_guard.js" for js projects inside the folder guards and write the below code inside it - 
 
 ```
 import { Guard, HttpResult, MIME_TYPE, HTTP_STATUS_CODE } from "fortjs";
@@ -255,9 +269,9 @@ async addUser() {
 
 In the above code - 
 * I have added the guard - "ModelUserGuard" using the decorator - `guards` . 
-* With the guard in process, we dont need to parse the data from body anymore, we are reading it from `this.data` which we have added inside "ModelUserGuard" .
+* With the guard in process, we dont need to parse the data from body anymore, we are reading it from `this.data` which we are passing from "ModelUserGuard" .
 
-You can see that our worker method looks very light now after using component.
+You can see that our worker method looks very light after using component.
 
 ### Updating user
 
