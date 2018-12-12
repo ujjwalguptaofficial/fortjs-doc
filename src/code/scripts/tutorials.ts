@@ -58,5 +58,13 @@ export const tutorialLinks = [
             text:"AppOption",
             url:"app-option"
         }]
+    },{
+        id:8,
+        text:"Advanced",
+        childs:[{
+            id:1,
+            text:"Custom Error Handler",
+            url:"custom-error-handler"
+        }]
     }
 ] as TreeViewItem[];

@@ -4,7 +4,7 @@ Title: "Controller"
 
 Controller is like a section where a list of resource of particular types are available.
 
-e.g - A Fort may have sections - WeaponSection, LibrarySection, MeetingSection etc. Now consider an real world application created for university may have sections - StudentSection, TeacherSection, LibrarySection etc.
+e.g - A Fort may have sections - WeaponSection, LibrarySection, MeetingSection etc. Now consider a real world application created for university may have sections - StudentSection, TeacherSection, LibrarySection etc.
 
 A controller have access to following - 
 
