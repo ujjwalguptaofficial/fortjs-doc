@@ -65,6 +65,14 @@ export const tutorialLinks = [
             id:1,
             text:"Custom Error Handler",
             url:"custom-error-handler"
+        },{
+            id:2,
+            text:"Session Provider",
+            url:"session-provider"
+        },{
+            id:3,
+            text:"Format Response",
+            url:"format-response"
         }]
     }
 ] as TreeViewItem[];
