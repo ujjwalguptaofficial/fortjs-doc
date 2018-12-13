@@ -10,7 +10,7 @@
       </div>
       <ul v-if="item.childs!=null" v-show="expandInfo[item.id]===true">
         <li v-for="child in item.childs" :key="child.id" v-bind:class="{'link-active': child.url=== activeUrl}">
-          <a :href="child.url">{{child.text}}</a>
+          <a :href="'/tutorial/'+child.url">{{child.text}}</a>
         </li>
       </ul>
     </div>
