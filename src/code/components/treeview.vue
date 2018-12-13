@@ -5,7 +5,7 @@
         {{expandInfo[item.id]===true?"keyboard_arrow_down":"chevron_right"}}
       </i>
       <div v-bind:data-id="item.id" class="text" @click="onMenuClick">
-        <a v-if="item.url!=null" :href="item.url">{{item.text}}</a>
+        <a v-if="item.url!=null" :href="'/tutorial/'+item.url">{{item.text}}</a>
         <span v-else> {{item.text}}</span>
       </div>
       <ul v-if="item.childs!=null" v-show="expandInfo[item.id]===true">

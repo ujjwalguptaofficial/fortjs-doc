@@ -42,3 +42,17 @@ new App().create({
 });
 ```
 
+The methods available for overwrites are - 
+
+* onServerError(ex: IException): Promise<string>
+* onBadRequest(ex: IException): Promise<string>
+* onForbiddenRequest(): Promise<string>
+* onNotAcceptableRequest(): Promise<string>
+* onMethodNotAllowed(): Promise<string>
+* onNotFound(url: string): Promise<string>
+  
+<br>
+You can see some methods also have parameters. So its upto you how you want to use those params.
+
+e.g - for onServerError (Status code - 500), you should not show the exception to users but you should log those errors.
+
