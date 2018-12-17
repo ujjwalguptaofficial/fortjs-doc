@@ -25,9 +25,13 @@ export const tutorialLinks = [
         id: 5,
         text: 'Bootstrap',
         url: 'bootstrap'
+    }, {
+        id: 7,
+        text: "View Engine",
+        url: "view-engine"
     },
     {
-        id: 6,
+        id: 8,
         text: "Components",
         childs: [
             {
@@ -47,32 +51,48 @@ export const tutorialLinks = [
             }
         ]
     }, {
-        id: 7,
+        id: 9,
         text: "Types",
         childs: [{
             id: 1,
             text: "HttpResult",
             url: "http-result"
-        },{
-            id:2,
-            text:"AppOption",
-            url:"app-option"
+        }, {
+            id: 2,
+            text: "AppOption",
+            url: "app-option"
+        }, {
+            id: 3,
+            text: "HttpRequest",
+            url: "http-request"
+        }, {
+            id: 4,
+            text: "HttpResponse",
+            url: "http-response"
+        }, {
+            id: 5,
+            text: "ViewEngineData",
+            url: "view-engine-data"
+        }, {
+            id: 6,
+            text: "HttpFormatResult",
+            url: "http-format-result"
         }]
-    },{
-        id:8,
-        text:"Advanced",
-        childs:[{
-            id:1,
-            text:"Custom Error Handler",
-            url:"custom-error-handler"
-        },{
-            id:2,
-            text:"Session Provider",
-            url:"session-provider"
-        },{
-            id:3,
-            text:"Format Response",
-            url:"format-response"
+    }, {
+        id: 10,
+        text: "Advanced",
+        childs: [{
+            id: 1,
+            text: "Custom Error Handler",
+            url: "custom-error-handler"
+        }, {
+            id: 2,
+            text: "Session Provider",
+            url: "session-provider"
+        }, {
+            id: 3,
+            text: "Format Response",
+            url: "format-response"
         }]
     }
 ] as TreeViewItem[];

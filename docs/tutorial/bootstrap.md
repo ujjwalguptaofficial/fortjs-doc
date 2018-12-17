@@ -28,13 +28,10 @@ class App extends Fort {
 new App().create();
 ```
 
-Structure of class Fort is - 
-
-<br>
 ## Configuring App
 
 <br>
-FortJs provides different configurations like - port, customErrorHandler etc. The configuration is supplied to create method and is type of [appOption](app-option).
+FortJs provides different configurations like - port, folders, appName etc. The configuration is supplied to create method and is type of [appOption](app-option).
 
 ```
 import { Fort } from "fortjs";
@@ -53,8 +50,44 @@ class App extends Fort {
 
 new App().create({
     appName: "MyAwesomeApp"
-    port: 8080,
-    foldersAllowed: ['contents', 'static']
+    port: 8080
 });
 ```
 
+<br>
+## Structure - 
+
+<br>
+```
+export declare class Fort {
+    routes: Route[];
+
+    walls: Array<typeof Wall>;
+
+    httpServer: http.Server;
+    /**
+    * view engine use to render the view
+    *
+    * @type {typeof ViewEngine}
+    */
+    viewEngine?: typeof ViewEngine;
+
+    /**
+     * sessionProvider class, default - MemorySessionProvider
+     *
+     * @type {typeof SessionProvider}
+     */
+    sessionProvider?: typeof SessionProvider;
+
+    /**
+     * Custom error handler class
+     *
+     * @type {typeof ErrorHandler}
+     */
+    errorHandler?: typeof ErrorHandler;
+
+    create(option: AppOption): Promise<any>;
+    
+    destroy(): Promise<any>;
+}
+```

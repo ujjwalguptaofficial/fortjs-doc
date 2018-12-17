@@ -4,7 +4,7 @@ Title: "Format Response"
 
 You can customize the format of your response and based on [content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation) fortjs select the appropriate response. If an appropriate response is not found then a response with status code - 406 is returned.
 
-A result of type - `HttpFormatResult` is used to return the response with different format.
+A result of type - [HttpFormatResult](http-format-result) is used to return the response with different format.
 
 Let's see an example -
 
