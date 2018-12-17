@@ -13,14 +13,7 @@ type AppOption = {
      *
      * @type {number}
      */
-    port ? : number;
-
-    /**
-     * view engine use to render the view
-     *
-     * @type {typeof ViewEngine}
-     */
-    viewEngine ? : typeof ViewEngine;
+    port?: number;
 
     /**
      * Whether to parse cookie or not, default - true
@@ -28,21 +21,14 @@ type AppOption = {
      *
      * @type {boolean}
      */
-    shouldParseCookie ? : boolean;
+    shouldParseCookie?: boolean;
 
     /**
      * Whether to parse the post data, default - true
      *
      * @type {boolean}
      */
-    shouldParsePost ? : boolean;
-
-    /**
-     * sessionProvider class, default - MemorySessionProvider
-     *
-     * @type {typeof SessionProvider}
-     */
-    sessionProvider ? : typeof SessionProvider;
+    shouldParsePost?: boolean;
 
     /**
      * session timeout in minute - default is 60 minute
@@ -50,21 +36,7 @@ type AppOption = {
      * @type {number}
      * @memberof IAppOption
      */
-    sessionTimeOut ? : number;
-
-    /**
-     * folders which should be visible to requests. By default nothing is allowed.
-     *
-     * @type {string[]}
-     */
-    foldersAllowed ? : string[];
-
-    /**
-     * Custom error handler class
-     *
-     * @type {typeof ErrorHandler}
-     */
-    errorHandler ? : typeof ErrorHandler;
+    sessionTimeOut?: number;
 
     /**
      * path to be used when url is root.
@@ -72,7 +44,7 @@ type AppOption = {
      * @type {string}
      * @memberof IAppOption
      */
-    defaultPath ? : string;
+    defaultPath?: string;
 
     /**
      * name of application - default is fort. Visible in header and cookie.
@@ -80,13 +52,21 @@ type AppOption = {
      *
      * @type {string}
      */
-    appName ? : string;
+    appName?: string;
 
     /**
      * eTag Settings
      *
      * @type {EtagOption}
      */
-    eTag ? : EtagOption
+    eTag?: EtagOption;
+
+
+    /**
+     * folders which should be visible to requests. By default nothing is allowed.
+     *
+     * @type {FolderMap[]}
+     */
+    folders?: FolderMap[];
 };
 ```

@@ -5,7 +5,7 @@ Title: "Bootstrap"
 In order to bootstrap the app, you need to perform two steps - 
 
 * Create a class which will extend the class `Fort` from 'fortjs'.
-* Create an object and call the method create.
+* Create an instance of class and call the method create.
 
 <br>
 Let's see an example - 
@@ -28,13 +28,7 @@ class App extends Fort {
 new App().create();
 ```
 
-Class Fort exposes certain member -
-
-* routers - array of routes.
-* walls - array of walls.
-* httpServer - instance of http server.
-* create - a method to start the server.
-* destroy - a method to stop the server.
+Structure of class Fort is - 
 
 <br>
 ## Configuring App
