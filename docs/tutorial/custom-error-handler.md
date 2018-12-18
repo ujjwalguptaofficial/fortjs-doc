@@ -32,14 +32,12 @@ class App extends Fort {
         this.routers = [{
             controller: UserController,
             path: "/user"
-        }]
+        }];
+        this.errorHandler = CustomErrorHandler;
     }
 }
 
-new App().create({
-    appName: "MyAwesomeApp",
-    errorHandler: CustomErrorHandler,
-});
+new App().create();
 ```
 
 The methods available for overwrites are - 

@@ -17,7 +17,7 @@ After downloading the repo - open the console, move to project directory and run
 * `npm run start` - It will run the app.
 
 <br>
-Browser the url mentioned in the console.
+Browser the url mentioned in the console (http://localhost:4000/)
 
 ## Understanding project
 

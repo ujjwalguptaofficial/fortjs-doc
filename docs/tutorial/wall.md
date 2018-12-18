@@ -15,7 +15,6 @@ Wall has two events -
 
     If there are multiple walls then "onOutgoing" is called in reverse order as they are defined.
 
-**Note:-** Since wall is called for every request, it might slow your app. So it is recommended to not create wall untill necessary.
 
 A wall have access to following - 
 
