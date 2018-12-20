@@ -7,7 +7,7 @@ Worker is a method which does particular task and return the final result.
 A worker method -
 
 * must be async or return a promise (since async is built on top of promises).
-* The result retruned by worker method must be of type [HttpResult](http-result).
+* The result retruned by worker method must be promise of type [HttpResult](http-result).
 
 <br>
 Since a worker is part of controller, it have the access to all the things which a controller has i.e - 
@@ -53,6 +53,7 @@ Lets consider that controller - 'UserController' is associated with path '/user'
 So what these decorators - `worker` and `defaultWorker` do ?
 
 * **worker** - method having decorator worker is added to route with all http methods (GET,POST etc).And the route is '/${method_name}'. For our example - route will be : '/getuser'.
+
 * **defaultWorker** - method having decorator defaultWorker is added to route with one http method GET. And the route is '/'.
 
 <br>

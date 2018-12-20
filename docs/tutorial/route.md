@@ -167,3 +167,26 @@ export class UserController extends Controller {
     }
 }
 ```
+
+I promise - this will be last. How about a route where you want to return some file based on some extension. 
+
+e.g - "abc.com/file/scripts/jquery.js" . In this example - "jquery" is dynmaic value means value can be anything like - "jsstore", "vue" , "underscore" etc. So that place is basically a placeholder.
+
+So here :
+
+* parent route is - 'file'
+* child route is - 'scripts/jquery.js'
+
+```
+import { Controller, worker, textResult,HTTP_METHOD, route } from "fortjs";
+
+export class FileController extends Controller {
+    
+    @worker()
+    @route("/scripts/{fileName}.js")
+    async getScripts () {
+       const value = this.params.value; // placeholder values are present in 'params' member of the controller.
+       return textResult("add is called");
+    }
+}
+```
