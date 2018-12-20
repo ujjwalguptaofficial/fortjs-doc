@@ -4,9 +4,9 @@ Title: "View Engine"
 
 By default fortjs provides [eshtml](https://github.com/ujjwalguptaofficial/eshtml) as view engine. But any view engine like - handlebar, ejs, mustache etc can be used.
 
-In order to create a view engine - You need to create a class which will implement class `VieEngine` from "fortjs".
+In order to create a view engine - You need to create a class which will implement class `ViewEngine` from "fortjs".
 
-e.g - Let's see how we can use mustache as view engine - 
+e.g - Let's see how we can use mustache as view engine. You can download the code for below example here - https://github.com/ujjwalguptaofficial/fortjs/tree/master/example/mustache
 
 ```
 import { ViewEngine, IViewValue } from "fortjs";
