@@ -30,6 +30,10 @@ module.exports = {
   head: {
     title: "FortJs - Fort Based MVC Web Framework For Nodejs",
     meta: [{
+        name: "google-site-verification",
+        content: "gFRrtV_TpZtZXXktE2jCL0C69py_TsCtorjh4GDae4U"
+      },
+      {
         name: "theme-color",
         content: "#ffffff"
       }, {
@@ -38,7 +42,7 @@ module.exports = {
       }, {
         name: "msapplication-TileImage",
         content: "/ms-icon-144x144.png"
-      },{
+      }, {
         name: "keywords",
         content: "fort, node, javascript, mvc, framework, typescript"
       },
@@ -107,36 +111,36 @@ module.exports = {
       rel: "apple-touch-icon",
       sizes: "72x72",
       href: "/apple-icon-72x72.png"
-    },{
+    }, {
       rel: "apple-touch-icon",
       sizes: "76x76",
       href: "/apple-icon-76x76.png"
-    },{
+    }, {
       rel: "apple-touch-icon",
       sizes: "114x114",
       href: "/apple-icon-114x114.png"
-    },{
+    }, {
       rel: "apple-touch-icon",
       sizes: "120x120",
       href: "/apple-icon-120x120.png"
-    },{
+    }, {
       rel: "apple-touch-icon",
       sizes: "144x144",
       href: "/apple-icon-144x144.png"
-    },{
+    }, {
       rel: "apple-touch-icon",
       sizes: "152x152",
       href: "/apple-icon-152x152.png"
-    },{
+    }, {
       rel: "apple-touch-icon",
       sizes: "180x180",
       href: "/apple-icon-180x180.png"
-    },{
+    }, {
       rel: "icon",
       type: "image/png",
       sizes: "192x192",
       href: "/favicon-192x192.png"
-    },{
+    }, {
       rel: "icon",
       type: "image/png",
       sizes: "32x32",
@@ -146,7 +150,7 @@ module.exports = {
       type: "image/png",
       sizes: "96x96",
       href: "/favicon-96x96.png"
-    },{
+    }, {
       rel: "icon",
       type: "image/png",
       sizes: "16x16",

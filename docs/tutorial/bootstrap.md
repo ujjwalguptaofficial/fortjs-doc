@@ -59,7 +59,7 @@ new App().create({
 
 <br>
 ```
-export declare class Fort {
+class Fort {
     routes: Route[];
 
     walls: Array<typeof Wall>;
