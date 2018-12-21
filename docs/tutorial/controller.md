@@ -6,16 +6,16 @@ Controller is like a section where a list of resource of particular types are av
 
 e.g - A Fort may have sections - WeaponSection, LibrarySection, MeetingSection etc. Now consider a real world application created for university may have sections - StudentSection, TeacherSection, LibrarySection etc.
 
-A controller have access to following - 
+A controller has following members - 
 
-* Request - `this.request`
-* Response - `this.response`
-* Cookie - `this.cookies`
-* Session - `this.session`
-* Query string data - `this.query`
-* Post data - `this.post`
-* Route parameter -  `this.params`
-* Data from other components -  `this.data`
+* Request - [request](http-request)
+* Response - [response](http-response)
+* Cookie - [cookie](cookie)
+* Session - [session](session)
+* Query string data - [query](query)
+* Post data - [body](body)
+* Route parameter -  [params](params)
+* Data from other components - [data](data)
 
 <br>
 # Creating controller

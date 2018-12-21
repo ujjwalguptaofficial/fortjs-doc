@@ -12,16 +12,16 @@ The guard is useful for -
 <br>
 There can be multiple guards for a worker & they are called in respective order, when a request wants to access the particular worker.
 
-A guard have access to following - 
+A guard has following member - 
 
-* Request - `this.request`
-* Response - `this.response`
-* Cookie - `this.cookies`
-* Session - `this.session`
-* Query string data - `this.query`
-* Post data - `this.post`
-* Route parameter -  `this.params`
-* Data from other components -  `this.data`
+* Request - [request](http-request)
+* Response - [response](http-response)
+* Cookie - [cookie](cookie)
+* Session - [session](session)
+* Query string data - [query](query)
+* Post data - [body](body)
+* Route parameter -  [params](params)
+* Data from other components - [data](data)
 
 <br>
 # Creating guard
