@@ -15,8 +15,6 @@ A shiled has following member-
 * Cookie - [cookie](cookie)
 * Session - [session](session)
 * Query string data - [query](query)
-* Post data - [body](body)
-* Route parameter -  [params](params)
 * Data from other components - [data](data)
 
 <br>
