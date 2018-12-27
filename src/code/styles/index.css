@@ -56,6 +56,7 @@
 
 #divLogoContainer .app-name {
     font-size: 200px;
+    font-family: -webkit-body;
 }
 
 #divLinkGroup {
@@ -64,7 +65,7 @@
 }
 
 #divLinkGroup a {
-   padding: 10px 30px;
+    padding: 10px 30px;
 }
 
 /*mobile*/
@@ -130,4 +131,9 @@
 .fa-heart {
     color: red;
     padding: 0 5px;
+}
+
+#divContent {
+    background: #333;
+    color: white;
 }

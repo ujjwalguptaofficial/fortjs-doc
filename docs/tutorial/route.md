@@ -162,7 +162,7 @@ export class UserController extends Controller {
     @worker()
     @route("/add/{value}")
     async add () {
-       const value = this.params.value; // placeholder values are present in 'params' member of the controller.
+       const value = this.param.value; // placeholder values are present in 'param' member of the controller.
        return textResult("add is called");
     }
 }
@@ -185,7 +185,7 @@ export class FileController extends Controller {
     @worker()
     @route("/scripts/{fileName}.js")
     async getScripts () {
-       const value = this.params.value; // placeholder values are present in 'params' member of the controller.
+       const value = this.param.value; // placeholder values are present in 'param' member of the controller.
        return textResult("add is called");
     }
 }

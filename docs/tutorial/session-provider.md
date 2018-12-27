@@ -21,7 +21,8 @@ abstract class SessionProvider {
     abstract setMany(values: ISessionValue[]): Promise<void[]>;
     abstract remove(key: string): Promise<void>;
 
-    protected async createSession()
+    protected createSession()
+    protected destroySession()
 }
 ```
 

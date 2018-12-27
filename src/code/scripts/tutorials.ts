@@ -69,7 +69,7 @@ export const tutorialLinks = [
         }, {
             id: 4,
             text: "Route Param",
-            url: "params"
+            url: "param"
         }, {
             id: 5,
             text: "Query String",
