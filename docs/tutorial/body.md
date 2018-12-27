@@ -2,7 +2,7 @@
 Title: "Body"
 ---
 
-`body` is class member of  Guard ,Shield and Controller. It is used to access body data sent in http post request. 
+`body` is class member of  Guard and Controller. It is used to access body data sent in http post request. 
 
 ```
 import { Controller, viewResult, worker, HTTP_METHOD, guards, route, jsonResult, htmlResult, textResult, defaultWorker, redirectResult } from "fortjs";

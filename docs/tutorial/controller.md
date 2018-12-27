@@ -14,7 +14,7 @@ A controller has following members -
 * Session - [session](session)
 * Query string data - [query](query)
 * Post data - [body](body)
-* Route parameter -  [params](params)
+* Route parameter -  [param](param)
 * Data from other components - [data](data)
 
 <br>

@@ -21,7 +21,7 @@ export class DefaultController extends Controller {
             const cookie = this.cookie.getCookie('cookie_name');
 
             //add cookie
-            const newCookie = new HttpCookie('new_cookie');
+            const newCookie = new HttpCookie('new_cookie','cookie_value');
             this.cookie.addCookie(newCookie);
 
             //remove cookie
