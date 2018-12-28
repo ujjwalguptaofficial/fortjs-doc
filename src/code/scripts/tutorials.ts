@@ -27,8 +27,8 @@ export const tutorialLinks = [
         url: 'bootstrap'
     }, {
         id: 7,
-        text: "View Engine",
-        url: "view-engine"
+        text: "View",
+        url: "view"
     },
     {
         id: 8,
@@ -127,6 +127,10 @@ export const tutorialLinks = [
             id: 3,
             text: "Format Response",
             url: "format-response"
+        }, {
+            id: 4,
+            text: "View Engine",
+            url: "view-engine"
         }]
     }
 ] as TreeViewItem[];
