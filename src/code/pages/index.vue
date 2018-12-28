@@ -9,6 +9,13 @@
 .logo {
     visibility: hidden;
 }
+.v-toolbar {
+    background-color: black !important;
+}
+
+.application--wrap{
+    background: black;
+}
 </style>
 
 
