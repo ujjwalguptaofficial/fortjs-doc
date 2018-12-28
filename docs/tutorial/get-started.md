@@ -39,7 +39,7 @@ Now you must be thinking - where is the code which is rendering output to browse
 
 * Inside the method, we are using `viewResult` to return a view with id "controller:default,action:default". But where is the view code ?
 
-*  Under Views folder - > open default folder - > open default.ts. This contains the code which is rendering our view. You can see the id "controller:default,action:default" with the decorator `declareView`. Please check [viewEngine](view-engine) doc for more info.
+*  Under Views folder - > open default folder - > open default.ts. This contains the code which is rendering our view. You can see the id "controller:default,action:default" with the decorator `declareView`. Please check [view](View) doc for more info.
 
 <br><br>
 # *Check out some other links

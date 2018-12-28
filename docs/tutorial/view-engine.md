@@ -2,8 +2,6 @@
 Title: "View Engine"
 ---
 
-By default fortjs provides [eshtml](https://github.com/ujjwalguptaofficial/eshtml) as view engine. But any view engine like - handlebar, ejs, mustache etc can be used.
-
 In order to create a view engine - You need to create a class which will implement class `ViewEngine` from "fortjs".
 
 e.g - Let's see how we can use mustache as view engine. You can download the code for below example here - https://github.com/ujjwalguptaofficial/fortjs/tree/master/example/mustache
@@ -61,4 +59,47 @@ new App().create({
 });
 ```
 
+Now We have successfully integrated our view engine with fortjs. Let's render some view using mustache - 
 
+## Create a view
+
+create a file "index.html" inside the folder - "views". Paste the below code inside the file -
+
+```
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+</head>
+
+<body>
+    <h1>{{msg}}</h1>
+</body>
+
+</html>
+```
+
+In the above code - title and msg will be sent from the controller and rendered by mustache. 
+
+Now its time to call our view engine for rendering this view - 
+
+```
+export class DefaultController extends Controller {
+    @defaultWorker()
+    async default() {
+        const model = {
+            title: "FortJs",
+            msg: "This is rendered by mustache"
+        };
+        const result = await viewResult("default/index.html", model);
+        return result;
+    }
+}
+```
+
+Basically we are sending the relative location of view and model data using `viewResult`. 
+
+That's all, run your code and you can see the view rendered.
