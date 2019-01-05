@@ -11,7 +11,7 @@ There are two variables in query string - `userid` and `name` . We can use `quer
 ```
 export class DefaultController extends Controller {
 
-    @defaultWorker()
+    @DefaultWorker()
     async default() {
         const userId = this.query.userid;
         const name = this.query.name;

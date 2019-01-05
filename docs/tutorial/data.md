@@ -34,11 +34,11 @@ The above wall is using `data` to pass ip to other components.
 ### Controller
 
 ```
-import { Controller, textResult, defaultWorker } from "fortjs";
+import { Controller, textResult, DefaultWorker } from "fortjs";
 
 export class DefaultController extends Controller {
 
-    @defaultWorker()
+    @DefaultWorker()
     async default() {
         // access ip 
         const ip = this.data.ip;

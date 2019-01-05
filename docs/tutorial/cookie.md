@@ -7,11 +7,11 @@ Title: "Cookie"
 Let's see how we can use cookie -
 
 ```
-import { Controller, defaultWorker textResult, viewResult } from "fortjs";
+import { Controller, DefaultWorker textResult, viewResult } from "fortjs";
 import { HttpCookie } from "fortjs";
 
 export class DefaultController extends Controller {
-    @defaultWorker()
+    @DefaultWorker()
     async default() {
         try {
             // check exist

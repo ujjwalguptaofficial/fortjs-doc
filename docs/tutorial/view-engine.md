@@ -7,7 +7,7 @@ In order to create a view engine - You need to create a class which will impleme
 e.g - Let's see how we can use mustache as view engine. You can download the code for below example here - https://github.com/ujjwalguptaofficial/fortjs/tree/master/example/mustache
 
 ```
-import { ViewEngine, IViewValue } from "fortjs";
+import { ViewEngine, ViewEngineData } from "fortjs";
 import * as Mustache from "moustache";
 import * as Fs from "fs";
 import * as path from "path";
@@ -88,7 +88,7 @@ Now its time to call our view engine for rendering this view -
 
 ```
 export class DefaultController extends Controller {
-    @defaultWorker()
+    @DefaultWorker()
     async default() {
         const model = {
             title: "FortJs",

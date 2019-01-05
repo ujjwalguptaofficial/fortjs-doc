@@ -5,12 +5,12 @@ Title: "Body"
 `body` is class member of  Guard and Controller. It is used to access body data sent in http post request. 
 
 ```
-import { Controller, viewResult, worker, HTTP_METHOD, guards, route, jsonResult, htmlResult, textResult, defaultWorker, redirectResult } from "fortjs";
+import { Controller, viewResult, Worker, HTTP_METHOD, jsonResult, htmlResult, textResult, DefaultWorker, redirectResult } from "fortjs";
 import { UserService } from "../services/user_service";
 
 export class DefaultController extends Controller {
 
-    @worker([HTTP_METHOD.Post])
+    @Worker([HTTP_METHOD.Post])
     async login() {
         // access post data
         const userId = this.body.userId;

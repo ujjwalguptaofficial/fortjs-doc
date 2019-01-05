@@ -65,10 +65,10 @@ e.g -
 Since UserController is mapped with "/user", so parent route is - "user". Now let's say we want to create the child route - "add".
 
 ```
-import { Controller, worker, textResult } from "fortjs";
+import { Controller, Worker, textResult } from "fortjs";
 
 export class UserController extends Controller {
-    @worker()
+    @Worker()
     async add () {
        return textResult("add is called");
     }
@@ -80,11 +80,11 @@ When url will be - "abc.com/user/add" then add method will be called.
 Here you can see method name is used to create the child route. But you can change the route name manually also. Let's see how ?
 
 ```
-import { Controller, worker, textResult, route } from "fortjs";
+import { Controller, Worker, textResult, Route } from "fortjs";
 
 export class UserController extends Controller {
-    @worker()
-    @route("/add")
+    @Worker()
+    @Route("/add")
     async add () {
        return textResult("add is called");
     }
@@ -98,10 +98,10 @@ Currently with any of http methods (GET,POST, etc.) add method will be hit. But 
 In this case - you need to provide desired http methods to worker. Let's see an example - 
 
 ```
-import { Controller, worker,textResult,HTTP_METHOD } from "fortjs";
+import { Controller, Worker,textResult,HTTP_METHOD } from "fortjs";
 
 export class UserController extends Controller {
-    @worker([HTTP_METHOD.POST]) // This method will be only hit when any of the http method specified in worker will match.
+    @Worker([HTTP_METHOD.POST]) // This method will be only hit when any of the http method specified in worker will match.
     async add () {
        return textResult("add is called");
     }
@@ -111,18 +111,18 @@ export class UserController extends Controller {
 How about you want to create a route "add" which will hit different methods based on http methods.
 
 ```
-import { Controller, worker, textResult,HTTP_METHOD, route } from "fortjs";
+import { Controller, Worker, textResult,HTTP_METHOD, Route } from "fortjs";
 
 export class UserController extends Controller {
     
-    @worker([HTTP_METHOD.GET])
-    @route("/add")
+    @Worker([HTTP_METHOD.GET])
+    @Route("/add")
     async addWithGet() { // This will be called when method will be GET
        return textResult("add with method get is called");
     }
 
-    @worker([HTTP_METHOD.POST])
-    @route("/add")
+    @Worker([HTTP_METHOD.POST])
+    @Route("/add")
     async addWithPost() { // This will be called when method will be POST
        return textResult("add with method post is called");
     }
@@ -134,12 +134,12 @@ So far we have created a route - "abc.com/user/add". How about little more compl
 For this, we just need to modify our route.
 
 ```
-import { Controller, worker, textResult,HTTP_METHOD, route } from "fortjs";
+import { Controller, Worker, textResult,HTTP_METHOD, Route } from "fortjs";
 
 export class UserController extends Controller {
     
-    @worker()
-    @route("/add/1")
+    @Worker()
+    @Route("/add/1")
     async add () {
        return textResult("add is called");
     }
@@ -155,12 +155,12 @@ Basically a part of the url is like a placeholder where different values are bei
 So now the question should be how to create a placeholder in a route. Let's see - 
 
 ```
-import { Controller, worker, textResult,HTTP_METHOD, route } from "fortjs";
+import { Controller, Worker, textResult,HTTP_METHOD, Route } from "fortjs";
 
 export class UserController extends Controller {
     
-    @worker()
-    @route("/add/{value}")
+    @Worker()
+    @Route("/add/{value}")
     async add () {
        const value = this.param.value; // placeholder values are present in 'param' member of the controller.
        return textResult("add is called");
@@ -178,12 +178,12 @@ So here :
 * child route is - 'scripts/jquery.js'
 
 ```
-import { Controller, worker, textResult,HTTP_METHOD, route } from "fortjs";
+import { Controller, Worker, textResult,HTTP_METHOD, Route } from "fortjs";
 
 export class FileController extends Controller {
     
-    @worker()
-    @route("/scripts/{fileName}.js")
+    @Worker()
+    @Route("/scripts/{fileName}.js")
     async getScripts () {
        const value = this.param.value; // placeholder values are present in 'param' member of the controller.
        return textResult("add is called");
