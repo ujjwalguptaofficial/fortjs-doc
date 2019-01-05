@@ -9,7 +9,7 @@ Let's see an example -
 
 ```
 export class DefaultController extends Controller {
-    @defaultWorker()
+    @DefaultWorker()
     async default() {
         const model = {
             title: 'FortJs'

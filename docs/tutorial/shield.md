@@ -2,7 +2,7 @@
 Title: "Shield"
 ---
 
-Shiled is security layer on top of Section. It controls whether a request should be allowed to enter inside the Section. It can also be used for doing some task before passing it to actions.
+Shiled is security layer on top of Section (Controller). It controls whether a request should be allowed to enter inside the Section. It can also be used for doing some task before passing it to workers.
 
 e.g - Consider a case - where a section "Admin" is only allowed if the request is authenticated. You can create a shield which will check for the conditions and if it does not satisfy the conditions, you can just reject it.
 
@@ -55,15 +55,13 @@ Now you have defined the shield but in order to use this shield, you need to ass
 ```
 import {
     Controller,
-    shields,
-    section
+    Shields 
 } from "fortjs";
 import {
     AuthenticationShield
 } from "location where shield is defined";
 
-@shields([AuthenticationShield])
-@section()
+@Shields([AuthenticationShield]) 
 export class UserController extends Controller {
 
 }

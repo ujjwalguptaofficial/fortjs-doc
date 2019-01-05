@@ -7,13 +7,13 @@ Title: "File"
 Let's see how to upload a file - 
 
 ```
-import { Controller, textResult, route, fileResult, worker, HTTP_METHOD } from "fortjs";
+import { Controller, textResult, Route, fileResult, Worker, HTTP_METHOD } from "fortjs";
 import * as Path from "path";
 
 export class FileController extends Controller {
    
-    @worker([HTTP_METHOD.Post])
-    @route("/upload")
+    @Worker([HTTP_METHOD.Post])
+    @Route("/upload")
     async uploadFile() {
         const pathToSave = Path.join(__dirname, "../upload.png");
         let result;

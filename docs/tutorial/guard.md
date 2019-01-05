@@ -65,17 +65,15 @@ Now you have defined the guard but in order to use this guard, you need to assig
 ```
 import {
     Controller,
-    shields,
-    section
+    Guards 
 } from "fortjs";
 import {
     ModelUserGuard
 } from "location where guard is defined";
 
 
-@section()
 export class UserController extends Controller {
-   @guards([ModelUserGuard])
+    @Guards([ModelUserGuard])
     addUser(){
         
     }

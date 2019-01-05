@@ -9,8 +9,8 @@ e.g - consider the route - "abc.com/{value}/hi" . Here value is a placeholder an
 ```
 export class FileController extends Controller {
    
-    @route("/scripts/{file}.js")
-    @worker()
+    @Route("/scripts/{file}.js")
+    @Worker()
     async getScripts() {
         const fileName = this.param.file;
     }

@@ -7,7 +7,7 @@ Worker is a method which does particular task and return the final result.
 A worker method -
 
 * must be async or return a promise (since async is built on top of promises).
-* The result retruned by worker method must be promise of type [HttpResult](http-result).
+* The result returned by worker method must be promise of type [HttpResult](http-result) or [HttpFormatResult](http-format-result).
 
 <br>
 Since a worker is part of controller, it have the access to all the things which a controller has i.e - 
@@ -25,22 +25,22 @@ Since a worker is part of controller, it have the access to all the things which
 # Creating worker
 
 <br>
-Worker is created by using decorator - `worker` or `defaultWorker`.
+Worker is created by using decorator - `Worker` or `DefaultWorker`.
 
 
 ## Example
 
 ```
-import { Controller, worker, defaultWorker, textResult } from "fortjs";
+import { Controller, Worker, DefaultWorker, textResult } from "fortjs";
 
 export class UserController extends Controller {
    
-    @defaultWorker()
+    @DefaultWorker()
     async default () {
        return textResult("This is default worker for section user");
     }
 
-    @worker()
+    @Worker()
     async getUser() {
         return textResult("This is a worker for section user");
     }
@@ -50,14 +50,14 @@ export class UserController extends Controller {
 
 Lets consider that controller - 'UserController' is associated with path '/user' and our domain is abc.com.
 
-So what these decorators - `worker` and `defaultWorker` do ?
+So what these decorators - `Worker` and `DefaultWorker` do ?
 
-* **worker** - method having decorator worker is added to route with all http methods (GET,POST etc).And the route is '/${method_name}'. For our example - route will be : '/getuser'.
+* **Worker** - method having decorator Worker is added to route with all http methods (GET,POST etc).And the route is '/${method_name}'. For our example - route will be : '/getuser'.
 
-* **defaultWorker** - method having decorator defaultWorker is added to route with one http method GET. And the route is '/'.
+* **DefaultWorker** - method having decorator DefaultWorker is added to route with one http method GET. And the route is '/'.
 
 <br>
-So when url will be - 
+So in the above example, when url will be - 
 * abc.com/user - method default will be called.
 * abc.com/getuser - method getuser will be called.
 
@@ -65,18 +65,18 @@ So when url will be -
 ## How to declare a method as default worker without using decorator - defaultWorker
 
 <br>
-A method can be declared as default worker by using decorators - `worker` & `route`.
+A method can be declared as default worker by using decorators - `Worker` & `Route`.
 
 Lets update the example -
 
 ```
-import { Controller, worker, textResult, HTTP_METHOD, route } from "fortjs";
+import { Controller, Worker, textResult, HTTP_METHOD, Route } from "fortjs";
 
 export class UserController extends Controller {
     
    // @defaultWorker()
-    @worker([HTTP_METHOD.Get])
-    @route("/")
+    @Worker([HTTP_METHOD.Get])
+    @Route("/")
     async default () {
        return textResult("This is default worker for section user");
     }
