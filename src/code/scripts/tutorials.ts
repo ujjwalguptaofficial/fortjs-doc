@@ -131,6 +131,10 @@ export const tutorialLinks = [
             id: 4,
             text: "View Engine",
             url: "view-engine"
+        },{
+            id: 5,
+            text: "Swagger",
+            url: "swagger"
         }]
     }
 ] as TreeViewItem[];
