@@ -36,4 +36,4 @@ export class DefaultController extends Controller {
 }
 ```
 
-By default fortjs parses the body data. But it can be turned off by setting option - `shouldParsePost` while bootstraping the app in `create` method. Please check [bootstrap](bootstrap) doc for more info.
+By default fortjs parses the body data. But it can be turned off by setting option - `shouldParsePost` while bootstraping the app in `create` method. Please check [bootstrap](/tutorial/bootstrap) doc for more info.

@@ -8,14 +8,14 @@ e.g - A Fort may have sections - WeaponSection, LibrarySection, MeetingSection e
 
 A controller has following members - 
 
-* Request - [request](http-request)
-* Response - [response](http-response)
-* Cookie - [cookie](cookie)
-* Session - [session](session)
-* Query string data - [query](query)
-* Post data - [body](body)
-* Route parameter -  [param](param)
-* Data from other components - [data](data)
+* Request - [request](/tutorial/http-request)
+* Response - [response](/tutorial/http-response)
+* Cookie - [cookie](/tutorial/cookie)
+* Session - [session](/tutorial/session)
+* Query string data - [query](/tutorial/query)
+* Post data - [body](/tutorial/body)
+* Route parameter -  [param](/tutorial/param)
+* Data from other components - [data](/tutorial/data)
 
 <br>
 # Creating controller
@@ -34,7 +34,7 @@ export class UserController extends Controller {
 }
 ```
 
-Now you have created the controller but in order to use this, you need to assign it to routes where you have [bootstrapped](bootstrap) your app.
+Now you have created the controller but in order to use this, you need to assign it to routes where you have [bootstrapped](/tutorial/bootstrap) your app.
 
 ```
 import { Fort } from "fortjs";
@@ -55,4 +55,4 @@ In the code we are adding our controller into routers list along  with a path. T
 
 e.g - Consider your website is abc.com , so when user hits the url - "abc.com/user" then the controller - 'UserController' will be called. 
 
-Note :- You must have [worker](worker) inside the controller otherwise it wont work.
+Note :- You must have [worker](/tutorial/worker) inside the controller otherwise it wont work.
