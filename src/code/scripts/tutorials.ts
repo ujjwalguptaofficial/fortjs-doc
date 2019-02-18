@@ -29,9 +29,13 @@ export const tutorialLinks = [
         id: 7,
         text: "View",
         url: "view"
+    },{
+        id: 8,
+        text: "Authentication",
+        url: "authentication"
     },
     {
-        id: 8,
+        id: 9,
         text: "Components",
         childs: [
             {
@@ -52,7 +56,7 @@ export const tutorialLinks = [
         ]
     },
     {
-        id: 9,
+        id: 10,
         text: "Concepts",
         childs: [{
             id: 1,
@@ -85,7 +89,7 @@ export const tutorialLinks = [
         }]
     },
     {
-        id: 10,
+        id: 11,
         text: "Types",
         childs: [{
             id: 1,
@@ -113,7 +117,7 @@ export const tutorialLinks = [
             url: "http-format-result"
         }]
     }, {
-        id: 11,
+        id: 12,
         text: "Advanced",
         childs: [{
             id: 1,
