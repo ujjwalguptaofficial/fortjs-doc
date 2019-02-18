@@ -1,9 +1,7 @@
 ---
 Title: "Authentication"
 ---
-
-Authentication is the process of taking some information like (userid,password)/some key etc. and allowing it to the system.
-
+ 
 There are multiple ways in which we can authenticate. But we will learn how to do session authentication based on userid/password combination.
 
 So the concept is simple - a registered user has userid and password and they can access the system once they have entered valid credential. We need to design a login page through which user can login.
