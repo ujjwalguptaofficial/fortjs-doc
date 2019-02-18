@@ -7,7 +7,7 @@ Worker is a method which does particular task and return the final result.
 A worker method -
 
 * must be async or return a promise (since async is built on top of promises).
-* The result returned by worker method must be promise of type [HttpResult](http-result) or [HttpFormatResult](http-format-result).
+* The result returned by worker method must be promise of type [HttpResult](/tutorial/http-result) or [HttpFormatResult](/tutorial/http-format-result).
 
 <br>
 Since a worker is part of controller, it have the access to all the things which a controller has i.e - 

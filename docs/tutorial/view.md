@@ -22,4 +22,4 @@ export class DefaultController extends Controller {
 
 By default fortjs provides [eshtml](https://github.com/ujjwalguptaofficial/eshtml) as view engine. But any view engine like - handlebar, ejs, mustache etc can be used.
 
-For configuring other view engine, please read the docs - [viewEngine](view-engine)
+For configuring other view engine, please read the docs - [viewEngine](/tutorial/view-engine)

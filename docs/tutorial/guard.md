@@ -14,14 +14,14 @@ There can be multiple guards for a worker & they are called in respective order,
 
 A guard has following member - 
 
-* Request - [request](http-request)
-* Response - [response](http-response)
-* Cookie - [cookie](cookie)
-* Session - [session](session)
-* Query string data - [query](query)
+* Request - [request](/tutorial/http-request)
+* Response - [response](/tutorial/http-response)
+* Cookie - [cookie](/tutorial/cookie)
+* Session - [session](/tutorial/session)
+* Query string data - [query](/tutorial/query)
 * Post data - [body](body)
-* Route parameter -  [param](param)
-* Data from other components - [data](data)
+* Route parameter -  [param](/tutorial/param)
+* Data from other components - [data](/tutorial/data)
 
 <br>
 # Creating guard

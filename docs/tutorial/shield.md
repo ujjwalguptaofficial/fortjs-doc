@@ -10,12 +10,12 @@ There can be multiple shield for a section & every section is called when a requ
 
 A shiled has following member- 
 
-* Request - [request](http-request)
-* Response - [response](http-response)
-* Cookie - [cookie](cookie)
-* Session - [session](session)
-* Query string data - [query](query)
-* Data from other components - [data](data)
+* Request - [request](/tutorial/http-request)
+* Response - [response](/tutorial/http-response)
+* Cookie - [cookie](/tutorial/cookie)
+* Session - [session](/tutorial/session)
+* Query string data - [query](/tutorial/query)
+* Data from other components - [data](/tutorial/data)
 
 <br>
 # Creating shield

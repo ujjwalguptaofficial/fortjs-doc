@@ -37,7 +37,7 @@ export class MoustacheViewEngine implements ViewEngine {
 }
 ```
 
-The method `render` is called by fortjs with value of type [ViewEngineData](view-engine-data). You need to use this value and return html string.
+The method `render` is called by fortjs with value of type [ViewEngineData](/tutorial/view-engine-data). You need to use this value and return html string.
 
 After you have created view engine, you need to tell fort to use this view engine. Open app.ts/app.js
 

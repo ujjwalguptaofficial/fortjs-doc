@@ -31,7 +31,7 @@ Let's see how this route is configured in fortjs -
 ## Parent Route 
 
 <br>
-In order to create a parent route we must have a [controller](controller). This controller is mapped with a path.
+In order to create a parent route we must have a [controller](/tutorial/controller). This controller is mapped with a path.
 
 e.g - Consider you have created a controller, let's say - "UserController".
 
@@ -59,7 +59,7 @@ class App extends Fort {
 ## Child Route
 
 <br>
-Child route is nothing but a [Worker](worker) inside a Controller.
+Child route is nothing but a [Worker](/tutorial/worker) inside a Controller.
 e.g - 
 
 Since UserController is mapped with "/user", so parent route is - "user". Now let's say we want to create the child route - "add".
