@@ -29,7 +29,7 @@ export const tutorialLinks = [
         id: 7,
         text: "View",
         url: "view"
-    },{
+    }, {
         id: 8,
         text: "Authentication",
         url: "authentication"
@@ -37,6 +37,7 @@ export const tutorialLinks = [
     {
         id: 9,
         text: "Components",
+        url: "components",
         childs: [
             {
                 id: 1,
@@ -58,6 +59,7 @@ export const tutorialLinks = [
     {
         id: 10,
         text: "Concepts",
+        url: "null",
         childs: [{
             id: 1,
             text: "Cookie",
@@ -91,6 +93,7 @@ export const tutorialLinks = [
     {
         id: 11,
         text: "Types",
+        url: "null",
         childs: [{
             id: 1,
             text: "HttpResult",
@@ -119,6 +122,7 @@ export const tutorialLinks = [
     }, {
         id: 12,
         text: "Advanced",
+        url: "null",
         childs: [{
             id: 1,
             text: "Custom Error Handler",
@@ -135,10 +139,14 @@ export const tutorialLinks = [
             id: 4,
             text: "View Engine",
             url: "view-engine"
-        },{
+        }, {
             id: 5,
             text: "Swagger",
             url: "swagger"
+        }, {
+            id: 6,
+            text: "GraphQl",
+            url: "graphql"
         }]
     }
 ] as TreeViewItem[];

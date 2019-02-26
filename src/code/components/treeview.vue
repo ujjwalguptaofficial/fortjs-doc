@@ -1,16 +1,39 @@
 <template>
   <div class="margin-top-50px">
-    <div class="treeview-parent" v-for="item in items" :key="item.id" v-bind:class="{'link-active': item.url=== activeUrl}">
-      <i :class="{'not-visible':item.childs==null || item.childs.length==0}" class="material-icons" v-bind:data-id="item.id" @click="onMenuClick">
-        {{expandInfo[item.id]===true?"keyboard_arrow_down":"chevron_right"}}
+    <div
+      class="treeview-parent"
+      v-for="item in items"
+      :key="item.id"
+      v-bind:class="{ 'link-active': item.url === activeUrl }"
+    >
+      <i
+        :class="{
+          'not-visible': item.childs == null || item.childs.length == 0
+        }"
+        class="material-icons"
+        v-bind:data-id="item.id"
+        @click="onMenuClick"
+      >
+        {{
+          expandInfo[item.id] === true ? "keyboard_arrow_down" : "chevron_right"
+        }}
       </i>
       <div v-bind:data-id="item.id" class="text" @click="onMenuClick">
-        <a v-if="item.url!=null" :href="'/tutorial/'+item.url">{{item.text}}</a>
-        <span v-else> {{item.text}}</span>
+        <a
+          v-bind:data-id="item.id"
+          v-if="item.url != 'null' "
+          :href="'/tutorial/' + item.url"
+          >{{ item.text }}</a
+        >
+        <span v-else v-bind:data-id="item.id"> {{ item.text }}</span>
       </div>
-      <ul v-if="item.childs!=null" v-show="expandInfo[item.id]===true">
-        <li v-for="child in item.childs" :key="child.id" v-bind:class="{'link-active': child.url=== activeUrl}">
-          <a :href="'/tutorial/'+child.url">{{child.text}}</a>
+      <ul v-if="item.childs != null" v-show="expandInfo[item.id] === true">
+        <li
+          v-for="child in item.childs"
+          :key="child.id"
+          v-bind:class="{ 'link-active': child.url === activeUrl }"
+        >
+          <a :href="'/tutorial/' + child.url">{{ child.text }}</a>
         </li>
       </ul>
     </div>
@@ -40,6 +63,7 @@ export default class TreeView extends Vue {
     });
   }
 
+  // called by parent
   setActiveLink(url) {
     this.activeUrl = url;
   }
@@ -61,6 +85,7 @@ export default class TreeView extends Vue {
   onMenuClick(e) {
     const el = e.target;
     const id = Number(el.dataset.id);
+    // debugger;
     this.setExpandInfo(id);
   }
 }
