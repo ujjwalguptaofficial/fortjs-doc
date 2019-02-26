@@ -59,6 +59,7 @@ export const tutorialLinks = [
     {
         id: 10,
         text: "Concepts",
+        url: "null",
         childs: [{
             id: 1,
             text: "Cookie",
@@ -92,6 +93,7 @@ export const tutorialLinks = [
     {
         id: 11,
         text: "Types",
+        url: "null",
         childs: [{
             id: 1,
             text: "HttpResult",
@@ -120,6 +122,7 @@ export const tutorialLinks = [
     }, {
         id: 12,
         text: "Advanced",
+        url: "null",
         childs: [{
             id: 1,
             text: "Custom Error Handler",

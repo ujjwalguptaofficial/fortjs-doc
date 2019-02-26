@@ -21,7 +21,7 @@
       <div v-bind:data-id="item.id" class="text" @click="onMenuClick">
         <a
           v-bind:data-id="item.id"
-          v-if="item.url != null"
+          v-if="item.url != 'null' "
           :href="'/tutorial/' + item.url"
           >{{ item.text }}</a
         >
