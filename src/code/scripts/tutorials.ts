@@ -139,6 +139,10 @@ export const tutorialLinks = [
             id: 5,
             text: "Swagger",
             url: "swagger"
+        },{
+            id: 6,
+            text: "GraphQl",
+            url: "graphql"
         }]
     }
 ] as TreeViewItem[];

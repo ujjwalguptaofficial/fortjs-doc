@@ -5,8 +5,18 @@
 
 .treeview-parent .text {
     display: inline-block;
+    padding: 3px;
 }
 
 .treeview-parent i.material-icons {
     vertical-align: bottom;
+}
+
+.treeview-parent:not(.link-active) .text a {
+    padding: 5px 10px;
+}
+
+.treeview-parent .text:hover {
+    /* background: #dadada; */
+    border-bottom: 1px solid;
 }
