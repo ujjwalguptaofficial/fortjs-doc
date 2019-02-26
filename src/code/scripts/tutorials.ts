@@ -29,7 +29,7 @@ export const tutorialLinks = [
         id: 7,
         text: "View",
         url: "view"
-    },{
+    }, {
         id: 8,
         text: "Authentication",
         url: "authentication"
@@ -37,6 +37,7 @@ export const tutorialLinks = [
     {
         id: 9,
         text: "Components",
+        url: "components",
         childs: [
             {
                 id: 1,
@@ -135,11 +136,11 @@ export const tutorialLinks = [
             id: 4,
             text: "View Engine",
             url: "view-engine"
-        },{
+        }, {
             id: 5,
             text: "Swagger",
             url: "swagger"
-        },{
+        }, {
             id: 6,
             text: "GraphQl",
             url: "graphql"
