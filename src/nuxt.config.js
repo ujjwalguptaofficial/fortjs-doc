@@ -44,7 +44,7 @@ module.exports = {
         content: "/ms-icon-144x144.png"
       }, {
         name: "keywords",
-        content: "fort, node, javascript, mvc, framework, typescript"
+        content: "javascript, node, es6, mvc, framework, typescript"
       },
       {
         name: "description",
