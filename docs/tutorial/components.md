@@ -1,5 +1,5 @@
 ---
-Title: "GraphQl"
+Title: "Components"
 ---
 
 Components are most important part of fort. It helps you to modularize your app.
