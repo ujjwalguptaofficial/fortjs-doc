@@ -63,27 +63,23 @@ You can see - we have three worker.
 
 Once the session has been set for a user. It can be accessed anywhere in the system (any controller/worker) using - `this.session.get('userId')`  or `this.session.isExist('userId')`
 
-In order to not allow unauthenticated user to access restrcited method : we can check in every worker - If session is set or not and then based on that take actions.
+In order to not allow unauthenticated user to access restricted method : we can check in every worker - If session is set or not and then based on that take actions.
 
 e.g - if session is present then fulfill the request otherwise redirect to login page or send a text response with http code 401.
 
-We can take the above concept and divide into [component](/tutorial/wall). So that we dont need to write in every method. We can use shield or guard - this completely depends upon application.
+We can take the above concept and divide into [component](/tutorial/components). So that we dont need to write in every method. We can use shield or guard - this completely depends upon application.
 
 Let's consider that we want to restrict at controller level and for this we need to create a [shield](/tutorial/shield) - 
 
 ```
-import {
-    Shield,
-    textResult,
-    redirectResult
-} from "fortjs";
+import { Shield, textResult,  redirectResult } from "fortjs";
 export class AuthenticationShield extends Shield {
     async protect() {
         try {
             const isExist = await this.session.isExist('userId');
             if (exist) { // user is authenticated so allow
                 return null;
-            } else { //user is not authenticated, so not allow
+            } else { //user is not authenticated, so redirect to login page
                 return redirectResult("/default/login");
             }
         } catch (ex) {
@@ -98,13 +94,8 @@ export class AuthenticationShield extends Shield {
 Now we can add shield to any controllers where we need to restrict. Let's add this into user controller - 
 
 ```
-import {
-    Controller,
-    Shields 
-} from "fortjs";
-import {
-    AuthenticationShield
-} from "location where shield is defined";
+import { Controller, Shields } from "fortjs";
+import { AuthenticationShield } from "location where shield is defined";
 
 @Shields([AuthenticationShield]) 
 export class UserController extends Controller {
