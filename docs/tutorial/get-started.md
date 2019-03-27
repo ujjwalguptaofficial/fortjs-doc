@@ -45,3 +45,5 @@ Now you must be thinking - where is the code which is rendering output to browse
 # *Check out some other links
 <br>
 * [Creating REST API using Typescript](https://medium.com/fortjs/rest-api-using-typescript-94004d9ae5e6)
+
+* [Creating REST API using es6](https://medium.com/fortjs/rest-api-in-nodejs-using-es6-227765440b2b)
