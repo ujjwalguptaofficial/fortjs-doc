@@ -106,6 +106,9 @@ export default class Tutorial extends VueWithRoute {
           `${this.relativeUrl}${item.url.toLowerCase()}`.replace(/\//g, "")
       ) {
         activeUrl = item.url;
+        if(item.childs && item.childs.length>0){
+           (this.$refs.linkContainer as any).setExpandInfo(item.id);
+        }
         return false;
       }
       return true;
