@@ -158,9 +158,9 @@ Here we have used three different decorators -
 * Description - used to describe the end point in details. This is not necessary most of the time.
 * Response -  used to define the response returned. In this example - we are telling swagger that : for http status "OK" the result will be array of model User. You can define multiple response in the same way i.e by using response decorator multiple time.
 
-In the similar way - we can define other workers.
+<br>In the similar way - we can define other workers.
 
 # * More resources - 
-
+<br>
 * Examples - https://github.com/ujjwalguptaofficial/fortjs-swagger/tree/master/examples
    
