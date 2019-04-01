@@ -31,15 +31,13 @@ You will see something like below -
 <br>
 Now you must be thinking - where is the code which is rendering output to browser ? Let's see -
 
-* Open  folder src -> controllers. Inside the controllers you will see a file name - default_controller, lets open it and observe the code.
+* Open  folder controllers. Inside the controllers you will see a file name - default_controller, lets open it and observe the code. The file contains a class DefaultController - this is a controller class and it contains list of resources of particular type. Please check out [controller](/tutorial/controller) doc for knowing about controller.
 
-* Under the controllers -> you will see a method 'default' - this is the one which is rendering output to browser. Please check out [controller](/tutorial/controller) doc for knowing about controller.
+* Inside the class DefaultController ->  you will see a method 'index' - this is the one which is rendering output to browser. On top of 'index' method we are using decorator 'defaultWorker'. It tells fortjs to make this method visible for http request. Please check out [worker](/tutorial/worker) doc for more info about worker.
 
-* On top of 'default' method we are using decorator 'defaultWorker'. It tells fortjs to make this method visible and call it for http request. Please check out [worker](/tutorial/worker) doc for more info about worker.
+* Inside the method, we are using `viewResult` to return a view with location "default/index.html". But where is the view code ?
 
-* Inside the method, we are using `viewResult` to return a view with id "controller:default,action:default". But where is the view code ?
-
-*  Under Views folder - > open default folder - > open default.ts. This contains the code which is rendering our view. You can see the id "controller:default,action:default" with the decorator `DeclareView`. Please check [view](/tutorial/view) doc for more info.
+*  Under Views folder - > open default folder - > open index.html. This contains the code which is rendering our view. Please check [view](/tutorial/view) doc for more info.
 
 <br><br>
 # *Check out some other links
