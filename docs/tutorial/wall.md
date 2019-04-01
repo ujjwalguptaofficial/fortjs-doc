@@ -53,3 +53,25 @@ export class AppWall extends Wall {
     }
 }
 ```
+
+Now you have defined the wall but in order to use this wall, you need to assign it to App.
+
+```
+import { Fort } from "fortjs";
+import { UserController } from "./controllers";
+import { AppWall } from "./walls/app_wall";
+
+class App extends Fort {
+    constructor() {
+        super();
+        //add routers
+        this.routers = [{
+            controller: UserController,
+            path: "/user"
+        }]
+        // adding AppWall to the walls array
+        this.walls = [AppWall]
+    }
+}
+
+```
