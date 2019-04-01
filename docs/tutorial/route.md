@@ -145,6 +145,7 @@ export class UserController extends Controller {
     }
 }
 ```
+<div class="top-border"><br></div>
 
 **<u>Params in route</u>**
 <br><br>
