@@ -229,3 +229,7 @@
     font-size: 45px;
     font-family: -webkit-body;
 }
+
+.top-border {
+    border-top: 2px solid #ccc;
+}
