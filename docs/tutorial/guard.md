@@ -47,6 +47,7 @@ export class ModelUserGuard extends Guard {
         }
         const errors = await validate(user);
         if (errors.length === 0) { // user is valid so allow to call the worker
+            // returning null means - this guard allows request to pass
             return null;
         }
         else { // user is not valid, so block the call to worker

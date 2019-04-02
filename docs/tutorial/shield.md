@@ -4,11 +4,11 @@ Title: "Shield"
 
 Shiled is security layer on top of Section (Controller). It controls whether a request should be allowed to enter inside the Section. It can also be used for doing some task before passing it to workers.
 
-e.g - Consider a case - where a section "Admin" is only allowed if the request is authenticated. You can create a shield which will check for the conditions and if it does not satisfy the conditions, you can just reject it.
+e.g - Consider a case - where a controller "Admin" is only allowed if the request is authenticated. You can create a shield which will check for the conditions and if it does not satisfy the conditions, you can just reject it.
 
-There can be multiple shield for a section & every section is called when a request wants to access the particular section.
+There can be multiple shield for a controller & every shield is called when a request wants to access the particular controller.
 
-A shiled has following member- 
+A shiled has following member - 
 
 * Request - [request](/tutorial/http-request)
 * Response - [response](/tutorial/http-response)
@@ -50,7 +50,7 @@ export class AuthenticationShield extends Shield {
 }
 ```
 
-Now you have defined the shield but in order to use this shield, you need to assign it to some section.
+Now you have defined the shield but in order to use this shield, you need to assign it to some controller.
 
 ```
 import {
@@ -67,4 +67,4 @@ export class UserController extends Controller {
 }
 ```
 
-**Note:-** A shield can be assigned to multiple section.
+**Note:-** A shield can be assigned to multiple controller.
