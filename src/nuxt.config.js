@@ -191,7 +191,10 @@ module.exports = {
     src: '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>'
   }],
   modules: [
-    "~/modules/typescript.js"
+    "~/modules/typescript.js",
+    ['@nuxtjs/google-analytics', {
+      id: process.env.GA_ID || 'UA-131290933-1'
+    }]
   ],
   axios: {}
 }
