@@ -147,10 +147,15 @@ export const tutorialLinks = [
             id: 6,
             text: "GraphQl",
             url: "graphql"
-        },{
-            id:7,
+        }, {
+            id: 7,
             text: "Socket.io",
             url: "socket-io"
-        }]
+        }],
+    },
+    {
+        id: 13,
+        text: "Deployment",
+        url: "deployment"
     }
 ] as TreeViewItem[];
