@@ -2,18 +2,21 @@
 Title: "Get Started"
 ---
 
-FortJs is built using typescript and uses es6 pattern. That's why we need webpack or babel to transpile es6 codes to nodejs compatible code.
+The easiest way to use fortjs is by using - [fort-creator](https://github.com/ujjwalguptaofficial/fort-creator). fort-creator is a cli package which helps you with fortjs development.
 
-But dont worry about all the configuration, we we have created different starter template for you. You just need to download/clone the repo based on your preferred language and start writing your code.
+So, Install the fort-creator globally by runing command -
 
-* Typescript - <https://github.com/ujjwalguptaofficial/fortjs-typescript-starter>
+* npm - `npm i fort-creator -g`
 
-* Javascript - <https://github.com/ujjwalguptaofficial/fortjs-javascript-starter>
+* yarn - `yarn global add fort-creator`
 
-<br>
-After downloading the repo - open the console, move to project directory and run the commands -
-* `npm install` - It will install all the dependency
-* `npm run start` - It will run the app.
+<br>After you have successfully installed, run the below commands - 
+
+* create new project -  `fort-creator new my-app`
+
+* move to the project path - `cd my-app` 
+
+* start dev server - `fort-creator start` 
 
 <br>
 Browser the url mentioned in the console (http://localhost:4000/)
@@ -45,3 +48,16 @@ Now you must be thinking - where is the code which is rendering output to browse
 * [Creating REST API using Typescript](https://medium.com/fortjs/rest-api-using-typescript-94004d9ae5e6)
 
 * [Creating REST API using es6](https://medium.com/fortjs/rest-api-in-nodejs-using-es6-227765440b2b)
+
+<div class="top-border" style="margin: 25px 0;"></div>
+Alternatively you can also clone/download starter template - 
+
+* Typescript - <https://github.com/ujjwalguptaofficial/fortjs-typescript-starter>
+
+* Javascript - <https://github.com/ujjwalguptaofficial/fortjs-javascript-starter>
+
+<br>
+After downloading the repo - open the console, move to project directory and run the commands -
+
+* `npm install` - It will install all the dependency
+* `npm run start` - It will run the app.
