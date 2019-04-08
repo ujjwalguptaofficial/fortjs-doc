@@ -6,9 +6,9 @@ The easiest way to use fortjs is by installing - [fort-creator](https://github.c
 
 So, Install the fort-creator globally by runing command -
 
-* npm - `npm i fort-creator -g`
+* Using npm - `npm i fort-creator -g`
 
-* yarn - `yarn global add fort-creator`
+* Using yarn - `yarn global add fort-creator`
 
 <br>After you have successfully installed, run the below commands - 
 
