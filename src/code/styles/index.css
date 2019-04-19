@@ -24,7 +24,7 @@
 }
 
 #divLogoContainer {
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     background-color: black;
     text-align: center;
@@ -57,6 +57,12 @@
 #divLogoContainer .app-name {
     font-size: 200px;
     font-family: -webkit-body;
+}
+
+@media only screen and (max-width: 600px) {
+    #divLogoContainer .app-name {
+        font-size: 100px;
+    }
 }
 
 #divLinkGroup {
