@@ -1,5 +1,6 @@
 ---
 Title: "Controller"
+Keywords: "controller, section, fortjs, node"
 ---
 
 Controller is like a section where a list of resource of particular types are available.

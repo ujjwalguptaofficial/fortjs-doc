@@ -1,5 +1,6 @@
 ---
 Title: "Param"
+Keywords: "param, route, customize, fortjs, node"
 ---
 
 `param` is class member of  Guard and Controller. It is used to extract route data for placeholder based routing.

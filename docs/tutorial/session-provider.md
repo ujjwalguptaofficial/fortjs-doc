@@ -1,5 +1,6 @@
 ---
 Title: "Session Provider"
+Keywords: "session provider, create session provider, options, fortjs, node"
 ---
 
 By default fortjs provides a memory session provider for development but its not good for production and not recommended to use. You must create your own session provider or use some packages if available.

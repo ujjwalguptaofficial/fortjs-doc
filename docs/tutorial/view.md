@@ -1,5 +1,6 @@
 ---
 Title: "View"
+Keywords: "view, render, fortjs, node"
 ---
 
 A view is rendered using the method `viewResult`. The viewResult accepts two parameters - 

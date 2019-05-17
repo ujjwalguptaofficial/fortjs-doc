@@ -30,74 +30,71 @@ module.exports = {
   head: {
     title: "FortJs - Fort Based MVC Web Framework For Nodejs",
     meta: [{
-        name: "google-site-verification",
-        content: "gFRrtV_TpZtZXXktE2jCL0C69py_TsCtorjh4GDae4U"
-      },
-      {
-        name: "theme-color",
-        content: "#ffffff"
-      }, {
-        name: "msapplication-TileColor",
-        content: "#ffffff"
-      }, {
-        name: "msapplication-TileImage",
-        content: "/ms-icon-144x144.png"
-      }, {
-        name: "keywords",
-        content: "javascript, node, es6, mvc, framework, typescript"
-      },
-      {
-        name: "description",
-        content: "Fort based MVC web framework for nodejs targeting good code structures & modularity."
-      }, {
-        name: "robots",
-        content: "index, follow"
-      }, {
-        name: "author",
-        content: "Ujjwal Gupta"
-      }, {
-        name: "Rating",
-        content: "General"
-      }, {
-        name: "Revisit-After",
-        content: "1 days"
-      }, {
-        charset: "utf-8"
-      },
-      {
-        name: "viewport",
-        content: "width=device-width, initial-scale=1.0"
-      }, {
-        property: "og:title",
-        content: "FortJs - Fort Based MVC Web Framework For Nodejs"
-      }, {
-        property: "og:type",
-        content: "Node MVC Framework"
-      }, {
-        property: "og:url",
-        content: "http://fortjs.info/"
-      }, {
-        property: "og:site_name",
-        content: "FortJs"
-      }, {
-        property: "og:description",
-        content: "Fort based MVC web framework for nodejs targeting good code structures & modularity."
-      }, {
-        property: "og:image",
-        content: "/img/fort_js_logo_1200_630.png"
-      }, {
-        name: "twitter:creator",
-        content: "@ujjwal_kr_gupta"
-      }, {
-        name: "twitter:title",
-        content: "FortJs - Fort Based MVC Web Framework For Nodejs"
-      }, {
-        name: "twitter:description",
-        content: "Fort based MVC web framework for nodejs targeting good code structures & modularity."
-      }, {
-        name: "twitter:image",
-        content: "http://fortjs.info/img/fort_js_logo_1200_630.png"
-      }
+      name: "google-site-verification",
+      content: "gFRrtV_TpZtZXXktE2jCL0C69py_TsCtorjh4GDae4U"
+    },
+    {
+      name: "theme-color",
+      content: "#ffffff"
+    }, {
+      name: "msapplication-TileColor",
+      content: "#ffffff"
+    }, {
+      name: "msapplication-TileImage",
+      content: "/ms-icon-144x144.png"
+    },
+    {
+      name: "description",
+      content: "Fort based MVC web framework for nodejs targeting good code structures & modularity."
+    }, {
+      name: "robots",
+      content: "index, follow"
+    }, {
+      name: "author",
+      content: "Ujjwal Gupta"
+    }, {
+      name: "Rating",
+      content: "General"
+    }, {
+      name: "Revisit-After",
+      content: "1 days"
+    }, {
+      charset: "utf-8"
+    },
+    {
+      name: "viewport",
+      content: "width=device-width, initial-scale=1.0"
+    }, {
+      property: "og:title",
+      content: "FortJs - Fort Based MVC Web Framework For Nodejs"
+    }, {
+      property: "og:type",
+      content: "Node MVC Framework"
+    }, {
+      property: "og:url",
+      content: "http://fortjs.info/"
+    }, {
+      property: "og:site_name",
+      content: "FortJs"
+    }, {
+      property: "og:description",
+      content: "Fort based MVC web framework for nodejs targeting good code structures & modularity."
+    }, {
+      property: "og:image",
+      content: "/img/fort_js_logo_1200_630.png"
+    }, {
+      name: "twitter:creator",
+      content: "@ujjwal_kr_gupta"
+    }, {
+      name: "twitter:title",
+      content: "FortJs - Fort Based MVC Web Framework For Nodejs"
+    }, {
+      name: "twitter:description",
+      content: "Fort based MVC web framework for nodejs targeting good code structures & modularity."
+    }, {
+      name: "twitter:image",
+      content: "http://fortjs.info/img/fort_js_logo_1200_630.png"
+    }
     ],
     link: [{
       rel: "apple-touch-icon",

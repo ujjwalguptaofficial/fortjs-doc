@@ -1,11 +1,6 @@
 <template>
   <v-layout row wrap>
-    <v-flex
-      md2
-      class="hidden-sm-and-down"
-      id="divMenuContainer"
-      :class="{ 'show-menu': showMenu }"
-    >
+    <v-flex md2 class="hidden-sm-and-down" id="divMenuContainer" :class="{ 'show-menu': showMenu }">
       <TreeView ref="linkContainer" :items="links"></TreeView>
     </v-flex>
     <v-flex
@@ -21,7 +16,7 @@
     <v-flex class="md2 margin-top-50px text-center">
       <!-- <v-btn href="/sponsor" color="success right-side-button">Sponsor <br>Us</v-btn>
       <br><br>
-      <v-btn href="/sponsor" color="success right-side-button">Be a backer</v-btn> -->
+      <v-btn href="/sponsor" color="success right-side-button">Be a backer</v-btn>-->
     </v-flex>
   </v-layout>
 </template>
@@ -44,14 +39,17 @@ export interface ITutorialLink {
   },
   props: {
     innerHtml: String,
-    pageTitle: String
+    pageTitle: String,
+    pageKeywords: String
   }
 })
 export default class Tutorial extends VueWithRoute {
   // props
   innerHtml: string;
   pageTitle: string;
-  version: number = 2;
+  version: number = 1;
+
+  pageKeywords: string;
 
   //property
   showMenu = false;
@@ -101,13 +99,13 @@ export default class Tutorial extends VueWithRoute {
       }
 
       if (
-        this.isNullOrEmpty(activeUrl) && 
+        this.isNullOrEmpty(activeUrl) &&
         currentUrl ===
           `${this.relativeUrl}${item.url.toLowerCase()}`.replace(/\//g, "")
       ) {
         activeUrl = item.url;
-        if(item.childs && item.childs.length>0){
-           (this.$refs.linkContainer as any).setExpandInfo(item.id);
+        if (item.childs && item.childs.length > 0) {
+          (this.$refs.linkContainer as any).setExpandInfo(item.id);
         }
         return false;
       }
@@ -135,7 +133,15 @@ export default class Tutorial extends VueWithRoute {
 
   head() {
     return {
-      title: `FortJs - ${this.pageTitle}`
+      title: `FortJs - ${this.pageTitle}`,
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: this.pageKeywords
+        }
+      ]
     };
   }
 
