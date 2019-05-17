@@ -1,5 +1,6 @@
 ---
 Title: "HttpResult"
+Keywords: "http result, type, options, fortjs, node"
 ---
 
 The type `httpResult` is used by workers to return the result. 

@@ -1,5 +1,6 @@
 ---
 Title: "Get Started"
+Keywords: "get started, fort-creator, install, fortjs, node"
 ---
 
 The easiest way to use fortjs is by installing - [fort-creator](https://github.com/ujjwalguptaofficial/fort-creator). fort-creator is a cli package which helps you with fortjs development.

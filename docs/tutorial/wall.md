@@ -1,5 +1,6 @@
 ---
 Title: "Wall"
+Keywords: "wall, component, options, fortjs, node"
 ---
 
 Wall is security layer on top of your app. It controls whether a request should be allowed to enter inside the app. It can also be used to do some tasks and pass data inside app.

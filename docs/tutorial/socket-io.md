@@ -1,5 +1,6 @@
 ---
 Title: "Socket.io"
+Keywords: "socket, integration, options, fortjs, node"
 ---
 
 Socket.IO enables real-time, bidirectional and event-based communication.

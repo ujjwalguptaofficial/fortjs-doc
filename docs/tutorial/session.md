@@ -1,5 +1,6 @@
 ---
 Title: "Session"
+Keywords: "session, uses, example, fortjs, node"
 ---
 
 `session` is class member of Wall, Guard , Shield and Controller. 

@@ -1,5 +1,6 @@
 ---
 Title: "Custom Error Handler"
+Keywords: "customize error, handle error, fortjs, node"
 ---
 
 In order to customize the error page , you need to create a class which extend class ErrorHandler and overwrite the methods.

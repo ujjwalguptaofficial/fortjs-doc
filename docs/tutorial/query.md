@@ -1,5 +1,6 @@
 ---
 Title: "Query"
+Keywords: "query string, variable, fortjs, node"
 ---
 
 `query` is class member of  Wall, Guard, Shield and Controller. It is used to get the query string value.

@@ -1,5 +1,6 @@
 ---
 Title: "GraphQl"
+Keywords: "graphql, integrate, fortjs, node"
 ---
 
 FortJs provides a seperate package - [fort-graphql](https://github.com/ujjwalguptaofficial/fortjs-graphql) for integration of graphql.

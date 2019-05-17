@@ -1,5 +1,6 @@
 ---
 Title: "File"
+Keywords: "file, upload, fortjs, node"
 ---
 
 `file` is class member of  Guard ,Shield and Controller. It is used to access http request files.

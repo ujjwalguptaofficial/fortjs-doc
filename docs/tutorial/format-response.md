@@ -1,5 +1,6 @@
 ---
 Title: "Format Response"
+Keywords: "format response, multiple response, mime type, fortjs, node"
 ---
 
 You can customize the format of your response and based on [content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation) fortjs select the appropriate response. If an appropriate response is not found then a response with status code - 406 is returned.

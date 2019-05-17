@@ -1,5 +1,6 @@
 ---
 Title: "Route"
+Keywords: "route, customize, options, fortjs, node"
 ---
 
 There are two parts of route in fortjs - 

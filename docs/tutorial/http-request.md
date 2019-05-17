@@ -1,5 +1,6 @@
 ---
 Title: "Http Request"
+Keywords: "http request, type, options, fortjs, node"
 ---
 
 The type HttpRequest is used for accessing request resources like url, headers etc.
