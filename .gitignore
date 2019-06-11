@@ -8,5 +8,5 @@ build
 deploy_key
 dist
 # src/pages/example
-# src/pages/tutorial
+src/code/pages/tutorial
 # src/pages/v1
