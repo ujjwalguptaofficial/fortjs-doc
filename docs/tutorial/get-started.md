@@ -20,7 +20,7 @@ So, Install the fort-creator globally by runing command -
 * start dev server - `fort-creator start` 
 
 <br>
-Browser the url mentioned in the console (http://localhost:4000/)
+Browse the url - <a href="http://localhost:4000" target="_blank">http://localhost:4000</a>
 
 You will see something like below - 
 
@@ -33,15 +33,34 @@ You will see something like below -
 ## Understanding project
 
 <br>
-Now you must be thinking - where is the code which is rendering output to browser ? Let's see -
+Let's understand the project structures -
+
+* Open the project folder in your favourite code editor. You will see many folders inside project root such as controllers, views, etc. Every folder is grouped by their use like controllers folder contains all controller & views folder contains all view.
 
 * Open  folder controllers. Inside the controllers you will see a file name - default_controller, lets open it and observe the code. The file contains a class DefaultController - this is a controller class and it contains list of resources of particular type. Please check out [controller](/tutorial/controller) doc for knowing about controller.
 
-* Inside the class DefaultController ->  you will see a method 'index' - this is the one which is rendering output to browser. On top of 'index' method we are using decorator 'defaultWorker'. It tells fortjs to make this method visible for http request. Please check out [worker](/tutorial/worker) doc for more info about worker.
+* Inside the class DefaultController ->  you will see a method 'index' with decorator 'DefaultWorker' - this is the one which is rendering output to browser. The method is known as worker in fortjs because it does some work & return result. We have marked it as worker by using decorator 'DefaultWorker'. Please check out [worker](/tutorial/worker) doc for more info about worker.
 
-* Inside the method, we are using `viewResult` to return a view with location "default/index.html". But where is the view code ?
+* Let's observe the index method code: 
+  ```
+  try {
+    const data= {
+        title: 'FortJs'
+    };
+    const result = await viewResult('default/index.html', data);
+    return result;
+} catch (ex) {
+    // handle exception and show user a good message.
+    // save this ex in a file or db, so that you can know what's the issue and where
+    const result = await textResult("Our server is busy right now. Please try later.");
+    return result;
+}
+  ```
 
-*  Under Views folder - > open default folder - > open index.html. This  is our view code. Please check [view](/tutorial/view) doc for more info.
+It creates a data object and passes that object into viewResult method. The viewResult method takes the view location and view data. The work of viewResult is to render the view and return response.
+
+*  The view files are inside Views folder. Let's observe it -
+open Views Folder -> open default folder - > open index.html. This is our view code - it contain simple html code with some mustache syntax. Please check [view](/tutorial/view) doc for more info.
 
 <br><br>
 # *Check out some other links
