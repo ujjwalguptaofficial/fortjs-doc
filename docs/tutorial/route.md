@@ -9,7 +9,7 @@ There are two parts of route in fortjs -
 * Child Route
 
 <br>
-e.g - Consider an url - "abc.com/user/add" and let's split it - 
+Let's understand this by examples. Consider an url - "abc.com/user/add" and let's split it - 
 
 * abc.com - domain of the website 
 * user - parent route
@@ -27,7 +27,7 @@ Let's take another example - "abc.com/user/1/2/3" and split it again -
 <br>
 Now you must have understood, how parent and child route is divided.
 
-Let's see how this route is configured in fortjs - 
+Let's see how the route is configured in fortjs - 
 
 ## Parent Route 
 
@@ -36,7 +36,7 @@ In order to create a parent route we must have a [controller](/tutorial/controll
 
 e.g - Consider you have created a controller, let's say - "UserController".
 
-Now you need to map Controller with a path . In the below example we are mapping "UserContoller" with a path "/user" inside the "routers" member of App -
+You need to map Controller with a path. 
 
 ```
 import { Fort } from "fortjs";
@@ -53,6 +53,7 @@ class App extends Fort {
     }
 }
 ```
+In the above example we are mapping "UserContoller" with a path "/user" inside the "routers" member of App. Since UserController is mapped with "/user", so parent route is - "user".
 
 **Note :-** If you have large no of controller (let's say more than 10), it is recommended to define routers in a file as array (you can also divide your routers into multiple files)and then import those inside class App. The motive of this note is to keep your routers clean.
 
@@ -60,14 +61,12 @@ class App extends Fort {
 ## Child Route
 
 <br>
-Child route is nothing but a [Worker](/tutorial/worker) inside a Controller.
+Child route is mapped to a [Worker](/tutorial/worker) inside Controller.
 e.g - 
-
-Since UserController is mapped with "/user", so parent route is - "user".
 
 **<u>Creating Child Route</u>**
 <br><br>
-Now let's say we want to create the child route "add" - you need to create a method with the name "add" and add decoarator "Worker" above it . The decorator "Worker" add the method to route list.
+Let's say we want to create the child route "add" - you need to create a method with the name "add" and add decoarator "Worker" above it . The decorator "Worker" add the method to route list -
 
 ```
 import { Controller, Worker, textResult } from "fortjs";
@@ -80,27 +79,27 @@ export class UserController extends Controller {
 }
 ```
 
-When url will be - "abc.com/user/add" then add method will be called.
+So, When url will be - "abc.com/user/add" then add method will be called.
 
 <div class="top-border"><br></div>
 
-**<u>Changing the name of route</u>**
+**<u>Customizing route</u>**
 <br><br>
-Here you can see method name "add" is used to create the child route. But you can customize the route name using decorator "Route". The "Route" decorator is used to customize the route in multiple ways -  
+By default route is name of method, but you can customize the route using decorator "Route". The "Route" decorator is used to customize the route in multiple ways -  
 
 ```
 import { Controller, Worker, textResult, Route } from "fortjs";
 
 export class UserController extends Controller {
     @Worker()
-    @Route("/add") // changing the route name
+    @Route("/addCustom") // changing the route name
     async add () {
        return textResult("add is called");
     }
 }
 ```
 
-You can see in the code , we have used 'route' decorator to override the route.
+You can see in the code , we have used 'Route' decorator to override the route. So, now when url will be - "abc.com/user/addCustom" then add method will be called.
 
 <div class="top-border"><br></div>
 
@@ -126,7 +125,7 @@ export class UserController extends Controller {
 **<u>Single route & multiple http method</u>**
 <br><br>
 
-How about you want to create a route "add" which will hit different worker based on http methods.
+How about you want to create a route "add" which will hit different worker based on http methods. This pattern is highly used in rest api implementation . Let's see an example -
 
 ```
 import { Controller, Worker, textResult,HTTP_METHOD, Route } from "fortjs";
@@ -172,9 +171,9 @@ export class UserController extends Controller {
 
 e.g - "abc.com/user/add/2", "abc.com/user/add/hi", "abc.com/user/add/1000" etc.
 
-Basically a part of the url is like a placeholder where different values are being placed.
+Basically a part of the url is a variable which can hold any value.
 
-So now the question should be how to create a placeholder in a route. Let's see - 
+You can declare a variable in a route by using `{}`. Let's see - 
 
 ```
 import { Controller, Worker, textResult,HTTP_METHOD, Route } from "fortjs";
