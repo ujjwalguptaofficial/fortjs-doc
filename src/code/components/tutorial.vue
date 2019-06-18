@@ -1,24 +1,5 @@
-<template>
-  <v-layout row wrap>
-    <v-flex md2 class="hidden-sm-and-down" id="divMenuContainer" :class="{ 'show-menu': showMenu }">
-      <TreeView ref="linkContainer" :items="links"></TreeView>
-    </v-flex>
-    <v-flex
-      id="divTutorialContent"
-      :class="{ 'padding-left-15px': $vuetify.breakpoint.mdAndUp }"
-      xs12
-      md8
-      l7
-      xl6
-    >
-      <div v-html="tutorialHtml" class="margin-top-20px"></div>
-    </v-flex>
-    <v-flex class="md2 margin-top-50px text-center">
-      <!-- <v-btn href="/sponsor" color="success right-side-button">Sponsor <br>Us</v-btn>
-      <br><br>
-      <v-btn href="/sponsor" color="success right-side-button">Be a backer</v-btn>-->
-    </v-flex>
-  </v-layout>
+<template src="../views/tutorial.html">
+  
 </template>
 <script lang="ts">
 import { Component, Vue, Watch } from "nuxt-property-decorator";
@@ -163,13 +144,32 @@ export default class Tutorial extends VueWithRoute {
 
   get relativeUrl() {
     switch (this.version) {
+      // case 1:
+      //   return "/v1/tutorial/";
       case 1:
-        return "/v1/tutorial/";
-      case 2:
         return "/tutorial/";
       default:
         return "/";
     }
+  }
+
+  getCurrentUrlIndex() {
+    const currentUrl = (this.$route as any).path;
+    const relativeUrl = this.relativeUrl;
+    const activeUrlIndex = this.links.findIndex(
+      value =>
+        currentUrl.toLowerCase().replace(/\//g, "") ===
+        `${this.relativeUrl}${value.url.toLowerCase()}`.replace(/\//g, "")
+    );
+    return activeUrlIndex;
+  }
+
+  get docToEdit() {
+    const url = this.allLinks_[this.getCurrentUrlIndex()];
+    if (url) {
+      return url.url;
+    }
+    return null;
   }
 }
 </script>
