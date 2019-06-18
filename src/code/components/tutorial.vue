@@ -1,46 +1,5 @@
-<template>
-  <v-layout row wrap>
-    <v-flex
-      md2
-      xl2
-      class="hidden-sm-and-down"
-      id="divMenuContainer"
-      :class="{ 'show-menu': showMenu }"
-    >
-      <TreeView ref="linkContainer" :items="links"></TreeView>
-    </v-flex>
-    <v-flex
-      xs12
-      md8
-      xl8
-      id="divTutorialContent"
-      :class="{ 'padding-left-15px': $vuetify.breakpoint.mdAndUp }"
-    >
-      <div v-html="tutorialHtml" class="margin-top-20px"></div>
-    </v-flex>
-    <v-flex md2 class="margin-top-50px">
-      <!-- <v-btn href="/sponsor" color="success right-side-button">
-        Sponsor
-        <br>Us
-      </v-btn>
-      <br>
-      <br>
-      <v-btn href="/sponsor" color="success right-side-button">Be a backer</v-btn> -->
-      <v-btn
-        v-if="docToEdit!=null"
-        alt="edit this doc"
-        target="_blank"
-        :href="`https://github.com/ujjwalguptaofficial/fortjs.docs/edit/master/docs/tutorial/${docToEdit}.md`"
-        color="primary"
-        fixed
-        bottom
-        right
-        fab
-      >
-        <v-icon style="display:inline-flex;">edit</v-icon>
-      </v-btn>
-    </v-flex>
-  </v-layout>
+<template src="../views/tutorial.html">
+  
 </template>
 <script lang="ts">
 import { Component, Vue, Watch } from "nuxt-property-decorator";
