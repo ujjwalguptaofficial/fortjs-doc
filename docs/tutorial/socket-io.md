@@ -1,6 +1,7 @@
 ---
 Title: "Socket.io"
 Keywords: "socket, integration, options, fortjs, node"
+Description: "How to use socket.io in fortjs"
 ---
 
 Socket.IO enables real-time, bidirectional and event-based communication.

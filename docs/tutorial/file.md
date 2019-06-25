@@ -1,6 +1,7 @@
 ---
 Title: "File"
 Keywords: "file, upload, fortjs, node"
+Description: "Access request file in nodejs using fortjs"
 ---
 
 `file` is class member of  Guard ,Shield and Controller. It is used to access http request files.

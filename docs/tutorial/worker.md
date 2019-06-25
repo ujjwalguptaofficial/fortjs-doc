@@ -1,6 +1,7 @@
 ---
 Title: "Worker"
 Keywords: "worker, route, controller method, fortjs, node"
+Description: "Description about worker in fortjs"
 ---
 
 Worker is a method which does particular task and return the final result. 

@@ -1,6 +1,7 @@
 ---
 Title: "View Engine"
 Keywords: "view engine, cutomize, options, fortjs, node"
+Description: "Creating custom view engine in fortjs"
 ---
 
 In order to create a view engine - You need to create a class which will implement class `ViewEngine` from "fortjs".

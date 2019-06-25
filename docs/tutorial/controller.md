@@ -1,6 +1,7 @@
 ---
 Title: "Controller"
 Keywords: "controller, section, fortjs, node"
+Description: "Description about controller in fortjs"
 ---
 
 Controller is like a section where a list of resource of particular types are available.

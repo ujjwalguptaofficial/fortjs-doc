@@ -1,6 +1,7 @@
 ---
 Title: "Components"
 Keywords: "components, modularize, app, fortjs, node"
+Description: "Description about components of fortjs"
 ---
 
 Components are most important part of fort. It helps you to modularize your app.

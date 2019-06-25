@@ -1,6 +1,7 @@
 ---
 Title: "Bootstrap"
 Keywords: "bootstrap, initiate, start, fortjs, node"
+Description: "fortjs bootstrap information & how to bootstrap"
 ---
 
 In order to bootstrap the app, you need to perform two steps - 

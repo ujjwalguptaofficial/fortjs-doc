@@ -1,6 +1,7 @@
 ---
 Title: "Deployment"
 Keywords: "deploy, instructions, fortjs, node"
+Description: "deployment in nodejs using fortjs"
 ---
 
 Few things to note when you are deploying your app to production - 
