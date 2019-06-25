@@ -1,6 +1,7 @@
 ---
 Title: "Guard"
 Keywords: "guard, component, types, fortjs, node"
+Description: "Description about guard component in fortjs"
 ---
 
 Guard is security layer on top of Worker. It contols whether a request should be allowed to call the **Worker**.

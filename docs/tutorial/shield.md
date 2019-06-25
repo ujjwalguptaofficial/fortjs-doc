@@ -1,6 +1,7 @@
 ---
 Title: "Shield"
-Keywords: "shield, component, options, fortjs, node"
+Keywords: "shield, component, modular, fortjs, node"
+Description: "Description about Shield component & how to use"
 ---
 
 Shiled is security layer on top of Section (Controller). It controls whether a request should be allowed to enter inside the Section. It can also be used for doing some task before passing it to workers.

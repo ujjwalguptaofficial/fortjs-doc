@@ -1,6 +1,7 @@
 ---
 Title: "Authentication"
 Keywords: "authentication, example, tutorial, fortjs, node"
+Description: "How to authenticate in nodejs using fortjs"
 ---
  
 There are multiple ways in which we can authenticate. But we will learn how to do session authentication based on userid/password combination.

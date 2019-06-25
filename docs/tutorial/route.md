@@ -1,6 +1,7 @@
 ---
 Title: "Route"
 Keywords: "route, customize, options, fortjs, node"
+Description: "Different types of route and how to customize them in fortjs"
 ---
 
 There are two parts of route in fortjs - 

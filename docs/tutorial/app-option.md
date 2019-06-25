@@ -1,6 +1,7 @@
 ---
 Title: "AppOption"
 Keywords: "app, options, fortjs, node"
+Description: "fortjs application options and details"
 ---
 
 The type `appOption` is used to provide the configuration for the app. 

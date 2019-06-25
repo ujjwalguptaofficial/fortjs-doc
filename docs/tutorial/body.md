@@ -1,6 +1,7 @@
 ---
 Title: "Body"
 Keywords: "request, post, body, fortjs, node"
+Description: "fortjs body member details"
 ---
 
 `body` is class member of  Guard and Controller. It is used to access body data sent in http post request. 

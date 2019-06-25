@@ -1,6 +1,7 @@
 ---
 Title: "Cookie"
 Keywords: "cookie, http, manipulation, fortjs, node"
+Description: "How to access Http Cookie in node using fortjs"
 ---
 
 `cookie` is class member of Wall, Guard , Shield and Controller.
