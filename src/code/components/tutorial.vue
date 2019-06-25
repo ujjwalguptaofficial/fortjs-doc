@@ -1,6 +1,4 @@
-<template src="../views/tutorial.html">
-  
-</template>
+<template src="../views/tutorial.html"></template>
 <script lang="ts">
 import { Component, Vue, Watch } from "nuxt-property-decorator";
 import DomHelper from "../helpers/dom_helper";
@@ -21,7 +19,8 @@ export interface ITutorialLink {
   props: {
     innerHtml: String,
     pageTitle: String,
-    pageKeywords: String
+    pageKeywords: String,
+    pageDescription: String
   }
 })
 export default class Tutorial extends VueWithRoute {
@@ -36,6 +35,7 @@ export default class Tutorial extends VueWithRoute {
   showMenu = false;
   searchValue = "";
   searchResult = "";
+  pageDescription: string;
 
   constructor() {
     super();
@@ -121,6 +121,11 @@ export default class Tutorial extends VueWithRoute {
           hid: "keywords",
           name: "keywords",
           content: this.pageKeywords
+        },
+        {
+          hid: "description",
+          name: "description",
+          content: this.pageDescription
         }
       ]
     };

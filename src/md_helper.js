@@ -52,6 +52,7 @@ function addMetaTags(layout, metaTags) {
 
     layout = addTag('title=', 'Title');
     layout = addTag('keywords=', 'Keywords');
+    layout = addTag('description=', 'Description');
     return layout;
 }
 
