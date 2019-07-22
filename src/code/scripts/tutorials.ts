@@ -88,6 +88,10 @@ export const tutorialLinks = [
             id: 7,
             text: "File",
             url: "file"
+        },{
+            id: 8,
+            text: "Dependency Injection",
+            url: "dependency-injection"
         }]
     },
     {
