@@ -54,14 +54,15 @@ Lets consider that controller - 'UserController' is associated with path '/user'
 
 So what these decorators - `Worker` and `DefaultWorker` do ?
 
-* **Worker** - method having decorator Worker is added to route with all http methods (GET,POST etc).And the route is '/${method_name}'. For our example - route will be : '/getuser'.
+* **Worker** - method having decorator Worker is added to route with all http methods (GET,POST etc).And the route is ```'/${method_name}'. For our example - route will be : ```'/getuser'```.
 
 * **DefaultWorker** - method having decorator DefaultWorker is added to route with one http method GET. And the route is '/'.
 
 <br>
 So in the above example, when url will be - 
-* abc.com/user - method default will be called.
-* abc.com/getuser - method getuser will be called.
+
+* ```abc.com/user``` - method default will be called.
+* ```abc.com/user/:getuser``` - method getuser will be called.
 
 <br>
 ## How to declare a method as default worker without using decorator - defaultWorker
