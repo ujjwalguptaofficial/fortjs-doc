@@ -60,8 +60,9 @@ So what these decorators - `Worker` and `DefaultWorker` do ?
 
 <br>
 So in the above example, when url will be - 
+
 * abc.com/user - method default will be called.
-* abc.com/getuser - method getuser will be called.
+* abc.com/user/:getuser - method getuser will be called.
 
 <br>
 ## How to declare a method as default worker without using decorator - defaultWorker
