@@ -18,6 +18,7 @@ A shiled has following member -
 * Session - [session](/tutorial/session)
 * Query string data - [query](/tutorial/query)
 * Data from other components - [data](/tutorial/data)
+* Target Worker Name - [workerName][#]
 
 <br>
 # Creating shield
@@ -29,25 +30,18 @@ Shield is a class which extends the class "Shield" from fortjs.
 ## Example
 
 ```
-import {
-    Shield,
-    textResult,
-    redirectResult
-} from "fortjs";
+import { Shield, textResult, redirectResult} from "fortjs";
+
 export class AuthenticationShield extends Shield {
     async protect() {
-        try {
-            const isExist = await this.session.isExist('userId');
-            if (exist) { // user is authenticated so allow
-                return null;
-            } else { //user is not authenticated, so not allow
-                return redirectResult("/default/login");
-            }
-        } catch (ex) {
-            // log the error
-            // return  some good message
-            return textResult("Our Server is busy right now, we are sorry for inconvenience. Please try later.")
+         
+        const isExist = await this.session.isExist('userId');
+        if (exist) { // user is authenticated so allow
+            return null;
+        } else { //user is not authenticated, so not allow
+            return redirectResult("/default/login");
         }
+
     }
 }
 ```
@@ -55,13 +49,8 @@ export class AuthenticationShield extends Shield {
 Now you have defined the shield but in order to use this shield, you need to assign it to some controller.
 
 ```
-import {
-    Controller,
-    Shields 
-} from "fortjs";
-import {
-    AuthenticationShield
-} from "location where shield is defined";
+import { Controller,Shields } from "fortjs";
+import { AuthenticationShield } from "location where shield is defined";
 
 @Shields([AuthenticationShield]) 
 export class UserController extends Controller {
