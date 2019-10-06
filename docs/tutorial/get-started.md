@@ -42,20 +42,14 @@ Let's understand the project structures -
 
 * Inside the class DefaultController ->  you will see a method 'index' with decorator 'DefaultWorker' - this is the one which is rendering output to browser. The method is known as worker in fortjs because it does some work & return result. We have marked it as worker by using decorator 'DefaultWorker'. Please check out [worker](/tutorial/worker) doc for more info about worker.
 
-* Let's observe the index method code: 
-  ```
-  try {
-    const data= {
-        title: 'FortJs'
-    };
-    const result = await viewResult('default/index.html', data);
-    return result;
-} catch (ex) {
-    // handle exception and show user a good message.
-    // save this ex in a file or db, so that you can know what's the issue and where
-    const result = await textResult("Our server is busy right now. Please try later.");
-    return result;
-}
+* Let's observe the index method code:
+   
+```
+const data= {
+    title: 'FortJs'
+};
+const result = await viewResult('default/index.html', data);
+return result;
   ```
 
 It creates a data object and passes that object into viewResult method. The viewResult method takes the view location and view data. The work of viewResult is to render the view and return response.
