@@ -4,9 +4,11 @@ Keywords: "controller, section, fortjs, node"
 Description: "Description about controller in fortjs"
 ---
 
-Controller is like a section where a list of resource of particular types are available.
+Controller is like a section or area where different resource & services are available.
 
-e.g - A Fort may have sections - WeaponSection, LibrarySection, MeetingSection etc. Now consider a real world application created for university may have sections - StudentSection, TeacherSection, LibrarySection etc.
+e.g - A Fort may have sections - WeaponSection, LibrarySection, MeetingSection etc. 
+
+Now consider a real world application created for university may have sections - StudentSection, TeacherSection, LibrarySection etc.
 
 A controller has following members - 
 
@@ -36,7 +38,7 @@ export class UserController extends Controller {
 }
 ```
 
-Now you have created the controller but in order to use this, you need to assign it to routes where you have [bootstrapped](/tutorial/bootstrap) your app.
+In order to make this controller active, you need to assign it to routes where you have [bootstrapped](/tutorial/bootstrap) your app.
 
 ```
 import { Fort } from "fortjs";
@@ -45,7 +47,7 @@ import { UserController } from "./controllers";
 class App extends Fort {
     constructor() {
         super();
-        this.routers = [{
+        this.routes = [{
             controller: UserController,
             path: "/user"
         }]
@@ -53,7 +55,7 @@ class App extends Fort {
 }
 ```
 
-In the code we are adding our controller into routers list along  with a path. The path is used to associate the controller with a top level route.
+In the code we are adding our controller into routes array along  with a path. The path is used to associate the controller with a top level route.
 
 e.g - Consider your website is abc.com , so when user hits the url - "abc.com/user" then the controller - 'UserController' will be called. 
 

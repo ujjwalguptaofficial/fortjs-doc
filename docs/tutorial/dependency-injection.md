@@ -4,7 +4,7 @@ Keywords: "dependency injection, assign, singleton, fortjs, node js"
 Description: "Dependency injection in nodejs"
 ---
 
-FortJs provides "Assign", "Singleton" decorator for dependency Injection. 
+FortJs provides "Assign" And "Singleton" decorator for dependency Injection. 
 
 ## Assign
 <br>

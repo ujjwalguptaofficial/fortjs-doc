@@ -19,8 +19,8 @@ import { UserController } from "./controllers";
 class App extends Fort {
     constructor() {
         super();
-        //add routers
-        this.routers = [{
+        //add routes
+        this.routes = [{
             controller: UserController,
             path: "/user"
         }]
@@ -42,8 +42,8 @@ import { UserController } from "./controllers";
 class App extends Fort {
     constructor() {
         super();
-        //add routers
-        this.routers = [{
+        //add routes
+        this.routes = [{
             controller: UserController,
             path: "/user"
         }]
