@@ -8,11 +8,9 @@ Few things to note when you are deploying your app to production -
 
 * Run build for production by using the command - `npm run build:prod` or `yarn run build:prod`
 
-* Always use try & catch in every worker & components. Save the error message in a file or db with date, time & other info.
-
 * Customize the error page by using customize error handler. For info about how to customize, visit this link - [/tutorial/custom-error-handler/](/tutorial/custom-error-handler/)
 
-* When deploying, make sure "NODE_ENV" is production. Multiple optimization like caching of views, compressing development error message etc. takes place when `NODE_ENV` is production.
+* When runing app in production, make sure "NODE_ENV" is production. Multiple optimization like caching of views, compressing development error message etc. takes place when `NODE_ENV` is production.
 
 * Use compression - you can configure any third party library for compression in a wall component. But we will recommend to configure the compression in the reverse proxy server like - nginix etc. Reverse proxy can be used for multiple purposes like - caching request, compression etc.
 

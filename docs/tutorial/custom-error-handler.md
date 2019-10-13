@@ -4,9 +4,9 @@ Keywords: "customize error, handle error, fortjs, node"
 Description: "How to customize error in nodejs using fortjs"
 ---
 
-In order to customize the error page , you need to create a class which extend class ErrorHandler and overwrite the methods.
+In order to customize the error response , you need to create a class which extend class ErrorHandler and override the available methods.
 
-e.g - Let's say you want to customize the ErrorPage for status code - 404.
+e.g - Let's say you want to customize the error response for status code - 404.
 
 ```
 import { ErrorHandler } from "fortjs";
@@ -18,7 +18,7 @@ export class CustomErrorHandler extends ErrorHandler {
 }
 ```
 
-So basically it returns html response. If you are using a view engine then you can also use view engine to render the page and then return the html response.
+So basically it returns html response. You can also use view engine to render the page and then return the html response.
 
 Now you have created the class, you need to inform fortjs about this.
 
@@ -42,7 +42,7 @@ class App extends Fort {
 new App().create();
 ```
 
-The methods available for overwrites are - 
+The methods available for override are - 
 
 * onServerError(ex: IException): Promise<string>
 * onBadRequest(ex: IException): Promise<string>
@@ -54,5 +54,7 @@ The methods available for overwrites are -
 <br>
 You can see some methods also have parameters. So its upto you how you want to use those params.
 
-e.g - for onServerError (Status code - 500), you should not show the exception to users but you should log those errors.
+e.g - for onServerError (Status code - 500), you should not show the exception information to users but you should definitely log those errors.
+
+**Note:-** It is highly recommended to create a custom error handler and atleast override the onServerError method and log the exception, otherwise you wont have any information regarding the exception occured.
 

@@ -56,7 +56,7 @@ export class AppWall extends Wall {
 }
 ```
 
-Now you have defined the wall but in order to use this wall, you need to assign it to App.
+Now you have defined the wall but in order to use this wall, you need to assign it to App. Open app.ts/.js file and add your wall to the walls array.
 
 ```
 import { Fort } from "fortjs";
