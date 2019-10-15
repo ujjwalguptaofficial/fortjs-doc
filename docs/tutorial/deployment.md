@@ -6,7 +6,7 @@ Description: "deployment in nodejs using fortjs"
 
 Few things to note when you are deploying your app to production - 
 
-* Run build for production by using the command - `npm run build:prod` or `yarn run build:prod`
+* Run build for production by using the command - `npm run deploy` or `yarn run deploy`
 
 * Customize the error page by using customize error handler. For info about how to customize, visit this link - [/tutorial/custom-error-handler/](/tutorial/custom-error-handler/)
 
