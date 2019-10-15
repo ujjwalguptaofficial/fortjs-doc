@@ -14,9 +14,9 @@ So, Install the fort-creator globally by runing command -
 
 <br>After you have successfully installed, run the below commands - 
 
-* create new project -  `fort-creator new my-app`
+* create new project -  `fort-creator new my-app`, here "my-app" is name of the project.
 
-* move to the project path - `cd my-app` 
+* move to project directory - `cd my-app` 
 
 * start dev server - `fort-creator start` 
 
