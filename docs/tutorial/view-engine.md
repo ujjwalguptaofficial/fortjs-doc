@@ -6,7 +6,7 @@ Description: "Creating custom view engine in fortjs"
 
 In order to create a view engine - You need to create a class which will implement class `ViewEngine` from "fortjs".
 
-e.g - Let's see how we can use ejs as view engine. You can download the code for below example here - https://github.com/ujjwalguptaofficial/fortjs/tree/master/example/ejs
+e.g - Let's see how we can use ejs as view engine. You can download the code for below example here - [https://github.com/ujjwalguptaofficial/fortjs/tree/master/example/ejs](https://github.com/ujjwalguptaofficial/fortjs/tree/master/example/ejs)
 
 ```
 import { ViewEngine, ViewEngineData, getViewFromFile } from "fortjs";
