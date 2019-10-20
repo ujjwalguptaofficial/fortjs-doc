@@ -10,29 +10,58 @@ There are three types of components -
 
 1. [Wall](/tutorial/wall)
 
-2. [Shiled](/tutorial/shield)
+2. [Shield](/tutorial/shield)
 
 3. [Guard](/tutorial/guard)
 
 # Concept 
 
+<img src="/img/fort_component.png" alt="FortJs Architecture" style="height:600px;"/>
+
+**The above picture shows the architecture of fortjs app and flow of http request inside app -** 
+
+<ul>
+    <li>
+    When a http request comes to your app - it has to go through sequence of components i.e <a href="/tutorial/wall">Wall</a>, <a target="_blank" href="/tutorial/shield">Shield</a> & <a target="_blank" href="/tutorial/guard">Guard</a> and if everyone allows then request is transferred to controller where the actual resource is present.
+    </li>
+    <li>The Http Request has to first go through component <a href="/tutorial/wall">Wall</a>. The incoming event of wall is called and if wall 
+        <ul>
+            <li>Allows - It is sent to next lower level component which is <a target="_blank" href="/tutorial/shield">Shield</a></li>
+            <li>Rejects - The result is considered as final result and result is sent as http response & its lifecycle is ended there.</li>
+        </ul>
+    </li>
+    <li>
+        After <a href="/tutorial/wall">Wall</a> allows the request, it is sent to <a target="_blank" href="/tutorial/shield">Shield</a> and if shield 
+        <ul>
+            <li>Allows - It is sent to next component which is <a target="_blank" href="/tutorial/guard">Guard</a> </li>
+            <li> Rejects - The result is considered as final result. The result has to go through wall outgoing event and finally http response is sent.</li>
+        </ul>
+    </li>
+    <li>
+        After <a target="_blank" href="/tutorial/shield">Shield</a> allows - the request is sent to <a target="_blank" href="/tutorial/guard">Guard</a>  & if guard
+        <ul>
+            <li>Allows - It is sent to Controller.</li>
+            <li> Rejects - The result is considered as final result. The result has to go through wall outgoing event and finally http response is sent.</li>
+        </ul>
+    </li>
+</ul>
+
 <br>
-Imagine a real fort which has a big market and it allows people from outside to purchase and sell. They can go to any sections like KingHall, WeaponStorage, Market, SacredTemple for different types of services.
+# Important points
+<br>
 
-Now we might have situations, where - 
+* It is not necessary to create any components. But it is highly recommended to use components since components helps to modularize your app into small dedicated features making your code cleaner, reutilizable & testable.
 
-1. Some persons are not allowed to enter inside the fort.
-2. Allowed inside the fort but not any particular section.Let's say Section WeaponStorage & SacredTemple. 
-3. Allowed inside the fort and section but not to use partiular service inside the sections. Let's say SacredTemple section is very high privileged area and only priest & king/queen is allowed to worship there & people like KingHand are allowed to go to sacred temple but not allowed to worship.
+* We can also do some works inside the component and pass the result from one component to another.  
 
-<br>Components are in heirarchy order, where Wall is at top, Shield is in middle and Guard is at bottom. We can use this concept to solve above problems -   
-
-1. In order to block person from entering into fort - we need to block them using **wall**.
-2. Now person is allowed to enter inside the fort (passed from wall), but not allowed inside some particular section. To solve this problem we need to create a **shield** which will block them to entering inside the section. 
-3. Now person is allowed to enter both wall, section but not to use particular services inside the section. We can place a **guard** to make sure, only authorized/authenticated people can access.
-
-<br>We can also do some works inside the component and pass the result from one component to another.  
-
+<style>
+li{
+    padding-top:10px;
+}
+ul{
+    margin-left:10px;
+}
+</style>
 
 
  
