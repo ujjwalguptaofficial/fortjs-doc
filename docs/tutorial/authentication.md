@@ -62,7 +62,7 @@ In order to not allow unauthenticated user to access restricted method : we can 
 
 e.g - if session is present then fulfill the request otherwise redirect to login page or send a text response with http code 401.
 
-We can take the above concept and divide into [component](/tutorial/components). So that we dont need to write in every method. We can use shield or guard - this completely depends upon application.
+We can take the above concept and divide into [component](/tutorial/components). So that we dont need to write in every method. We can use shield or guard - this completely depends upon requirement.
 
 Let's consider that we want to restrict at controller level and for this we need to create a [shield](/tutorial/shield) - 
 
@@ -92,6 +92,8 @@ export class UserController extends Controller {
 
 }
 ```
+
+Now UserController wont be initiated until AuthenticationShield allows i.e user is authenticated.
 
 In the similar way - you can create a [guard](/tutorial/guard) to restrict at worker level.
 
