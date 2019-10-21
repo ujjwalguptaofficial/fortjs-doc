@@ -14,37 +14,29 @@ import { Controller, DefaultWorker, textResult, viewResult } from "fortjs";
 export class DefaultController extends Controller {
     @DefaultWorker()
     async default() {
-        try {
-            // check if session exist
-            const isSessionExist = await this.session.isExist('userId');
+        // check if session exist
+        const isSessionExist = await this.session.isExist('userId');
 
-            // add value to session
-            await this.session.set('userId', 45);
+        // add value to session
+        await this.session.set('userId', 45);
 
-            // get session value
-            const userIdFromSession = await this.session.get('userId');
+        // get session value
+        const userIdFromSession = await this.session.get('userId');
 
-            // remove session
-            await this.session.remove('session_name');
+        // remove session
+        await this.session.remove('session_name');
 
-            // set multiple session at a time
-            this.session.setMany([{
-                key: 'user_id',
-                value: 1
-            }, {
-                key: 'name',
-                value: 'ujjwal gupta'
-            }])
+        // set multiple session at a time
+        this.session.setMany([{
+            key: 'user_id',
+            value: 1
+        }, {
+            key: 'name',
+            value: 'ujjwal gupta'
+        }])
 
-            const result = await viewResult('controller:default,action:default');
-            return result;
-        } catch (ex) {
-            console.log(ex);
-            // handle exception and show user a good message.
-            // save this ex in a file or db, so that you can know what's the issue and where
-            const result = await textResult(`Our server is busy right now. Please try later.`);
-            return result;
-        }
+        const result = await viewResult('controller:default,action:default');
+        return result;
     }
 }
 ```

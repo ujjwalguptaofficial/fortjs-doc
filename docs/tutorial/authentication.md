@@ -14,15 +14,8 @@ let's consider that our app has a default controller and it can be accessed by a
 export class DefaultController extends Controller {
     @DefaultWorker()
     async default() {
-        try {
-            const result = await viewResult('controller:default,action:default');
-            return result;
-        } catch (ex) {
-            console.log(ex);
-            // handle exception and show user a good message.
-            const result = await textResult(`Our server is busy right now. Please try later.`);
-            return result;
-        }
+        const result = await viewResult('controller:default,action:default');
+        return result;
     }
 
     @Worker([HTTP_METHOD.Get])
@@ -77,17 +70,12 @@ Let's consider that we want to restrict at controller level and for this we need
 import { Shield, textResult,  redirectResult } from "fortjs";
 export class AuthenticationShield extends Shield {
     async protect() {
-        try {
-            const isExist = await this.session.isExist('userId');
-            if (exist) { // user is authenticated so allow
-                return null;
-            } else { //user is not authenticated, so redirect to login page
-                return redirectResult("/default/login");
-            }
-        } catch (ex) {
-            // log the error
-            // return  some good message
-            return textResult("Our Server is busy right now, we are sorry for inconvenience. Please try later.")
+        
+        const isExist = await this.session.isExist('userId');
+        if (exist) { // user is authenticated so allow
+            return null;
+        } else { //user is not authenticated, so redirect to login page
+            return redirectResult("/default/login");
         }
     }
 }

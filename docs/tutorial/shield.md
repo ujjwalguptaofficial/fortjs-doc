@@ -8,7 +8,7 @@ Shiled is security layer on top of Section (Controller). It controls whether a r
 
 e.g - Consider a case - where a controller "Admin" is only allowed if the request is authenticated. You can create a shield which will check for the conditions and if it does not satisfy the conditions, you can just reject it.
 
-There can be multiple shield for a controller & every shield is called when a request wants to access the particular controller.
+There can be multiple shield for a controller & every shield is called when a request wants to access the particular controller in the same order as they are defined.
 
 A shiled has following member - 
 
@@ -18,7 +18,7 @@ A shiled has following member -
 * Session - [session](/tutorial/session)
 * Query string data - [query](/tutorial/query)
 * Data from other components - [data](/tutorial/data)
-* Target Worker Name - [workerName][#]
+* Target Worker Name - [workerName](#)
 
 <br>
 # Creating shield

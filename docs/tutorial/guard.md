@@ -4,7 +4,7 @@ Keywords: "guard, component, types, fortjs, node"
 Description: "Description about guard component in fortjs"
 ---
 
-Guard is security layer on top of Worker. It contols whether a request should be allowed to call the **Worker**.
+Guard is security layer on top of Worker which means it is called after controller is initiated. It contols whether a request should be allowed to call the **Worker**.
 
 The guard is useful for - 
 * Validation of data. 
@@ -36,8 +36,7 @@ Guard is a class which extends the class "Guard" from fortjs.
 
 ```
 import { Guard, HttpResult, MIME_TYPE, HTTP_STATUS_CODE } from "fortjs";
-import {isEmail, isLength, isIn} from "validator"
-import { User } from "../../models/user";
+import {isEmail, isLength, isIn} from "validator";
 
 export class ModelUserGuard extends Guard {
 
