@@ -1,6 +1,6 @@
 ---
 Title: "Get Started"
-Keywords: "get started, fort-creator, install, fortjs, node"
+Keywords: "get started, fort-creator, introduction, fortjs, node"
 Description: "Fortjs introduction & how to use."
 ---
 
@@ -56,6 +56,8 @@ It creates a data object and passes that object into viewResult method. The view
 
 *  The view files are inside Views folder. Let's observe it -
 open Views Folder -> open default folder - > open index.html. This is our view code - it contain simple html code with some mustache syntax. Please check [view](/tutorial/view) doc for more info.
+
+Hope this will give you a good idea about fortjs. 
 
 <br><br>
 # *Check out some other links
