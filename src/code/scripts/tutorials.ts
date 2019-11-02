@@ -36,6 +36,11 @@ export const tutorialLinks = [
     },
     {
         id: 9,
+        text: "Logger",
+        url: "logger"
+    },
+    {
+        id: 10,
         text: "Components",
         url: "components",
         childs: [
@@ -57,7 +62,7 @@ export const tutorialLinks = [
         ]
     },
     {
-        id: 10,
+        id: 11,
         text: "Concepts",
         url: "null",
         childs: [{
@@ -95,7 +100,7 @@ export const tutorialLinks = [
         }]
     },
     {
-        id: 11,
+        id: 12,
         text: "Types",
         url: "null",
         childs: [{
@@ -124,7 +129,7 @@ export const tutorialLinks = [
             url: "http-format-result"
         }]
     }, {
-        id: 12,
+        id: 13,
         text: "Advanced",
         url: "null",
         childs: [{
@@ -158,12 +163,12 @@ export const tutorialLinks = [
         }],
     },
     {
-        id: 13,
+        id: 14,
         text: "Deployment",
         url: "deployment"
     },
     {
-        id: 14,
+        id: 15,
         text: "Test",
         url: "test"
     }
