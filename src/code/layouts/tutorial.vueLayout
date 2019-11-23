@@ -3,7 +3,7 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
-import Tutorial from "../../components/tutorial.vue";
+import Tutorial from "~/components/tutorial.vue";
 @Component({
   components: {
     Tutorial

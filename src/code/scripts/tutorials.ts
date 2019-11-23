@@ -93,7 +93,7 @@ export const tutorialLinks = [
             id: 7,
             text: "File",
             url: "file"
-        },{
+        }, {
             id: 8,
             text: "Dependency Injection",
             url: "dependency-injection"
@@ -148,11 +148,13 @@ export const tutorialLinks = [
             id: 4,
             text: "View Engine",
             url: "view-engine"
-        }, {
-            id: 5,
-            text: "Swagger",
-            url: "swagger"
-        }, {
+        },
+        //  {
+        //     id: 5,
+        //     text: "Swagger",
+        //     url: "swagger"
+        // },
+        {
             id: 6,
             text: "GraphQl",
             url: "graphql"
@@ -164,11 +166,25 @@ export const tutorialLinks = [
     },
     {
         id: 14,
+        text: "Swagger / Open API",
+        url: "swagger",
+        childs: [{
+            id: 1,
+            text: "Initiate",
+            url: "swagger/initiate"
+        }, {
+            id: 2,
+            text: "Swagger Model",
+            url: "swagger/model"
+        }]
+    },
+    {
+        id: 15,
         text: "Deployment",
         url: "deployment"
     },
     {
-        id: 15,
+        id: 16,
         text: "Test",
         url: "test"
     }

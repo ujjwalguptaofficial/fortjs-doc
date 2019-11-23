@@ -1,14 +1,10 @@
 ---
-Title: "Swagger"
+Title: "Swagger Initialization"
 Keywords: "swagger, automatic generate, integrate, fortjs, node"
-Description: "How to integrate swagger in fortjs"
+Description: "Swagger integration in fortjs"
 ---
 
-Swagger is an open-source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services
-
-FortJs provides a seperate library - [fortjs-swagger](https://github.com/ujjwalguptaofficial/fortjs-swagger) for swagger integration. It provides automatic generation of swagger documents.
-
-Let's see how to integrate swagger - 
+FortJs provides a seperate library - [fortjs-swagger](https://github.com/ujjwalguptaofficial/fortjs-swagger) for swagger integration. It provides automatic generation of swagger documents by taking documents related information from you.
 
 ##  1. Install library
 
@@ -32,19 +28,15 @@ export class App extends Fort {
     }
 }
 
-new App().create({
-    defaultPath: "default",
-    folders: [{
-        alias: "/",
-        path: path.join(__dirname, "../static")
-    }, {
-        alias: "swagger",
-        path: Path.join(__dirname, "../swagger")
-    }]
-}).then(() => {
+const swaggerPath = Path.join(__dirname, "../swagger/");
 
-    const srcFolder = Path.join(__dirname, "../src/");
-    
+new App().create({
+    // allow swagger path to access using url with alias swagger
+    folders: [{
+        alias: "swagger",
+        path: swaggerPath
+    }]
+}).then(() => {    
     // initiating swagger 
     new Swagger().create({
         appInfo: {
@@ -56,7 +48,8 @@ new App().create({
             description: "local",
             url: "http://localhost:4000"
         }],
-        outputPath: Path.join(__dirname, "../swagger/"),
+        // create swagger files at this path
+        outputPath: swaggerPath,
         securitySchemes: {
             basicAuth: {
                 type: "http",
@@ -69,7 +62,7 @@ new App().create({
 
 Will it generate docs now ?
 
-No, we need to tell fortjs what we are expecting exactly i.e - what will be the structure of post request, query string etc.
+No, This is just a setup. Now we need to tell fortjs what we are expecting exactly i.e - what will be the structure of http request & structure of http response etc.
 
 Consider the below controller
 
@@ -144,7 +137,9 @@ The above controller does operation for a user. And every end point exepects dif
 Let's document the  worker - "getUsers". 
 
 ```
-@Summary('get all users') // import { Response, Summary, Description} from 'fortjs-swagger';
+import { Response, Summary, Description} from 'fortjs-swagger';
+
+@Summary('get all users')
 @Description('return all saved users') 
 @Response(HTTP_STATUS_CODE.Ok, [User])
 @DefaultWorker()
