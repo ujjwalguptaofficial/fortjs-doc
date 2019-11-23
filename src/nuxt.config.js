@@ -1,4 +1,5 @@
-const parseArgs = require("minimist")
+const parseArgs = require("minimist");
+const path = require("path");
 const argv = parseArgs(process.argv.slice(2), {
   alias: {
     H: "hostname",
@@ -20,6 +21,11 @@ const host =
   "localhost"
 module.exports = {
   srcDir: 'code/',
+  build: {
+    alias: {
+      "~": path.join(__dirname, "code")
+    }
+  },
   env: {
     baseUrl: process.env.BASE_URL ||
       `http://${host}:${port}`

@@ -2,11 +2,11 @@
 <script lang="ts">
 import { Component, Vue, Watch } from "nuxt-property-decorator";
 import DomHelper from "../helpers/dom_helper";
-import { vueEvent, VueWithRoute } from "../common_var";
-import { IInputSelect } from "../interfaces";
-import TreeView from "./treeview";
-import { TreeViewItem } from "../models/treeview_item";
-import { tutorialLinks } from "../scripts/tutorials";
+import { vueEvent, VueWithRoute } from "~/common_var";
+import { IInputSelect } from "~/interfaces";
+import TreeView from "~/components/treeview";
+import { TreeViewItem } from "~/models/treeview_item";
+import { tutorialLinks } from "~/scripts/tutorials";
 
 export interface ITutorialLink {
   text: string;
