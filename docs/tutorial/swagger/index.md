@@ -10,5 +10,5 @@ FortJs provides a seperate library - [fortjs-swagger](https://github.com/ujjwalg
 
 Read the following docs for more information - 
 
-* [Initiate Swagger](swagger/initiate) 
-* [Defining model in swagger](swagger/model)
+* [Initiate Swagger](/tutorial/swagger/initiate) 
+* [Defining model in swagger](/tutorial/swagger/model)
