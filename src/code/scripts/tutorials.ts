@@ -40,6 +40,11 @@ export const tutorialLinks = [
         url: "logger"
     },
     {
+        id: "middleware",
+        text: "Middleware",
+        url: "middleware"
+    },
+    {
         id: 10,
         text: "Components",
         url: "components",
@@ -149,11 +154,6 @@ export const tutorialLinks = [
             text: "View Engine",
             url: "view-engine"
         },
-        //  {
-        //     id: 5,
-        //     text: "Swagger",
-        //     url: "swagger"
-        // },
         {
             id: 6,
             text: "GraphQl",
