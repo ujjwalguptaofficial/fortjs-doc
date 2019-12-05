@@ -181,8 +181,8 @@ module.exports = {
     src: ('~/styles/app.styl'),
     lang: 'styl'
   }, {
-    src: ('~/styles/common.css'),
-    lang: 'css'
+    src: ('~/styles/common.scss'),
+    lang: 'scss'
   }, {
     src: ('~/styles/menu.css'),
     lang: 'css'
