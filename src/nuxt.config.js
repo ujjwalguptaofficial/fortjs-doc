@@ -34,7 +34,7 @@ module.exports = {
     dir: '../build/'
   },
   head: {
-    title: "FortJs - Fort Based MVC Web Framework For Nodejs",
+    title: "FortJs - Component Based MVC Web Framework For Nodejs",
     meta: [{
       name: "google-site-verification",
       content: "gFRrtV_TpZtZXXktE2jCL0C69py_TsCtorjh4GDae4U"
@@ -51,7 +51,7 @@ module.exports = {
     },
     {
       name: "description",
-      content: "Fort based MVC web framework for nodejs targeting good code structures & modularity."
+      content: "Component based MVC web framework for nodejs targeting good code structures & modularity."
     }, {
       name: "robots",
       content: "index, follow"
@@ -72,7 +72,7 @@ module.exports = {
       content: "width=device-width, initial-scale=1.0"
     }, {
       property: "og:title",
-      content: "FortJs - Fort Based MVC Web Framework For Nodejs"
+      content: "FortJs - Component Based MVC Web Framework For Nodejs"
     }, {
       property: "og:type",
       content: "Node MVC Framework"
@@ -84,7 +84,7 @@ module.exports = {
       content: "FortJs"
     }, {
       property: "og:description",
-      content: "Fort based MVC web framework for nodejs targeting good code structures & modularity."
+      content: "Component based MVC web framework for nodejs targeting good code structures & modularity."
     }, {
       property: "og:image",
       content: "/img/fort_js_logo_1200_630.png"
@@ -93,10 +93,10 @@ module.exports = {
       content: "@ujjwal_kr_gupta"
     }, {
       name: "twitter:title",
-      content: "FortJs - Fort Based MVC Web Framework For Nodejs"
+      content: "FortJs - Component Based MVC Web Framework For Nodejs"
     }, {
       name: "twitter:description",
-      content: "Fort based MVC web framework for nodejs targeting good code structures & modularity."
+      content: "Component based MVC web framework for nodejs targeting good code structures & modularity."
     }, {
       name: "twitter:image",
       content: "http://fortjs.info/img/fort_js_logo_1200_630.png"

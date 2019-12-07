@@ -20,13 +20,13 @@
 export default {
   head() {
     return {
-      title: `Fort based MVC web framework for nodejs`,
+      title: `Component based MVC web framework for nodejs`,
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {
           hid: "keywords",
           name: "keywords",
-          content: "javascript, node, es6, mvc, framework, typescript"
+          content: "component, node, es6, mvc, framework, typescript"
         }
       ]
     };
