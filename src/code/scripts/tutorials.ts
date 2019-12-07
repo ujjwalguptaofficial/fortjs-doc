@@ -65,6 +65,19 @@ export const tutorialLinks = [
                 url: "guard"
             }
         ]
+    }, {
+        id: "decorator",
+        text: "Decorators",
+        url: "decorator",
+        childs: [{
+            id: "expect_body",
+            url: "decorator/expect-body",
+            text: "ExpectBody"
+        }, {
+            id: "expect_query",
+            url: "decorator/expect-query",
+            text: "ExpectQuery"
+        }]
     },
     {
         id: 11,
