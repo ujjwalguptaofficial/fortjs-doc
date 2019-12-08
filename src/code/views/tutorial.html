@@ -1,15 +1,28 @@
 <v-layout row wrap>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <v-flex md2 xl2 class="hidden-sm-and-down" id="divMenuContainer" :class="{ 'show-menu': showMenu }">
-        <TreeView ref="linkContainer" :items="links"></TreeView>
+    <v-flex md2 xl2 class="hidden-sm-and-down" :class="{ 'show-menu': showMenu }">
+        <div class="search">
+            <v-card class="search-wrapper">
+                <v-card-text style="padding:5px;">
+                    <input v-model="searchValue" id="txtSearch" type="text" placeholder="Search" @keyup="onSearch">
+                    <i class="material-icons">search</i>
+                    <ul class="search-results">
+                        <li v-for="item in searchResult">
+                            <a :href="item.url">{{item.text}}</a>
+                        </li>
+                    </ul>
+                </v-card-text>
+            </v-card>
+        </div>
+        <TreeView id="divMenuContainer" ref="linkContainer" :items="links"></TreeView>
     </v-flex>
     <v-flex xs12 md8 xl8 id="divTutorialContent" :class="{ 'padding-left-15px': $vuetify.breakpoint.mdAndUp }">
         <div v-html="tutorialHtml" class="margin-top-20px"></div>
     </v-flex>
     <v-flex md2 class="margin-top-50px">
         <a target="_blank" class="ad-container" href="http://jsstore.net/">
-            <img class="ad-image" src="http://jsstore.net/img/JsStore_350_155.png"/>
+            <img class="ad-image" src="http://jsstore.net/img/JsStore_350_155.png" />
             <div>{{jsstoreText[adIndex]}}</div>
         </a>
         <!-- <v-btn href="/sponsor" color="success right-side-button">

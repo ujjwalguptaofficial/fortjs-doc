@@ -39,17 +39,7 @@
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-#divMenuContainer ul li.search i {
-    vertical-align: middle;
-}
 
-#divMenuContainer ul li #txtSearch {
-    width: 80%;
-    border: none;
-    text-align: center;
-    margin: 0px;
-    height: 45px;
-}
 
 #btnMenuToggle {
     margin-left: 10px;
@@ -102,11 +92,6 @@ pre code {
     font-weight: normal;
 }
 
-.search-results {
-    webkit-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
-    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
-}
-
 .right-side-button {
     padding: 15px;
     height: 50px;
@@ -128,4 +113,46 @@ pre code {
         width: 100%;
         height: auto;
     }
+}
+
+.search {
+    padding: 5px;
+    margin-top: 20px;
+
+    i {
+        vertical-align: middle;
+    }
+
+    #txtSearch {
+        width: 80%;
+        border: none;
+        text-align: center;
+        margin: 0px;
+        height: 45px;
+    }
+
+    ul {
+        webkit-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+        box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        z-index: 1000;
+        background: #FFF;
+        width: 95%;
+
+        li {
+            a {
+                padding: 8px;
+                width: 100%;
+                height: 100%;
+                display: inline-block;
+                color: black;
+            }
+
+        }
+
+    }
+
 }

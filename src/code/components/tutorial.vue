@@ -42,7 +42,7 @@ export default class Tutorial extends VueWithRoute {
   //property
   showMenu = false;
   searchValue = "";
-  searchResult = "";
+  searchResult: any[] = [];
   pageDescription: string;
 
   constructor() {
@@ -55,13 +55,11 @@ export default class Tutorial extends VueWithRoute {
   }
 
   onSearch() {
-    // var html = "";
-    // this.links.forEach(link => {
-    //   if (link.text.toLowerCase().indexOf(this.searchValue) >= 0) {
-    //     html += "<a href=" + link.url + ">" + link.text + "</a>";
-    //   }
-    // });
-    // this.searchResult = html;
+    this.searchResult = this.links.filter(link => {
+      if (link.text.toLowerCase().indexOf(this.searchValue) >= 0) {
+        return link;
+      }
+    });
   }
 
   isNullOrEmpty(value: string) {
