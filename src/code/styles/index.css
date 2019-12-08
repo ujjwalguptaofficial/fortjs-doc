@@ -143,3 +143,17 @@
     background: black;
     color: white;
 }
+
+.used-by {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.flixloves-logo {
+    width: 100px;
+    height: auto;
+}
+
+.used-by-logos{
+    margin-top: 10px;
+}
