@@ -48,4 +48,8 @@ export default class Footer extends Vue {}
   padding-top: 20px;
   margin-top: 30px;
 }
+.fa-heart {
+  color: red;
+  padding: 0 5px;
+}
 </style>

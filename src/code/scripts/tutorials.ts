@@ -30,6 +30,10 @@ export const tutorialLinks = [
         text: "View",
         url: "view"
     }, {
+        id: "validation",
+        text: "Validation",
+        url: "validation"
+    },{
         id: 8,
         text: "Authentication",
         url: "authentication"
