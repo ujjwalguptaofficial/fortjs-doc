@@ -29,6 +29,14 @@ export default class Tutorial extends VueWithRoute {
   pageTitle: string;
   version: number = 1;
 
+  jsstoreText = [
+    "Store data in browser using jsstore",
+    "Improve your web app performance by storing data in client side",
+    "Easy indexeddb development using jsstore"
+  ];
+
+  adIndex = -1;
+
   pageKeywords: string;
 
   //property
@@ -61,6 +69,7 @@ export default class Tutorial extends VueWithRoute {
   }
 
   mounted() {
+    this.showAds();
     var currentUrl: string = (this.$route as any).path
       .toLowerCase()
       .replace(/\//g, "");
@@ -176,8 +185,19 @@ export default class Tutorial extends VueWithRoute {
     }
     return null;
   }
+
+  showAds() {
+    let newIndex = ++this.adIndex;
+    if (newIndex >= this.jsstoreText.length) {
+      newIndex = this.adIndex = 0;
+    }
+    this.adIndex = newIndex;
+    setTimeout(() => {
+      this.showAds();
+    }, 2000);
+  }
 }
 </script>
-<style>
-@import url("~/styles/tutorial.css");
+<style lang="scss">
+@import "~/styles/tutorial.scss";
 </style>

@@ -8,6 +8,10 @@
         <div v-html="tutorialHtml" class="margin-top-20px"></div>
     </v-flex>
     <v-flex md2 class="margin-top-50px">
+        <a target="_blank" class="ad-container" href="http://jsstore.net/">
+            <img class="ad-image" src="http://jsstore.net/img/JsStore_350_155.png"/>
+            <div>{{jsstoreText[adIndex]}}</div>
+        </a>
         <!-- <v-btn href="/sponsor" color="success right-side-button">
         Sponsor
         <br>Us
@@ -24,8 +28,8 @@
             color="primary" fixed bottom right fab>
             <v-icon style="display:inline-flex;">edit</v-icon>
         </v-btn>
-        <v-btn v-if="docToEdit!=null" alt="edit this doc" target="_blank"
-            href="https://twitter.com/ujjwal_kr_gupta" color="primary" fixed bottom right fab>
+        <v-btn v-if="docToEdit!=null" alt="edit this doc" target="_blank" href="https://twitter.com/ujjwal_kr_gupta"
+            color="primary" fixed bottom right fab>
             <i class="fab fa-twitter"></i>
         </v-btn>
     </v-flex>
