@@ -33,4 +33,7 @@ export class HelmetWall extends Wall {
 
 In a similar way other middleware can be used in any component.
 
+You can download example from here - [Middleware example](https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/middleware)
+
 For detailed information visit this article - [https://medium.com/fortjs/middleware-pattern-in-fortjs-7329cc7cf499](https://medium.com/fortjs/middleware-pattern-in-fortjs-7329cc7cf499) written by [Ujjwal Gupta](https://twitter.com/ujjwal_kr_gupta)
+
