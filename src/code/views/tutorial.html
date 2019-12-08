@@ -9,7 +9,7 @@
                     <i class="material-icons">search</i>
                     <ul class="search-results">
                         <li v-for="item in searchResult">
-                            <a :href="item.url">{{item.text}}</a>
+                            <a :href="'/tutorial/'+item.url">{{item.text}}</a>
                         </li>
                     </ul>
                 </v-card-text>

@@ -5,8 +5,8 @@ import DomHelper from "../helpers/dom_helper";
 import { vueEvent, VueWithRoute } from "~/common_var";
 import { IInputSelect } from "~/interfaces";
 import TreeView from "~/components/treeview";
-import { TreeViewItem } from "~/models/treeview_item";
 import { tutorialLinks } from "~/scripts/tutorials";
+import { TreeViewItem } from "../models/treeview_item";
 
 export interface ITutorialLink {
   text: string;
@@ -45,6 +45,8 @@ export default class Tutorial extends VueWithRoute {
   searchResult: any[] = [];
   pageDescription: string;
 
+  linksWithChilds: any[] = [];
+
   constructor() {
     super();
     this.catchEvents();
@@ -55,7 +57,7 @@ export default class Tutorial extends VueWithRoute {
   }
 
   onSearch() {
-    this.searchResult = this.links.filter(link => {
+    this.searchResult = this.linksWithChilds.filter(link => {
       if (link.text.toLowerCase().indexOf(this.searchValue) >= 0) {
         return link;
       }
@@ -68,6 +70,7 @@ export default class Tutorial extends VueWithRoute {
 
   mounted() {
     this.showAds();
+    this.setLinksWithChilds();
     var currentUrl: string = (this.$route as any).path
       .toLowerCase()
       .replace(/\//g, "");
@@ -151,7 +154,7 @@ export default class Tutorial extends VueWithRoute {
   }
 
   private get allLinks_() {
-    return tutorialLinks;
+    return tutorialLinks as TreeViewItem[];
   }
 
   get relativeUrl() {
@@ -193,6 +196,18 @@ export default class Tutorial extends VueWithRoute {
     setTimeout(() => {
       this.showAds();
     }, 2000);
+  }
+
+  setLinksWithChilds() {
+    this.links.forEach(val => {
+      this.linksWithChilds.push(val);
+      if (val.childs) {
+        val.childs.forEach(child => {
+          // child.url =  child.url;
+          this.linksWithChilds.push(child);
+        });
+      }
+    });
   }
 }
 </script>
