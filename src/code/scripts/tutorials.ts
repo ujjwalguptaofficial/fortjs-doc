@@ -33,7 +33,7 @@ export const tutorialLinks = [
         id: "validation",
         text: "Validation",
         url: "validation"
-    },{
+    }, {
         id: 8,
         text: "Authentication",
         url: "authentication"
@@ -203,6 +203,18 @@ export const tutorialLinks = [
     {
         id: 16,
         text: "Test",
-        url: "test"
+        url: "test",
+        childs: [
+            {
+                id: "unit_test",
+                text: "Unit Test",
+                url: "test/unit-test"
+            },
+            {
+                id: "e2e_test",
+                text: "e2e Test",
+                url: "test/e2e-test"
+            }
+        ]
     }
 ] as TreeViewItem[];
