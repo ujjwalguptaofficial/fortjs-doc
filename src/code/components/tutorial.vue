@@ -57,6 +57,10 @@ export default class Tutorial extends VueWithRoute {
   }
 
   onSearch() {
+    if (this.searchValue.length == 0) {
+      this.searchResult = [];
+      return;
+    }
     this.searchResult = this.linksWithChilds.filter(link => {
       if (link.text.toLowerCase().indexOf(this.searchValue) >= 0) {
         return link;
@@ -195,7 +199,7 @@ export default class Tutorial extends VueWithRoute {
     this.adIndex = newIndex;
     setTimeout(() => {
       this.showAds();
-    }, 2000);
+    }, 3000);
   }
 
   setLinksWithChilds() {

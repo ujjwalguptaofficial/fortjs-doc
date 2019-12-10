@@ -7,7 +7,7 @@
                 <v-card-text style="padding:5px;">
                     <input v-model="searchValue" id="txtSearch" type="text" placeholder="Search" @keyup="onSearch">
                     <i class="material-icons">search</i>
-                    <ul class="search-results">
+                    <ul v-if="searchResult.length>0" class="search-results">
                         <li v-for="item in searchResult">
                             <a :href="'/tutorial/'+item.url">{{item.text}}</a>
                         </li>
