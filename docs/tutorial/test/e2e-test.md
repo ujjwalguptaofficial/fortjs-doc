@@ -1,12 +1,12 @@
 ---
 Title: "e2e Test"
 Keywords: "test, unit, e2e, fortjs, node"
-Description: "Setting up test in fortjs"
+Description: "Setting up e2e test in fortjs"
 ---
 
-For e2e test - we recommend to use Axios. Let's see an example - 
+For e2e test - we recommend to use Axios. But feel free to use your favourite http client library.
 
-Consider UserController implments Rest Api & codes are - 
+Let's see an example - Consider UserController implments Rest Api & codes are - 
 
 ```
 import { Controller, textResult, DefaultWorker, jsonResult, Worker, Route, HTTP_STATUS_CODE, HTTP_METHOD, Guards, Singleton } from 'fortjs';
