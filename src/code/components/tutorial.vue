@@ -184,7 +184,15 @@ export default class Tutorial extends VueWithRoute {
   }
 
   get docToEdit() {
-    const url = this.allLinks_[this.getCurrentUrlIndex()];
+    const currentUrl = (this.$route as any).path;
+    const relativeUrl = this.relativeUrl;
+    const activeUrlIndex = this.linksWithChilds.findIndex(
+      value =>
+        currentUrl.toLowerCase().replace(/\//g, "") ===
+        `${this.relativeUrl}${value.url.toLowerCase()}`.replace(/\//g, "")
+    );
+
+    const url = this.linksWithChilds[activeUrlIndex];
     if (url) {
       return url.url;
     }

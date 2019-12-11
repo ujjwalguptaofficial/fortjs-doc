@@ -214,6 +214,11 @@ export const tutorialLinks = [
                 id: "e2e_test",
                 text: "e2e Test",
                 url: "test/e2e-test"
+            },
+            {
+                id: "initialize",
+                text: "Initialize controller",
+                url: "test/initialize"
             }
         ]
     }

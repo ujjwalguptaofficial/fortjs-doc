@@ -1,7 +1,7 @@
 ---
 Title: "Unit Test"
 Keywords: "test, unit, e2e, fortjs, node"
-Description: "Setting up test in fortjs"
+Description: "Setting up unit test in fortjs"
 ---
 
 As the codes written in fortjs are simple & clean, we want similar approach for test cases. Let's see one example for unit testing "UserController"- 
