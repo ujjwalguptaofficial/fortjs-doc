@@ -154,6 +154,12 @@
     height: auto;
 }
 
-.used-by-logos{
+.used-by-logos {
     margin-top: 10px;
+}
+
+.kuvera {
+    margin-right: 20px;
+
+    img {}
 }
