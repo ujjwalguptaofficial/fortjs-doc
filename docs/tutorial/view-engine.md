@@ -6,7 +6,7 @@ Description: "Creating custom view engine in fortjs"
 
 In order to create a view engine - You need to create a class which will implement class `ViewEngine` from "fortjs".
 
-e.g - Let's see how we can use ejs as view engine. You can download the code for below example here - [https://github.com/ujjwalguptaofficial/fortjs/tree/master/example/ejs](https://github.com/ujjwalguptaofficial/fortjs/tree/master/example/ejs)
+e.g - Let's see how we can use ejs as view engine. You can download the code for below example here - <a href="https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/ejs" target="_blank">ViewEngine configurtion example</a>
 
 ```
 import { ViewEngine, ViewEngineData, getViewFromFile } from "fortjs";
@@ -15,15 +15,15 @@ import * as ejs from "ejs";
 export class EjsViewEngine implements ViewEngine {
 
     async render(value: ViewEngineData) {
-        const viewData = await getViewFromFile(value.view);
+        const viewData = await getViewFromFile({ fileLocation: value.view});
         return ejs.render(viewData, value.model);
     }
 }
 ```
 
-The method `render` is called by fortjs with value of type [ViewEngineData](/tutorial/view-engine-data). You need to use this value and return html string.
+The method `render` will be called by fortjs with value of type [ViewEngineData](/tutorial/type/view-engine-data). You need to use this value and return html string.
 
-After you have created view engine, you need to tell fort to use this view engine. Open app.ts/app.js
+After you have created view engine, you need to tell fort to use this view engine. Open app.ts /app.js
 
 ```
 import { Fort } from 'fortjs';
@@ -40,10 +40,10 @@ export class App extends Fort {
 }
 ```
 
-Now We have successfully integrated our view engine with fortjs. Let's render some view using ejs - 
+Now We have successfully integrated our view engine with fortjs. Let's test our view engine setup - 
 
 ## Create a view
-
+<br>
 create a file "index.ejs" inside the folder - "views". Paste the below code inside the file -
 
 ```
