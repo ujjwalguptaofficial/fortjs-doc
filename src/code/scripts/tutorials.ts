@@ -128,27 +128,27 @@ export const tutorialLinks = [
         childs: [{
             id: 1,
             text: "HttpResult",
-            url: "http-result"
+            url: "type/http-result"
         }, {
             id: 2,
             text: "AppOption",
-            url: "app-option"
+            url: "type/app-option"
         }, {
             id: 3,
             text: "HttpRequest",
-            url: "http-request"
+            url: "type/http-request"
         }, {
             id: 4,
             text: "HttpResponse",
-            url: "http-response"
+            url: "type/http-response"
         }, {
             id: 5,
             text: "ViewEngineData",
-            url: "view-engine-data"
+            url: "type/view-engine-data"
         }, {
             id: 6,
             text: "HttpFormatResult",
-            url: "http-format-result"
+            url: "type/http-format-result"
         }]
     }, {
         id: 13,

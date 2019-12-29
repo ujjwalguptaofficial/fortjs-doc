@@ -1,7 +1,7 @@
 ---
 Title: "AppOption"
-Keywords: "app, options, fortjs, node"
-Description: "fortjs application options and details"
+Keywords: "app, options, configurtion, fortjs, node"
+Description: "fortjs application configurations, options and details"
 ---
 
 The type `appOption` is used to provide the configuration for the app. 
@@ -70,5 +70,13 @@ type AppOption = {
      * @type {FolderMap[]}
      */
     folders?: FolderMap[];
+
+     /**
+     * Views folder location. By default it is - views.
+     *
+     *
+     * @type {string}
+     */
+    viewPath?: string;
 };
 ```

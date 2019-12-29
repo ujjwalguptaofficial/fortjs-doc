@@ -12,3 +12,4 @@ FortJs provides following decorators -
 4. [Wall](/tutorial/wall)
 5. [Shield](/tutorial/shield)
 6. [Guard](/tutorial/guard)
+7. [ExpectQuery](/tutorial/decorator/expect-query)

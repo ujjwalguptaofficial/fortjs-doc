@@ -33,7 +33,7 @@ new App().create();
 ## Configuring App
 
 <br>
-FortJs provides different configurations like - port, folders, appName etc. The configuration is supplied to create method and is type of [appOption](/tutorial/app-option).
+FortJs provides different configurations like - port, folders, appName etc. The configuration is supplied to create method and is type of [appOption](/tutorial/type/app-option).
 
 ```
 import { Fort } from "fortjs";
