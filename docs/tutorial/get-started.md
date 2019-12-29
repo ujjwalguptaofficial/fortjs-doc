@@ -59,12 +59,6 @@ open views Folder -> open default folder - > open index.html. This is our view c
 
 <br> Hope this will give you a good idea about fortjs. Now let's create something awesome. 
 
-## If you need any help, feel free to ask in different available channels like - 
-<br>
-* <a target="_blank" href="https://gitter.im/fortjs/Lobby">Gitter</a>
-* Ask for help directly from creator of fortjs - <a target="_blank" href="https://twitter.com/ujjwal_kr_gupta">Ujjwal Gupta twitter</a>
-
-<br>
 # For more help, Check out these links
 <br>
 * [Creating REST API using Typescript](https://medium.com/fortjs/rest-api-using-typescript-94004d9ae5e6)
