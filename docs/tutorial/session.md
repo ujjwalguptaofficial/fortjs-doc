@@ -4,7 +4,8 @@ Keywords: "session, uses, example, fortjs, node"
 Description: "Using session in fortjs"
 ---
 
-`session` is class member of Wall, Guard , Shield and Controller. 
+Session is a State Management Technique. It enables you to store and retrieve values for a user as the user navigates ASP.NET pages in a Web application.
+
 
 Let's see how we can use session - 
 
@@ -12,6 +13,7 @@ Let's see how we can use session -
 import { Controller, DefaultWorker, textResult, viewResult } from "fortjs";
 
 export class DefaultController extends Controller {
+
     @DefaultWorker()
     async default() {
         // check if session exist
@@ -27,16 +29,16 @@ export class DefaultController extends Controller {
         await this.session.remove('session_name');
 
         // set multiple session at a time
-        this.session.setMany([{
-            key: 'user_id',
-            value: 1
-        }, {
-            key: 'name',
-            value: 'ujjwal gupta'
-        }])
+        await this.session.setMany({
+            'user_id' : 1,
+            'name' : 'ujjwal gupta'
+        })
 
-        const result = await viewResult('controller:default,action:default');
-        return result;
+        return textResult('Welcome to FortJs');
     }
 }
 ```
+
+By default fortjs stores all your session data in memory which means data will be lost when nodejs process is stopped or restarted. 
+
+If you want to preserve your session values, then you need to store your value in a database or use any tools or service. You can customize the session store by creating a [session provider](/tutorial/session-provider).

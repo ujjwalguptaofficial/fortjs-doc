@@ -4,9 +4,9 @@ Keywords: "session provider, create session provider, options, fortjs, node"
 Description: "Customize session provider in fortjs"
 ---
 
-By default fortjs provides a memory session provider for development but its not good for production and not recommended to use. You must create your own session provider or use some packages if available.
+By default fortjs provides a memory session provider which stores all your data in memory & data is lost when nodejs process is stopped or restarted.
 
-A session provider is a class which implements the class - `SessionProvider`.
+You can create your own session provider & store it in database or wherever you want. A session provider is a class which extends the class - `SessionProvider`.
 
 Strcuture of SessionProvider is - 
 
@@ -16,12 +16,13 @@ abstract class SessionProvider {
     sessionId: string;
     protected cookies: CookieManager;
 
-    abstract get(key: string): Promise<ISessionValue>;
+    abstract get(key: string): Promise<any>;
     abstract isExist(key: string): Promise<boolean>;
-    abstract getAll(): Promise<ISessionValue[]>;
+    abstract getAll(): Promise<SessionValue[]>;
     abstract set(key: string, val: any): Promise<void>;
-    abstract setMany(values: ISessionValue[]): Promise<void[]>;
+    abstract setMany(values: { [key: string]: any }): Promise<void[]>;
     abstract remove(key: string): Promise<void>;
+    abstract clear(): Promise<void>;
 
     protected createSession()
     protected destroySession()
