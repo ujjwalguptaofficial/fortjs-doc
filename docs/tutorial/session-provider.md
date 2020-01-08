@@ -10,8 +10,6 @@ You can create your own session provider & store it in database or wherever you 
 
 Let's see how we can implement a simple memory session provider - 
 
-Strcuture of SessionProvider is - 
-
 ```
 import { SessionProvider } from "fortjs";
 
