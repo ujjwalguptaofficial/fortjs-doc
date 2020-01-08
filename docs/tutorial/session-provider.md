@@ -8,28 +8,69 @@ By default fortjs provides a memory session provider which stores all your data 
 
 You can create your own session provider & store it in database or wherever you want. A session provider is a class which extends the class - `SessionProvider`.
 
+Let's see how we can implement a simple memory session provider - 
+
 Strcuture of SessionProvider is - 
 
 ```
-abstract class SessionProvider {
+import { SessionProvider } from "fortjs";
 
-    sessionId: string;
-    protected cookies: CookieManager;
+const sessionValues = {};
 
-    abstract get(key: string): Promise<any>;
-    abstract isExist(key: string): Promise<boolean>;
-    abstract getAll(): Promise<SessionValue[]>;
-    abstract set(key: string, val: any): Promise<void>;
-    abstract setMany(values: { [key: string]: any }): Promise<void[]>;
-    abstract remove(key: string): Promise<void>;
-    abstract clear(): Promise<void>;
+export class CustomSessionProvider extends SessionProvider {
 
-    protected createSession()
-    protected destroySession()
+    async get(key: string) {
+        const savedSession = sessionValues[this.sessionId];
+        return savedSession != null ? savedSession[key] : null;
+    }
+
+    async isExist(key: string) {
+        const savedValue = sessionValues[this.sessionId];
+        return savedValue == null ? false : savedValue[key] != null;
+    }
+
+    async getAll() {
+        const savedValue = sessionValues[this.sessionId];
+        return savedValue == null ? {} : savedValue;
+    }
+
+    async set(key: string, val: any) {
+        const savedValue = sessionValues[this.sessionId];
+        if (savedValue == null) {
+            this.createSession();
+            sessionValues[this.sessionId] = {
+                [key]: val
+            };
+        }
+        else {
+            savedValue[key] = val;
+        }
+    }
+
+    setMany(values: { [key: string]: any }) {
+        return Promise.all(
+            Object.keys(values).map((key) => {
+                return this.set(key, values[key]);
+            })
+        );
+    }
+
+    async remove(key: string) {
+        const savedValue = sessionValues[this.sessionId];
+        if (savedValue != null) {
+            savedValue[key] = null;
+        }
+    }
+
+    async clear() {
+        // remove session values
+        delete sessionValues[this.sessionId];
+        // expire cookie in browser
+        await this.destroySession();
+    }
 }
-```
 
-So you need to implement all abstract methods.
+```
 
 After you have created a session provider, you need to tell fortjs to use new session provider.
 
@@ -41,16 +82,20 @@ import { CustomSessionProvider } from "./extra/custom_session_provider";
 class App extends Fort {
     constructor() {
         super();
+
+        // set your session provider
+        this.sessionProvider = CustomSessionProvider
+
         //add routers
         this.routers = [{
             controller: UserController,
             path: "/user"
-        }]
+        }];
+        
     }
 }
 
 new App().create({
-    appName: "MyAwesomeApp",
-    sessionProvider: CustomSessionProvider,
+    appName: "MyAwesomeApp"
 });
 ```

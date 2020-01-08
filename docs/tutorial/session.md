@@ -42,3 +42,6 @@ export class DefaultController extends Controller {
 By default fortjs stores all your session data in memory which means data will be lost when nodejs process is stopped or restarted. 
 
 If you want to preserve your session values, then you need to store your value in a database or use any tools or service. You can customize the session store by creating a [session provider](/tutorial/session-provider).
+
+
+You should take a look at our [authentication](https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/authentication) example. In this example - a login page is shown to user and when user logs in - session is created. Login method is present in "default controller".
