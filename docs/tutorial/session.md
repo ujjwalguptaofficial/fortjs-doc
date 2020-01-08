@@ -4,7 +4,7 @@ Keywords: "session, uses, example, fortjs, node"
 Description: "Using session in fortjs"
 ---
 
-Session is a State Management Technique. It enables you to store and retrieve values for a user as the user navigates ASP.NET pages in a Web application.
+Session is a State Management Technique. It enables you to store and retrieve values for a user as the user navigates pages in a Web application.
 
 
 Let's see how we can use session - 
