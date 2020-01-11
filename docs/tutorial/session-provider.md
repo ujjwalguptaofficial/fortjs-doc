@@ -97,3 +97,5 @@ new App().create({
     appName: "MyAwesomeApp"
 });
 ```
+
+Have a look at redis session provider example - [https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/session-provider/redis](https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/session-provider/redis)
