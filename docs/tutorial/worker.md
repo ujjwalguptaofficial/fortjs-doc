@@ -20,7 +20,7 @@ Since a worker is part of controller, it have the access to all the things which
 * Session - `this.session`
 * Query string data - `this.query`
 * Post data - `this.post`
-* Route parameter -  `this.params`
+* Route parameter -  `this.param`
 * Data from other components -  `this.data`
 
 <br>
