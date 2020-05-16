@@ -170,6 +170,10 @@ export const tutorialLinks = [
             id: 4,
             text: "View Engine",
             url: "view-engine"
+        }, {
+            id: "xml-parser",
+            text: "Accept xml in body",
+            url: "xml-parser"
         },
         {
             id: 6,
