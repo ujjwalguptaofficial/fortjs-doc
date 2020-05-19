@@ -13,7 +13,7 @@ Wall has two events -
 * **onIncoming** - called when a request wants to enter inside the fort (app). If this events returns null means request is allowed to enter otherwise rejects with the result returned.
 
     If there are multiple walls then "onIncoming" is called in order as they are defined.
-* **onOutgoing** - called when a request is about to leave. This is an optional event & Result returned from this event is ignored.
+* **onOutgoing** - called when a request is about to leave. This is an optional event & Result returned from this event is ignored. onOutgoing is called with returned response & based on that response you can take actions, even you can modify the whole result.
 
     If there are multiple walls then "onOutgoing" is called in reverse order as they are defined.
 
@@ -49,9 +49,9 @@ export class AppWall extends Wall {
 
     }
 
-    async onOutgoing() {
-        // this events can be used to set headers or log datas etc
-        console.log("request finished");
+    async onOutgoing(result) {
+        // can be used to set headers, log events, modify returning result etc
+        console.log("request finished with result", result);
     }
 }
 ```
@@ -76,4 +76,18 @@ class App extends Fort {
     }
 }
 
+```
+
+## How to modify returning result
+
+```
+class AppWall extends Wall {
+    async onIncoming() {
+        return null;
+    }
+
+    async onOutgoing(result) {
+       Object.assign(result, textResult("result modified by wall outgoing");
+    }
+}
 ```
