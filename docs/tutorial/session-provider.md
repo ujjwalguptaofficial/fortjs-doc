@@ -80,7 +80,7 @@ import { CustomSessionProvider } from "./extra/custom_session_provider";
 // set your session provider
 Fort.sessionProvider = CustomSessionProvider
 
-//add routers
+//add routes
 Fort.routes = [{
     controller: UserController,
     path: "/user"

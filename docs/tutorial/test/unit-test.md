@@ -70,10 +70,10 @@ export class UserController extends Controller {
 
 ```
 describe('UserController', () => {
-    let app,controller;
+    let controller;
 
     beforeAll(async () => {
-        app = await createApp();
+        await createApp();
         // UserController has dependency of UserService, which is injected by fortjs at run time. 
         // Here UserService is a fake service in memory
         controller = new UserController(new UserService());
@@ -149,7 +149,7 @@ describe('UserController', () => {
     });
 
     afterAll(() => {
-        return app.destroy();
+        return Fort.destroy();
     });
 });
 ```

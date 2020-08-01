@@ -24,7 +24,7 @@ export class GraphQlController extends GraphQlHelper {
      * @returns
      * @memberof GraphQlController
      */
-    @DefaultWorker([HTTP_METHOD.Get, HTTP_METHOD.Post])
+    @DefaultWorker(HTTP_METHOD.Get, HTTP_METHOD.Post)
     async  default() {
         return this.processGraphQl();
     }
@@ -53,15 +53,10 @@ import * as path from "path";
 import { FortGraphQl } from 'fortjs-graphql';
 import { GraphQLError, buildSchema } from 'graphql';
 
-export class App extends Fort {
-    constructor() {
-        super();
-        this.routes = routes;
-        this.viewEngine = FortViewEngine;
-    }
-}
 
-new App().create({
+Fort.routes = routes;
+
+Fort.create({
     defaultPath: "default" 
 }).then(() => {
     console.log("Your fort is located at address - localhost:4000");
