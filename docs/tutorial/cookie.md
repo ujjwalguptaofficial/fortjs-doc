@@ -29,8 +29,7 @@ export class DefaultController extends Controller {
         //remove cookie
         this.cookie.removeCookie('cookie_name');
 
-        const result = await viewResult('controller:default,action:default');
-        return result;
+        return textResult("Hey, we have tested cookie successfully");
     }
 }
 ```

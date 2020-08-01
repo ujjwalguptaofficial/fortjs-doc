@@ -14,6 +14,7 @@ Let's see an example -
 import { Controller, DefaultWorker, HttpFormatResult, HTTP_STATUS_CODE, MIME_TYPE} from "fortjs";
 
 export class RandomController extends Controller {
+    
     @DefaultWorker()
     async format() {
         const result = {

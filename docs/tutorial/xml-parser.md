@@ -26,13 +26,7 @@ and pass this class in App configuration -
 import { Fort } from 'fortjs';
 import { XmlToJsonParser } from './xml-parser';
 
-
-export class App extends Fort {
-    constructor() {
-        super();
-        this.xmlParser = XmlToJsonParser;
-    }
-}
+Fort.xmlParser = XmlToJsonParser;
 ```
 
 You can take a look at example - [xml-in-body](https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/xml-in-body).

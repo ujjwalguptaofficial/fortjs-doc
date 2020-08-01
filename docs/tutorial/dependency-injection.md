@@ -44,3 +44,5 @@ export class UserController extends Controller {
     }
 }
 ```
+
+By using `Singleton` you can save memory as its create only one instance of class & maintains throughout the app.  

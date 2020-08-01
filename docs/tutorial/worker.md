@@ -78,7 +78,7 @@ import { Controller, Worker, textResult, HTTP_METHOD, Route } from "fortjs";
 export class UserController extends Controller {
     
    // @defaultWorker()
-    @Worker([HTTP_METHOD.Get])
+    @Worker(HTTP_METHOD.Get)
     @Route("/")
     async default () {
        return textResult("This is default worker for section user");

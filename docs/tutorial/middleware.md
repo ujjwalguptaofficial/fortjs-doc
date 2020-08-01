@@ -1,7 +1,7 @@
 ---
 Title: "Middleware"
 Keywords: "middleware, pattern, fortjs, node"
-Description: "This page tells about how to use middleware paatern in fortjs."
+Description: "How to use middleware pattern in fortjs."
 ---
 
 Middleware is a technique which is heavily used in nodejs frameworks like express etc. It is based on chain of responsibility pattern means one middleware will call another.

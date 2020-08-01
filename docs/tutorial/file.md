@@ -14,7 +14,7 @@ import * as Path from "path";
 
 export class FileController extends Controller {
    
-    @Worker([HTTP_METHOD.Post])
+    @Worker(HTTP_METHOD.Post)
     @Route("/upload")
     async uploadFile() {
         const pathToSave = Path.join(__dirname, "../upload.png");

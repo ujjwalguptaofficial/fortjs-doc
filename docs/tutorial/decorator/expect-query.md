@@ -28,7 +28,7 @@ Let's see how to configure this using `ExpectQuery`
 export class ProductController{
 
     @Route("/")
-    @Worker(["get"])
+    @Worker("get")
     @ExpectQuery({ id: 0})
     saveProduct(){
        const id =  this.query.id;
@@ -48,7 +48,7 @@ export class Product {
 export class ProductController{
 
     @Route("/")
-    @Worker(["get"])
+    @Worker("get")
     @ExpectQuery(Product)
     saveProduct(){
        const id =  this.query.id;
@@ -75,7 +75,7 @@ Let's see how to use ExpectQuery to only retrieve value that we want, so that pr
 export class UserController{
 
     @Route("/")
-    @Worker(["get"])
+    @Worker("get")
     @ExpectQuery({name:"", gender: ""})
     saveUser(){
        const user =  this.query;

@@ -26,6 +26,7 @@ export class RequestLogger extends Wall {
     async onIncoming() {
         // here we are sending ip to other components
         this.data.ip = this.getIP(this.request);
+
         return null;
     }
 }
@@ -33,7 +34,7 @@ export class RequestLogger extends Wall {
 
 The above wall is using `data` to pass ip to other components.
 
-### Controller
+### Access ip address passded from Wall in Controller
 
 ```
 import { Controller, textResult, DefaultWorker } from "fortjs";

@@ -4,7 +4,11 @@ Keywords: "route, customize, options, fortjs, node"
 Description: "Different types of route and how to customize them in fortjs"
 ---
 
-FortJs is a MVC framework which means any route will target a class method. So route in fortjs has two parts - 
+FortJs is a MVC framework which means the application will be divided into three parts - Controller, view, model.
+
+A route is mapped with Controller and will target a Controller method.
+
+So route in fortjs has two parts - 
 
 * Controller - A class
 * Worker - A method inside a class
@@ -50,16 +54,14 @@ You need to map Controller with a path.
 import { Fort } from "fortjs";
 import { UserController } from "./controllers";
 
-class App extends Fort {
-    constructor() {
-        super();
-        // here we have mapped UserController with path "/user"
-        this.routers = [{
-            controller: UserController,
-            path: "/user"
-        }]
-    }
-}
+// here we have mapped UserController with path "/user"
+Fort.routes = [{
+    controller: UserController,
+    path: "/user"
+}]
+
+Fort.create();
+
 ```
 In the above example we are mapping "UserContoller" with a path "/user" inside the "routers" member of App. Since UserController is mapped with "/user", so controller route is - "user".
 
@@ -124,7 +126,7 @@ import { Controller, Worker,textResult,HTTP_METHOD } from "fortjs";
 
 export class UserController extends Controller {
 
-    @Worker([HTTP_METHOD.POST]) // This method will be only hit when any of the http method specified in worker will match.
+    @Worker(HTTP_METHOD.POST) // This method will be only hit when any of the http method specified in worker will match.
     async add () {
        return textResult("add is called");
     }
@@ -142,13 +144,13 @@ import { Controller, Worker, textResult,HTTP_METHOD, Route } from "fortjs";
 
 export class UserController extends Controller {
     
-    @Worker([HTTP_METHOD.GET])
+    @Worker(HTTP_METHOD.GET)
     @Route("/add")
     async addWithGet() { // This will be called when method will be GET
        return textResult("add with method get is called");
     }
 
-    @Worker([HTTP_METHOD.POST])
+    @Worker(HTTP_METHOD.POST)
     @Route("/add")
     async addWithPost() { // This will be called when method will be POST
        return textResult("add with method post is called");

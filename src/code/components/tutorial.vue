@@ -14,14 +14,14 @@ export interface ITutorialLink {
 }
 @Component({
   components: {
-    TreeView
+    TreeView,
   },
   props: {
     innerHtml: String,
     pageTitle: String,
     pageKeywords: String,
-    pageDescription: String
-  }
+    pageDescription: String,
+  },
 })
 export default class Tutorial extends VueWithRoute {
   // props
@@ -32,7 +32,7 @@ export default class Tutorial extends VueWithRoute {
   jsstoreText = [
     "Store data in browser using jsstore",
     "Improve your web app performance by storing data in client side",
-    "Easy indexeddb development using jsstore"
+    "Easy indexeddb development using jsstore",
   ];
 
   adIndex = -1;
@@ -61,7 +61,7 @@ export default class Tutorial extends VueWithRoute {
       this.searchResult = [];
       return;
     }
-    this.searchResult = this.linksWithChilds.filter(link => {
+    this.searchResult = this.linksWithChilds.filter((link) => {
       if (link.text.toLowerCase().indexOf(this.searchValue) >= 0) {
         return link;
       }
@@ -79,10 +79,10 @@ export default class Tutorial extends VueWithRoute {
       .toLowerCase()
       .replace(/\//g, "");
     let activeUrl;
-    this.links.every(item => {
+    this.links.every((item) => {
       if (item.childs != null) {
         const child = item.childs.find(
-          qry =>
+          (qry) =>
             currentUrl ===
             `${this.relativeUrl}${qry.url.toLowerCase()}`.replace(/\//g, "")
         );
@@ -134,19 +134,26 @@ export default class Tutorial extends VueWithRoute {
         {
           hid: "keywords",
           name: "keywords",
-          content: this.pageKeywords
+          content: this.pageKeywords,
         },
         {
           hid: "description",
           name: "description",
-          content: this.pageDescription
-        }
-      ]
+          content: this.pageDescription,
+        },
+      ],
     };
   }
 
-  getVersion(): string {
-    return "1";
+  getVersion() {
+    const currentUrl = (this.$route as any).path;
+    if (currentUrl.indexOf("v1") >= 0 && currentUrl.indexOf("v2") < 0) {
+      return 1;
+    }
+    // else if (currentUrl.indexOf("v2") >= 0 && currentUrl.indexOf("v3") < 0) {
+    //   return 2;
+    // }
+    return 2;
   }
 
   get tutorialHtml() {
@@ -176,7 +183,7 @@ export default class Tutorial extends VueWithRoute {
     const currentUrl = (this.$route as any).path;
     const relativeUrl = this.relativeUrl;
     const activeUrlIndex = this.links.findIndex(
-      value =>
+      (value) =>
         currentUrl.toLowerCase().replace(/\//g, "") ===
         `${this.relativeUrl}${value.url.toLowerCase()}`.replace(/\//g, "")
     );
@@ -187,7 +194,7 @@ export default class Tutorial extends VueWithRoute {
     const currentUrl = (this.$route as any).path;
     const relativeUrl = this.relativeUrl;
     const activeUrlIndex = this.linksWithChilds.findIndex(
-      value =>
+      (value) =>
         currentUrl.toLowerCase().replace(/\//g, "") ===
         `${this.relativeUrl}${value.url.toLowerCase()}`.replace(/\//g, "")
     );
@@ -211,10 +218,10 @@ export default class Tutorial extends VueWithRoute {
   }
 
   setLinksWithChilds() {
-    this.links.forEach(val => {
+    this.links.forEach((val) => {
       this.linksWithChilds.push(val);
       if (val.childs) {
-        val.childs.forEach(child => {
+        val.childs.forEach((child) => {
           // child.url =  child.url;
           this.linksWithChilds.push(child);
         });

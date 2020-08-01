@@ -84,10 +84,12 @@ import { ModelUserGuard } from "location where guard is defined";
 
 
 export class UserController extends Controller {
-    @Guards([ModelUserGuard])
+
+    @Guards(ModelUserGuard)
     addUser(){
         
     }
+    
 }
 ```
 

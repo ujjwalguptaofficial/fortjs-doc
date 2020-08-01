@@ -77,25 +77,16 @@ import { Fort } from "fortjs";
 import { UserController } from "./controllers";
 import { CustomSessionProvider } from "./extra/custom_session_provider";
 
-class App extends Fort {
-    constructor() {
-        super();
+// set your session provider
+Fort.sessionProvider = CustomSessionProvider
 
-        // set your session provider
-        this.sessionProvider = CustomSessionProvider
+//add routers
+Fort.routes = [{
+    controller: UserController,
+    path: "/user"
+}];
 
-        //add routers
-        this.routers = [{
-            controller: UserController,
-            path: "/user"
-        }];
-        
-    }
-}
-
-new App().create({
-    appName: "MyAwesomeApp"
-});
+Fort.create();
 ```
 
 Have a look at redis session provider example - [https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/session-provider/redis](https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/session-provider/redis)
