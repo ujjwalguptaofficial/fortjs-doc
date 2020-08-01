@@ -12,7 +12,7 @@ import { UserService } from "../services/user_service";
 
 export class DefaultController extends Controller {
 
-    @Worker([HTTP_METHOD.Post])
+    @Worker(HTTP_METHOD.Post)
     async login() {
         // access post data
         const userId = this.body.userId;
@@ -38,4 +38,4 @@ export class DefaultController extends Controller {
 }
 ```
 
-By default fortjs parses the body data. But it can be turned off by setting option - `shouldParsePost` while bootstraping the app in `create` method. Please check [bootstrap](/tutorial/bootstrap) doc for more info.
+By default fortjs parses the body data. But it can be turned off by setting option - `shouldParsePost` . Please check [bootstrap](/tutorial/bootstrap) doc for more info.

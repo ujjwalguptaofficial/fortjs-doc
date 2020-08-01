@@ -14,6 +14,7 @@ Let's see an example -
 
 ```
 export class DefaultController extends Controller {
+    
     @DefaultWorker()
     async default() {
         const model = {

@@ -27,16 +27,16 @@ export class UserController extends Controller {
         return jsonResult(this.service.getUsers());
     }
 
-    @Worker([HTTP_METHOD.Post])
+    @Worker(HTTP_METHOD.Post)
     @Route("/")
-    @Guards([ModelUserGuard])
+    @Guards(ModelUserGuard)
     async addUser() {
         const user = this.data.user;
         const newUser = this.service.addUser(user);
         return jsonResult(newUser, HTTP_STATUS_CODE.Created);
     }
 
-    @Worker([HTTP_METHOD.Put])
+    @Worker(HTTP_METHOD.Put)
     @Route("/")
     async updateUser() {
         const user = new User().init(this.body);
@@ -50,7 +50,7 @@ export class UserController extends Controller {
 
     }
 
-    @Worker([HTTP_METHOD.Get])
+    @Worker(HTTP_METHOD.Get)
     @Route("/{id}")
     async getUser() {
 

@@ -31,7 +31,7 @@ Let's see how to configure this using `ExpectBody`
 export class ProductController{
 
     @Route("/")
-    @Worker(["post"])
+    @Worker("post")
     @ExpectBody({ price:0, name:""})
     saveProduct(){
        const product =  this.body;
@@ -52,7 +52,7 @@ export class Product {
 export class ProductController{
 
     @Route("/")
-    @Worker(["post"])
+    @Worker("post")
     @ExpectBody(Product)
     saveProduct(){
        const product =  this.body;
@@ -80,7 +80,7 @@ now for such requests -
 export class UserController{
 
     @Route("/")
-    @Worker(["post"])
+    @Worker("post")
     saveUser(){
        const user = this.body;
        // save user into mongodb
@@ -98,7 +98,7 @@ In this case - property `extra` will be saved too & thus your database has now g
 export class UserController{
 
     @Route("/")
-    @Worker(["post"])
+    @Worker("post")
     saveUser(){
        const user = {
            name:this.body.name,
@@ -119,7 +119,7 @@ Let's write the above code using `ExpectBody`
 export class UserController{
 
     @Route("/")
-    @Worker(["post"])
+    @Worker("post")
     @ExpectBody({name:"", gender: ""})
     saveUser(){
        const user =  this.body;

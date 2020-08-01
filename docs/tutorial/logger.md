@@ -33,11 +33,21 @@ But you might want to log everything in files or database, so want to customize 
 import { Logger } from 'fortjs';
 
 export class CustomLogger extends Logger {
+
     debug(message) {
         // do anything with message
     }
     
 }
+```
+
+Now you need to tell framework to use your logger - 
+
+```
+import { Fort } from 'fortjs';
+
+Fort.logger = CustomLogger;
+    
 ```
 
 Logger has following methods available - 

@@ -27,19 +27,16 @@ import { Fort } from "fortjs";
 import { UserController } from "./controllers";
 import { CustomErrorHandler } from "./extra/custom_error_handler";
 
-class App extends Fort {
-    constructor() {
-        super();
-        //add routers
-        this.routers = [{
-            controller: UserController,
-            path: "/user"
-        }];
-        this.errorHandler = CustomErrorHandler;
-    }
-}
 
-new App().create();
+//add routers
+Fort.routes = [{
+    controller: UserController,
+    path: "/user"
+}];
+
+Fort.errorHandler = CustomErrorHandler;    
+
+Fort.create();
 ```
 
 The methods available for override are - 

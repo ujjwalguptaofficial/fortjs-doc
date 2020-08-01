@@ -3,93 +3,51 @@ Title: "Bootstrap"
 Keywords: "bootstrap, initiate, start, fortjs, node"
 Description: "fortjs bootstrap information & how to bootstrap"
 ---
-
-In order to bootstrap the app, you need to perform two steps - 
-
-* Create a class which will extend the class `Fort` from 'fortjs'.
-* Create an instance of class and call the method create.
-
-<br>
-Let's see an example - 
+ 
 
 ```
 import { Fort } from "fortjs";
 import { UserController } from "./controllers";
 
-class App extends Fort {
-    constructor() {
-        super();
-        //add routes
-        this.routes = [{
-            controller: UserController,
-            path: "/user"
-        }]
-    }
-}
+// add routes
+Fort.routes = [{
+    controller: UserController,
+    path: "/user"
+}]
 
-new App().create();
+// initiate app
+Fort.create().then(()=>{
+    Fort.logger.info("App is started");
+})
 ```
 
 ## Configuring App
 
 <br>
-FortJs provides different configurations like - port, folders, appName etc. The configuration is supplied to create method and is type of [appOption](/tutorial/type/app-option).
+FortJs provides different configurations like - port, folders, appName etc.
 
 ```
 import { Fort } from "fortjs";
 import { UserController } from "./controllers";
 
-class App extends Fort {
-    constructor() {
-        super();
-        //add routes
-        this.routes = [{
-            controller: UserController,
-            path: "/user"
-        }]
-    }
-}
-
-new App().create({
-    appName: "MyAwesomeApp"
-    port: 8080
-});
+Fort.appName = "MyAwesomeApp";
+Fort.port = 8080
+Fort.routes = [{
+    controller: UserController,
+    path: "/user"
+}]
+Fort.create();
 ```
 
+### Configuration list
 <br>
-## Structure - 
-
-<br>
-```
-class Fort {
-    routes: Route[];
-
-    walls: Array<typeof Wall>;
-
-    httpServer: http.Server;
-    /**
-    * view engine use to render the view
-    *
-    * @type {typeof ViewEngine}
-    */
-    viewEngine?: typeof ViewEngine;
-
-    /**
-     * sessionProvider class, default - MemorySessionProvider
-     *
-     * @type {typeof SessionProvider}
-     */
-    sessionProvider?: typeof SessionProvider;
-
-    /**
-     * Custom error handler class
-     *
-     * @type {typeof ErrorHandler}
-     */
-    errorHandler?: typeof ErrorHandler;
-
-    create(option: AppOption): Promise<any>;
-    
-    destroy(): Promise<any>;
-}
-```
+1. appName - name of application - default is fort. Visible in header and cookie. Change name if you dont want any one to know the framework name.
+2. port - Port at which app will listen, default - 4000
+3. logger - 
+4. viewPath - Views folder location. By default it is - views.
+5. httpServer -  Confiure http server
+6. folders - folders which should be visible to requests. By default nothing is allowed.
+7. eTag - eTag Settings
+8. logger -  Supply your custom logger.
+9. walls - List of walls
+10. customErrorHandler - A custom error handler class which will be used when framework detects error.

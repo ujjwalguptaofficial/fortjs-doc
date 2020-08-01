@@ -52,7 +52,7 @@ Now you have defined the shield but in order to use this shield, you need to ass
 import { Controller,Shields } from "fortjs";
 import { AuthenticationShield } from "location where shield is defined";
 
-@Shields([AuthenticationShield]) 
+@Shields(AuthenticationShield) 
 export class UserController extends Controller {
 
 }

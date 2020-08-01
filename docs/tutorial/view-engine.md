@@ -31,13 +31,10 @@ import { routes } from './routes';
 import { EjsViewEngine } from './ejs_view_engine';
 
 
-export class App extends Fort {
-    constructor() {
-        super();
-        this.routes = routes;
-        this.viewEngine = EjsViewEngine;
-    }
-}
+Fort.viewEngine = EjsViewEngine;
+Fort.routes = routes;
+Fort.create();
+
 ```
 
 Now We have successfully integrated our view engine with fortjs. Let's test our view engine setup - 
@@ -69,6 +66,7 @@ Now its time to call our view engine for rendering this view -
 
 ```
 export class DefaultController extends Controller {
+
     @DefaultWorker()
     async default() {
         const model = {
@@ -81,6 +79,4 @@ export class DefaultController extends Controller {
 }
 ```
 
-we are using `viewResult` to render the view  which takes - the relative location of view and model value using . 
-
-That's all, run your code and you can see the view rendered.
+we are using `viewResult` to render the view  which takes - the relative location of view and model value.
