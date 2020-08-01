@@ -28,7 +28,7 @@ import { UserController } from "./controllers";
 import { CustomErrorHandler } from "./extra/custom_error_handler";
 
 
-//add routers
+//add routes
 Fort.routes = [{
     controller: UserController,
     path: "/user"

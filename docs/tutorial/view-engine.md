@@ -79,4 +79,4 @@ export class DefaultController extends Controller {
 }
 ```
 
-we are using `viewResult` to render the view  which takes - the relative location of view and model value.
+we are using `viewResult` to render the view, which takes - the relative location of view and model value.
