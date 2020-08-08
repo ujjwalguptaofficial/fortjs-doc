@@ -20,25 +20,23 @@ initiate the swagger after the fortjs has started.
 e.g -
 
 ```
-export class App extends Fort {
-    constructor() {
-        super();
-        this.routes = routes;
-        this.viewEngine = FortViewEngine;
-    }
-}
+import * as Path from "path";
+import { Fort } from "fortjs";
+import { Swagger } from "fortjs-swagger";
+import { routes } from "./routes";
 
-const swaggerPath = Path.join(__dirname, "../swagger/");
 
-new App().create({
-    // allow swagger path to access using url with alias swagger
-    folders: [{
-        alias: "swagger",
-        path: swaggerPath
-    }]
-}).then(() => {    
+Fort.routes = routes;
+
+// allow swagger path to access using url with alias swagger
+Fort.folders = [{
+    alias: "swagger",
+    path: Path.join(__dirname, "../swagger/")
+}];
+
+Fort.create().then(() => {    
     // initiating swagger 
-    new Swagger().create({
+    Swagger.create({
         appInfo: {
             title: "Swagger Test",
             description: "Swagger Test",
@@ -62,11 +60,18 @@ new App().create({
 
 Will it generate docs now ?
 
-No, This is just a setup. Now we need to tell fortjs what we are expecting exactly i.e - what will be the structure of http request & structure of http response etc.
+No, This is only setup to initiate swagger. We need to tell fortjs what we are expecting exactly i.e - what will be the structure of http request & structure of http response etc.
 
 Consider the below controller
 
 ```
+import { Controller, textResult, DefaultWorker, jsonResult, Worker, Route, HTTP_STATUS_CODE, HTTP_METHOD, Guards, Shields } from 'fortjs';
+import { UserService } from '../services/user_service';
+import { ModelUserGuard } from '../guards/model_user_guard';
+import { User } from '../models/user';
+import { Response, Body, Param, Summary, Description, Security } from 'fortjs-swagger';
+
+
 export class UserController extends Controller {
 
     @DefaultWorker()
