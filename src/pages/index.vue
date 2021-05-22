@@ -1,23 +1,26 @@
 <template>
-  <div class="row">
-    <div class="col width-full">
-      <div id="divLogoContainer">
-        <div class="ml-20px">
+  <div class="b-index row">
+    <div class="b-index__header col width-full">
+      <div class="b-index__header__logo">
+        <div class="b-index__header__logo__content ml-20px row content-center">
           <img
             class="responsive-img"
-            src="/img/JsStore_350_155.png"
+            src="/img/fort_js_logo_200_137.png"
             alt="JsStore logo"
           />
+          <h1 class="b-index__header__logo__content__text">FortJs</h1>
         </div>
       </div>
-      <div id="divStyle"></div>
+      <div class="b-index__header__style"></div>
     </div>
     <div sm12 offset-md1 md10 offset-xl-2 xl8 class="margin-top-40px">
       <div id="divOverview">
-        <h3>Execute Database operation in browsers with JsStore.</h3>
+        <h3>
+          Write beautiful server code and create maintainable app using FortJs
+        </h3>
         <div>
-          JsStore is an IndexedDB Wrapper. It makes IndexedDB super easy with
-          its SQL divke apis.
+          Component based MVC web framework for nodejs targeting good code
+          structures & modularity.
         </div>
       </div>
       <div class="row content-center mt-20px">
@@ -26,7 +29,7 @@
         </a>
         <a
           class="btn secondary outlined mr-10px x-big"
-          href="https://github.com/ujjwalguptaofficial/JsStore"
+          href="https://github.com/ujjwalguptaofficial/fortjs"
           target="_blank"
         >
           Github
@@ -35,21 +38,23 @@
         <a
           class="btn secondary outlined x-big"
           target="_blank"
-          href="https://gitter.im/JsStore/Lobby"
+          href="https://gitter.im/JsStore/fortjs"
         >
           Get Help
           <i class="margin-left-10px fab fa-gitter"></i>
         </a>
       </div>
       <div class="col mt-20px content-center">
-        <h2>Supported with all frameworks</h2>
+        <h2>
+          Open-source MIT Licensed | Supported with all plugins & frameworks
+        </h2>
         <div class="row frameworks">
           <a
-            class="vue"
+            class="socket-io"
             target="_blank"
             href="https://github.com/ujjwalguptaofficial/jsstore-examples/tree/master/vue"
           >
-            <img src="/img/vue-logo.png" />
+            <img src="https://socket.io/css/images/logo.svg" />
           </a>
           <a
             class="vue"
@@ -90,9 +95,7 @@
             :key="item.title"
           >
             <h4 class="div-header">{{ item.title }}</h4>
-            <span class="div-body">
-              {{ item.subTitle }}
-            </span>
+            <span class="div-body" v-html="item.subTitle"> </span>
           </div>
         </div>
       </div>
@@ -102,7 +105,7 @@
           <a
             target="_blank"
             title="github"
-            href="https://github.com/ujjwalguptaofficial/JsStore"
+            href="https://github.com/ujjwalguptaofficial/fortjs"
           >
             <img
               class="responsive-img"
@@ -113,20 +116,8 @@
           <a
             target="_blank"
             class="ml-20px"
-            title="twitter handle"
-            href="https://twitter.com/ujjwal_kr_gupta"
-          >
-            <img
-              class="responsive-img"
-              src="/img/twitter.svg"
-              alt="twitter logo"
-            />
-          </a>
-          <a
-            target="_blank"
-            class="ml-20px"
             title="gitter"
-            href="https://gitter.im/JsStore"
+            href="https://gitter.im/fortjs"
           >
             <img
               style="height: 50px; width: 50px; padding-top: 8px"
@@ -139,7 +130,7 @@
             target="_blank"
             class="ml-20px"
             title="npm"
-            href="https://www.npmjs.com/package/jsstore"
+            href="https://www.npmjs.com/package/fortjs"
           >
             <img
               style="height: 50px; width: 50px; padding-top: 8px"
@@ -152,7 +143,7 @@
             target="_blank"
             class="ml-20px"
             title="travis"
-            href="https://travis-ci.org/ujjwalguptaofficial/JsStore"
+            href="https://travis-ci.org/ujjwalguptaofficial/fortjs"
           >
             <img
               style="height: 50px; width: 50px; padding-top: 8px"
@@ -165,7 +156,7 @@
             target="_blank"
             class="ml-20px"
             title="meidum"
-            href="https://medium.com/jsstore"
+            href="https://medium.com/fortjs"
           >
             <svg class="svgIcon-use" width="45" height="45" viewBox="0 0 45 45">
               <path
@@ -173,26 +164,7 @@
               />
             </svg>
           </a>
-          <a
-            target="_blank"
-            class="ml-20px"
-            title="saucelab"
-            href="https://saucelabs.com/u/ujjwalgupta"
-          >
-            <img
-              style="height: 55px; width: 50px; padding-top: 8px"
-              class="responsive-img"
-              src="/img/saucelab.png"
-              alt="travis logo"
-            />
-          </a>
         </div>
-      </div>
-
-      <div class="text-center mt-20px">
-        Created with
-        <i class="fas fa-heart" style="color: red"></i> by
-        <a href="https://ujjwalguptaofficial.github.io/">Ujjwal Gupta</a>
       </div>
     </div>
   </div>
@@ -206,13 +178,13 @@ export default {
         {
           hid: "keywords",
           name: "keywords",
-          content: "jsstore, sql, indexeddb, storage, divbrary",
+          content: "jsstore, sql, indexeddb, storage, wrapper",
         },
         {
           hid: "description",
           name: "description",
           content:
-            "JsStore is a cdivent side javascript divbrary for performing database operation inside indexeddb.",
+            "JsStore is a client side javascript library for performing database operation inside browser using indexeddb.",
         },
       ],
     };
@@ -220,29 +192,30 @@ export default {
   created() {
     this.features = [
       {
-        title: "Web worker support",
-        subTitle: "Code can be executed in Web Worker or without Worker",
+        title: "Fort Based",
+        subTitle: `<a href="https://github.com/ujjwalguptaofficial/fort">Fort</a> is an
+                        architecture on top of MVC`,
       },
       {
-        title: "Advanced query support",
-        subTitle: "support of join, intersect, union, groupby etc",
+        title: "Next Gen Code",
+        subTitle: "Create your app in typescript or es6",
       },
       {
-        title: "Cross Browsers",
-        subTitle:
-          "Develop your appdivcation without worrying about cross browser compatibility.",
+        title: "Modular",
+        subTitle: "FortJs provides components to make apps more modular",
       },
       {
-        title: "Sql support",
-        subTitle: "Using an extension SqlWeb",
+        title: "Fun To Create",
+        subTitle: "You are not creating an app but a fort",
       },
       {
-        title: "TypeScript Support",
-        subTitle: "Typed result, intillisense",
+        title: "Fully Customizable",
+        subTitle: `Use your favourite view engine or configure your session store and
+                        more...`,
       },
       {
-        title: "Debugging tool",
-        subTitle: "JsStore provides IDBStudio to help you debug, manage db.",
+        title: "Beautiful code",
+        subTitle: "Code written for FortJs are more beautiful & readable",
       },
     ];
   },
@@ -255,18 +228,22 @@ export default {
   width: 150px;
   margin-right: 10px;
 }
-#divLogoContainer {
+.b-index__header__logo {
   position: absolute;
   width: 100%;
   background-color: var(--primary-color);
   text-align: center;
   color: white;
   z-index: 1;
+
+  div .logo-tagline {
+    display: block;
+  }
 }
 
-#divStyle {
+.b-index__header__style {
   position: relative;
-  background-color: #42a5f5;
+  background-color: var(--primary-color);
   color: #fff;
   width: 100%;
   /* height: 150px; */
@@ -281,10 +258,6 @@ export default {
 
 .logo-text {
   font-size: 50px;
-}
-
-#divLogoContainer div .logo-tagline {
-  display: block;
 }
 
 #divLinkGroup {
@@ -311,5 +284,10 @@ export default {
   margin-bottom: 28px;
   margin-right: 28x;
   width: 350px;
+}
+.b-index__header__logo__content__text {
+  align-self: center;
+  margin-left: 20px;
+  font-size: 3rem;
 }
 </style>
