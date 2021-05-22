@@ -1,25 +1,13 @@
----
-Title: "Components"
-Keywords: "components, modularize, app, fortjs, node"
-Description: "Description about components of fortjs"
----
-
-Components are most important part of fort application. They are independent & every component has its own lifecycle and scope. It helps you to modularize your app & reutilize codes.
-
-There are three types of components - 
-
-1. [Wall](/tutorial/wall)
-
-2. [Shield](/tutorial/shield)
-
-3. [Guard](/tutorial/guard)
-
-# Concept 
-
-<img src="/img/fort_component.png" alt="FortJs Architecture" style="height:600px;"/>
-
-**The above picture shows the architecture of fortjs app and flow of http request inside app -** 
-
+<template><Layout title='Components' description='Description about components of fortjs' keywords='components, modularize, app, fortjs, node' contentSrc='/home/warrior/projects/opensource/fortjs.docs/content/tutorial/components/index.md'><p>Components are most important part of fort application. They are independent &amp; every component has its own lifecycle and scope. It helps you to modularize your app &amp; reutilize codes.</p>
+<p>There are three types of components - </p>
+<ol>
+<li><p><a href="/tutorial/wall">Wall</a></p></li>
+<li><p><a href="/tutorial/shield">Shield</a></p></li>
+<li><p><a href="/tutorial/guard">Guard</a></p></li>
+</ol>
+<h1 id="concept">Concept</h1>
+<p><img src="/img/fort_component.png" alt="FortJs Architecture" style="height:600px;"/></p>
+<p><strong>The above picture shows the architecture of fortjs app and flow of http request inside app -</strong> </p>
 <ul>
     <li>
     When a http request comes to your app - it has to go through sequence of components i.e <a href="/tutorial/wall">Wall</a>, <a target="_blank" href="/tutorial/shield">Shield</a> & <a target="_blank" href="/tutorial/guard">Guard</a> and if everyone allows then request is transferred to Worker inside <a target="_blank" href="/tutorial/controller">Controller</a> where the actual resource is present.
@@ -45,17 +33,14 @@ There are three types of components -
         </ul>
     </li>
 </ul>
-
-<br>
-# Important points
-<br>
-
-* It is not necessary to create any components, you can have just Controller and Worker. But it is highly recommended to use components since components helps to modularize your app into small dedicated features making your code cleaner, reutilizable & testable.
-
-* Here we saw Components are being used to block the request, but it can be also used to do some work and pass the result from one component to another. Check out particular component to know more. 
-
-e.g - The validation of data, extracting some information like ip address & passing from one component to another etc.
-
+<p><br></p>
+<h1 id="importantpoints">Important points</h1>
+<p><br></p>
+<ul>
+<li><p>It is not necessary to create any components, you can have just Controller and Worker. But it is highly recommended to use components since components helps to modularize your app into small dedicated features making your code cleaner, reutilizable &amp; testable.</p></li>
+<li><p>Here we saw Components are being used to block the request, but it can be also used to do some work and pass the result from one component to another. Check out particular component to know more. </p></li>
+</ul>
+<p>e.g - The validation of data, extracting some information like ip address &amp; passing from one component to another etc.</p>
 <style>
 li{
     padding-top:10px;
@@ -63,7 +48,10 @@ li{
 ul{
     margin-left:10px;
 }
-</style>
-
-
- 
+</style></Layout></template>
+        <script>import Layout from '/home/warrior/projects/opensource/fortjs.docs/layouts/tutorial.vue'
+        export default {
+            components:{Layout}
+        };
+        </script>
+        

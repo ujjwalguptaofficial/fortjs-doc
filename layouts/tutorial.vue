@@ -29,7 +29,7 @@
             'b-tutorial__links__item--active-with-children':
               link.children && childActiveUrlIndex < 0,
           }"
-          :href="url(link.url)"
+          :href="url(link.url, link.children)"
         >
           <template v-if="link.children">
             <i v-if="index === activeUrlIndex" class="fas fa-chevron-down"></i>
@@ -233,7 +233,12 @@ export default {
       });
       this.flatLinks = flatLinks;
     },
-    url(value) {
+    url(value, children) {
+      if (!value) {
+        if (children) {
+          value = children[0].url;
+        }
+      }
       return "/tutorial/" + value;
     },
     getLink(delta) {
