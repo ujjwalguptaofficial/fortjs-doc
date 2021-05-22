@@ -76,14 +76,14 @@
         class="btn rounded secondary margin-bottom-70px"
         alt="edit this doc"
         target="_blank"
-        href="https://gitter.im/JsStore/Lobby"
+        href="https://gitter.im/fortjs/Lobby"
       >
         <i class="fab fa-gitter"></i>
       </a>
       <a
         alt="edit this doc"
         target="_blank"
-        :href="`https://github.com/ujjwalguptaofficial/jsstore.docs/edit/master/content${currentUrl}.md`"
+        :href="`https://github.com/ujjwalguptaofficial/fortjs.docs/edit/master/content${currentUrl}.md`"
         class="btn secondary"
         fixed
         bottom

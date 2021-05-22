@@ -52,7 +52,7 @@
           <a
             class="socket-io"
             target="_blank"
-            href="https://github.com/ujjwalguptaofficial/jsstore-examples/tree/master/vue"
+            href="https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/socket.io"
           >
             <img src="https://socket.io/css/images/logo.svg" />
           </a>

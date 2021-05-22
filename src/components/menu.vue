@@ -9,7 +9,8 @@
         <i class="material-icons">menu</i>
       </button>
       <a class="b-menu__icon" href="/" title="JsStore Index Page">
-        <img src="/img/JsStore_145_64.png" alt="JsStore" />
+        <img src="/img/fort_js_logo_60_48.png" alt="JsStore" />
+        <span>FortJs</span>
       </a>
     </template>
     <div v-else></div>
@@ -138,8 +139,14 @@ a {
   }
 
   .b-menu__icon {
+    display: flex;
+    align-items: center;
     img {
-      height: unset;
+      height: 41px;
+    }
+    span {
+      font-size: 2rem;
+      margin-left: 5px;
     }
   }
 }
