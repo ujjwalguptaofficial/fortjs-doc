@@ -85,7 +85,8 @@ module.exports = [
     {
         id: 11,
         text: "Concepts",
-        // url: " ",
+        url: "concepts",
+        expand: true,
         children: [{
             id: 1,
             text: "Cookie",
@@ -122,37 +123,39 @@ module.exports = [
     },
     {
         id: 12,
-        text: "Types",
-        // url: "null",
+        text: "Type",
+        url: "type",
+        expand: true,
         children: [{
             id: 1,
             text: "HttpResult",
-            url: "type/http-result"
+            url: "http-result"
         }, {
             id: 2,
             text: "AppOption",
-            url: "type/app-option"
+            url: "app-option"
         }, {
             id: 3,
             text: "HttpRequest",
-            url: "type/http-request"
+            url: "http-request"
         }, {
             id: 4,
             text: "HttpResponse",
-            url: "type/http-response"
+            url: "http-response"
         }, {
             id: 5,
             text: "ViewEngineData",
-            url: "type/view-engine-data"
+            url: "view-engine-data"
         }, {
             id: 6,
             text: "HttpFormatResult",
-            url: "type/http-format-result"
+            url: "http-format-result"
         }]
     }, {
         id: 13,
         text: "Advanced",
-        // url: "null",
+        url: "advanced",
+        expand: true,
         children: [{
             id: 1,
             text: "Custom Error Handler",
@@ -186,16 +189,16 @@ module.exports = [
     },
     {
         id: 14,
-        text: "Swagger / Open API",
+        text: "Swagger",
         url: "swagger",
         children: [{
             id: 1,
             text: "Initiate",
-            url: "swagger/initiate"
+            url: "initiate"
         }, {
             id: 2,
             text: "Swagger Model",
-            url: "swagger/model"
+            url: "model"
         }]
     },
     {
@@ -207,21 +210,22 @@ module.exports = [
         id: 16,
         text: "Test",
         url: "test",
+        expand: true,
         children: [
             {
                 id: "unit_test",
                 text: "Unit Test",
-                url: "test/unit-test"
+                url: "unit-test"
             },
             {
                 id: "e2e_test",
                 text: "e2e Test",
-                url: "test/e2e-test"
+                url: "e2e-test"
             },
             {
                 id: "initialize",
                 text: "Initialize controller",
-                url: "test/initialize"
+                url: "initialize"
             }
         ]
     }
