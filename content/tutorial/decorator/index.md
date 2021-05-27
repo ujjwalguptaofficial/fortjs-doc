@@ -10,6 +10,6 @@ FortJs provides following decorators -
 2. [Worker](/tutorial/worker)
 3. [Route](/tutorial/worker)
 4. [Wall](/tutorial/wall)
-5. [Shield](/tutorial/shield)
+5. [Shield](/tutorial/components/shield)
 6. [Guard](/tutorial/guard)
 7. [ExpectQuery](/tutorial/decorator/expect-query)

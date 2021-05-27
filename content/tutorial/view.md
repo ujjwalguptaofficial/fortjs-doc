@@ -28,4 +28,4 @@ export class DefaultController extends Controller {
 
 By default fortjs provides [mustache](https://github.com/janl/mustache.js/) as view engine. But any view engine like - handlebar, ejs etc can be used.
 
-For configuring other view engine, please read the docs - [viewEngine](/tutorial/view-engine)
+For configuring other view engine, please read the docs - [viewEngine](/tutorial/advanced/view-engine)

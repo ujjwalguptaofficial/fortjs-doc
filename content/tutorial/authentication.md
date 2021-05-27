@@ -63,7 +63,7 @@ e.g - if session is present then fulfill the request otherwise redirect to login
 
 We can take the above concept and divide into [component](/tutorial/components), so that we don't need to write in every method. We can use shield or guard - this completely depends upon requirement.
 
-Let's consider - we want to restrict at controller level and for this we need to create a [shield](/tutorial/shield) - 
+Let's consider - we want to restrict at controller level and for this we need to create a [shield](/tutorial/components/shield) - 
 
 ```
 import { Shield, textResult,  redirectResult } from "fortjs";
