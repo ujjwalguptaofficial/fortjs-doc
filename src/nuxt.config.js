@@ -20,6 +20,7 @@ const host =
     process.env.npm_package_config_nuxt_host ||
     "localhost";
 // return;
+const buildDir = path.join(__dirname, '../build');
 module.exports = {
     srcDir: path.join(__dirname),
     dir: {
@@ -40,7 +41,7 @@ module.exports = {
             `http://${host}:${port}`
     },
     generate: {
-        dir: '../build'
+        dir: buildDir
     },
     head: {
         title: "FortJs - Component Based MVC Web Framework For Nodejs",
