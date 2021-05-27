@@ -43,12 +43,25 @@ module.exports = {
         dir: '../build'
     },
     head: {
-        title: "JsStore - Think in SQL and do in JS",
+        title: "FortJs - Component Based MVC Web Framework For Nodejs",
         meta: [{
-            name: "theme-color",
-            content: "#42a5f5"
+            name: "google-site-verification",
+            content: "gFRrtV_TpZtZXXktE2jCL0C69py_TsCtorjh4GDae4U"
         },
         {
+            name: "theme-color",
+            content: "#ffffff"
+        }, {
+            name: "msapplication-TileColor",
+            content: "#ffffff"
+        }, {
+            name: "msapplication-TileImage",
+            content: "/ms-icon-144x144.png"
+        },
+        {
+            name: "description",
+            content: "Component based MVC web framework for nodejs targeting good code structures & modularity."
+        }, {
             name: "robots",
             content: "index, follow"
         }, {
@@ -68,40 +81,34 @@ module.exports = {
             content: "width=device-width, initial-scale=1.0"
         }, {
             property: "og:title",
-            content: "JsStore - Think in SQL and do in JS"
+            content: "FortJs - Component Based MVC Web Framework For Nodejs"
         }, {
             property: "og:type",
-            content: "IndexedDB wrapper"
+            content: "Node MVC Framework"
         }, {
             property: "og:url",
-            content: "http://jsstore.net/"
+            content: "http://fortjs.info/"
         }, {
             property: "og:site_name",
-            content: "JsStore"
+            content: "FortJs"
         }, {
             property: "og:description",
-            content: "JsStore is an IndexedDB Wrapper. It makes IndexedDB super easy with its SQL like apis."
-        },
-        {
+            content: "Component based MVC web framework for nodejs targeting good code structures & modularity."
+        }, {
             property: "og:image",
-            content: "/img/JsStore_1200_630.png"
-        },
-        {
-            property: "og:image",
-            content: "/img/jsStore_500_500.png"
-        },
-        {
+            content: "/img/fort_js_logo_1200_630.png"
+        }, {
             name: "twitter:creator",
             content: "@ujjwal_kr_gupta"
         }, {
             name: "twitter:title",
-            content: "JsStore - Think in SQL and do in JS"
+            content: "FortJs - Component Based MVC Web Framework For Nodejs"
         }, {
             name: "twitter:description",
-            content: "JsStore is an IndexedDB Wrapper. It makes IndexedDB super easy with its SQL like apis."
+            content: "Component based MVC web framework for nodejs targeting good code structures & modularity."
         }, {
             name: "twitter:image",
-            content: "http://jsstore.net/img/JsStore_1200_630.png"
+            content: "http://fortjs.info/img/fort_js_logo_1200_630.png"
         }
         ],
         link: [
