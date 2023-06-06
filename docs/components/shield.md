@@ -4,58 +4,75 @@ Keywords: "shield, component, modular, fortjs, node"
 Description: "Description about Shield component & how to use"
 ---
 
-Shiled is security layer on top of Section (Controller). It controls whether a request should be allowed to enter inside the Section or not. It can also be used for doing some task before passing it to workers.
+# Shield
+
+Shield is security layer on top of Controller. It controls whether a request should be allowed to enter inside the Controller or not. 
+
+It can be used for -
+
+* Doing some task before passing it to Controller
+* Authentication on controller level
 
 e.g - Consider a case - where a controller "Admin" is only allowed if the request is authenticated. You can create a shield which will check for the conditions and if it does not satisfy the conditions, you can just reject it.
 
-There can be multiple shield for a controller & every shield is called when a request wants to access the particular controller in the same order as they are defined.
+There can be multiple shield for a controller & every shield is called in the same order as they are defined.
 
-A shiled has following member - 
+A shield has following member - 
 
-* Request - [request](/tutorial/http-request)
-* Response - [response](/tutorial/http-response)
-* Cookie - [cookie](/tutorial/cookie)
-* Session - [session](/tutorial/session)
-* Query string data - [query](/tutorial/query)
-* Data from other components - [data](/tutorial/data)
-* Target Worker Name - [workerName](#)
+* [Request](/docs/types/http-request.md)
+* [Response](/docs/types/http-response.md)
+* [Cookie](/docs/concepts/cookie.md)
+* [Session](/docs/concepts/session.md)
+* [Query data](/docs/concepts/query.md)
+* [Data from other components](/docs/concepts/data.md)
+* Target Worker Name
 
-<br/>
-# Creating shield
+## Creating shield
 
-<br/>
-Shield is a class which extends the class "Shield" from fortjs.
+Shield is a class which extends the class `Shield` from fortjs. It has `protect` method as lifecycle of Shield. 
+
+The `protect` method can perform any task such as validation etc and return the result. The method can return two types of data - 
+
+1. **null** - It means shield has passed the request.
+2. **Http response** - It means shield has rejected the request. The http resonse is directly returned to the user.
 
 
-## Example
+### Example
 
-```
-import { Shield, textResult, redirectResult} from "fortjs";
+```javascript
+import { Shield, textResult } from "fortjs";
 
 export class AuthenticationShield extends Shield {
     async protect() {
          
         const isExist = await this.session.isExist('userId');
+
         if (exist) { // user is authenticated so allow
             return null;
+
         } else { //user is not authenticated, so not allow
-            return redirectResult("/default/login");
+    
+            return textResult("Requires authentication", HTTP_STATUS_CODE.BadRequest);
         }
 
     }
 }
 ```
 
-Now you have defined the shield but in order to use this shield, you need to assign it to some controller.
+Now let's use this shield to some controller.
 
-```
-import { Controller,Shields } from "fortjs";
+```javascript
+import { Controller, shields } from "fortjs";
 import { AuthenticationShield } from "location where shield is defined";
 
-@Shields(AuthenticationShield) 
+@shields(AuthenticationShield) 
 export class UserController extends Controller {
 
 }
 ```
 
-**Note:-** A shield can be assigned to multiple controller.
+## Summary
+
+* A shield allows you to execute logic before accessing to controller.
+* It can be used for controller level task like authentication etc.
+* A shield can be assigned to multiple controller. e.g - A generic autherization shield can be placed on all controller where authentication is required.

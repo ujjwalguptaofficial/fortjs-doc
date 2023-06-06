@@ -5,6 +5,8 @@ Keywords: "controller, section, fortjs, node"
 Description: "Description about controller in fortjs"
 ---
 
+# Controller
+
 A Controller is a class which contains methods to be used as end points.  You can consider it like a section or area where different resource & services are available.
 
 e.g - A Fort may have sections - WeaponSection, LibrarySection, MeetingSection etc. 
@@ -22,10 +24,8 @@ A controller has following members -
 * Route parameter -  [param](/tutorial/param)
 * Data from other components - [data](/tutorial/data)
 
-<br/>
 # Creating controller
 
-<br/>
 Controller is a class which extends the class "Controller" from fortjs.
 
 
@@ -57,4 +57,4 @@ In the code we are adding our controller into routes array along  with a path. T
 
 e.g - Consider your website is abc.com , so when user hits the url - "abc.com/user" then the controller - 'UserController' will be called. 
 
-Note :- You must have [worker](/tutorial/worker) inside the controller otherwise it won't work.
+Note :- You must have - [worker](/docs/worker) inside the controller otherwise it won't work.

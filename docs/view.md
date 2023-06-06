@@ -5,6 +5,12 @@ Keywords: "view, render, fortjs, node"
 Description: "How to create & render views"
 ---
 
+# View
+
+A view is a HTML page which needs some data also called model to show those datas to users.The data(model) is passed from controller to view where view engine accepts the data and create the html page.
+
+## viewResult
+
 A view is rendered using the method `viewResult`. The viewResult accepts two parameters - 
 
 1. view identification - view location or view name or id
@@ -29,4 +35,4 @@ export class DefaultController extends Controller {
 
 By default fortjs provides [mustache](https://github.com/janl/mustache.js/) as view engine. But any view engine like - handlebar, ejs etc can be used.
 
-For configuring other view engine, please read the docs - [viewEngine](/tutorial/advanced/view-engine)
+For configuring other view engine, please read the docs - [viewEngine](/docs/advanced/view-engine)

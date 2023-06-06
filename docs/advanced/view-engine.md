@@ -4,6 +4,8 @@ Keywords: "view engine, cutomize, options, fortjs, node"
 Description: "Creating custom view engine in fortjs"
 ---
 
+# View Engine
+
 In order to create a view engine - You need to create a class which will implement class `ViewEngine` from "fortjs".
 
 e.g - Let's see how we can use ejs as view engine. You can download the code for below example here - <a href="https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/ejs" target="_blank">ViewEngine configurtion example</a>
@@ -60,9 +62,9 @@ create a file "index.ejs" inside the folder - "views". Paste the below code insi
 </html>
 ```
 
-In the above code - title and msg will be sent from the controller and rendered by mustache. 
+In the above code - `title` and `msg` will be sent from the controller and rendered by ejs view engine. 
 
-Now its time to call our view engine for rendering this view - 
+Now let's pass data from Controller and call our view engine for rendering this view - 
 
 ```
 export class DefaultController extends Controller {

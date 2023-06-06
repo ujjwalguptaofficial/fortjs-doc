@@ -4,6 +4,8 @@ Keywords: "xml, parser, accept xml, body, node"
 Description: "Configure fortjs to accept xml data as http body"
 ---
 
+# XmlParser
+
 By default FortJs doesn't handle xml data in http body but can be configured very easily.
 
 You need to create a class extending abstract class `XmlParser`

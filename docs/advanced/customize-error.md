@@ -1,26 +1,28 @@
 ---
-Title: "Custom Error Handler"
+Title: "Customize Error"
 Keywords: "customize error, handle error, fortjs, node"
 Description: "How to customize error in nodejs using fortjs"
 ---
 
-In order to customize the error response , you need to create a class which extend class ErrorHandler and override the available methods.
+# Customize Error
 
-e.g - Let's say you want to customize the error response for status code - 404.
+In order to customize the error response , you need to create a class which extend class `ErrorHandler` and override the available methods.
+
+e.g - Let's say you want to customize the error response for status code - **404**.
 
 ```
 import { ErrorHandler } from "fortjs";
 
 export class CustomErrorHandler extends ErrorHandler {
     async onNotFound(url){
-       return  htmlResult(`<h1>The resource ${url} does not exist.</h1>`);
+       return htmlResult(`<h1>The resource ${url} does not exist.</h1>`);
     }
 }
 ```
 
 So basically it returns a customized http response similar to worker.
 
-Now you have created the class, you need to inform fortjs about this.
+After creating the error handler class - you need to inform fortjs about this.
 
 ```
 import { Fort } from "fortjs";

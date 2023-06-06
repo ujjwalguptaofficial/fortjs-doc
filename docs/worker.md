@@ -5,6 +5,8 @@ Keywords: "worker, route, controller method, fortjs, node"
 Description: "Description about worker in fortjs"
 ---
 
+# Worker
+
 Worker is a method which does particular task and return the final result. 
 
 A worker method -
@@ -24,10 +26,8 @@ Since a worker is part of controller, it have the access to all the things which
 * Route parameter -  `this.param`
 * Data from other components -  `this.data`
 
-<br/>
 # Creating worker
 
-<br/>
 Worker is created by using decorator - `Worker` or `DefaultWorker`.
 
 
@@ -65,10 +65,8 @@ So in the above example, when url will be -
 * abc.com/user - method default will be called.
 * abc.com/user/:getuser - method getuser will be called.
 
-<br/>
 ## How to declare a method as default worker without using decorator - defaultWorker
 
-<br/>
 A method can be declared as default worker by using decorators - `Worker` & `Route`.
 
 Lets update the example -

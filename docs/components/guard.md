@@ -1,8 +1,10 @@
 ---
 Title: "Guard"
 Keywords: "guard, component, types, fortjs, node"
-Description: "Description about guard component in fortjs"
+Description: "Guard is security layer on top of Worker"
 ---
+
+# Guard
 
 Guard is security layer on top of Worker which means it is called after controller is initiated. It contols whether a request should be allowed to call the **Worker**.
 
@@ -12,33 +14,38 @@ The guard is useful for -
 * Doing some task and passing it to worker. In this case - guard will be used as subordinate.
 
 <br/>
-There can be multiple guards for a worker & they are called in respective order, when a request wants to access the particular worker.
+There can be multiple guards for a worker and they are called in same order as declared.
 
 A guard has following member - 
 
-* Request - [request](/tutorial/http-request)
-* Response - [response](/tutorial/http-response)
-* Cookie - [cookie](/tutorial/cookie)
-* Session - [session](/tutorial/session)
-* Query string data - [query](/tutorial/query)
-* Post data - [body](body)
-* Route parameter -  [param](/tutorial/param)
-* Data from other components - [data](/tutorial/data)
+* [Request](/docs/types/http-request.md)
+* [Response](/docs/types/http-response.md)
+* [Cookie](/docs/concepts/cookie.md)
+* [Session](/docs/concepts/session.md)
+* [Query data](/docs/concepts/query.md)
+* [Body data](/docs/concepts/body.md)
+* [Route parameter](/docs/concepts/param.md)
+* [Data from other components](/docs/concepts/data.md)
 
-<br/>
-# Creating guard
+## Creating guard
 
-<br/>
-Guard is a class which extends the class "Guard" from fortjs.
+Guard is a class which extends the class "Guard" from fortjs. It has `check` method as lifecycle of Guard. 
+
+The `check` method can perform any task such as validation etc and return the result. The method can return two types of data - 
+
+1. **null** - It means guard has passed the request.
+2. **Http response** - It means guard has rejected the request. The http resonse is directly returned to the user.
+
+### Example
+
+Let's create a Guard which validates a user object. It passes if the user is valid and rejects if not.
 
 
-## Example
-
-```
+```javascript
 import { Guard, HttpResult, MIME_TYPE, HTTP_STATUS_CODE } from "fortjs";
 import {isEmail, isLength, isIn} from "validator";
 
-export class ModelUserGuard extends Guard {
+export class ValidUserGuard extends Guard {
 
     async check() {
         const user = { // extracted the info from request body
@@ -46,13 +53,18 @@ export class ModelUserGuard extends Guard {
             gender: this.body.gender,
             address: this.body.address,
             emailId: this.body.emailId
-        }
+        };
+
         const errMsg = this.validate(user);
+
         if (errMsg == null) {
+
             // pass user to worker method, so that they dont need to parse again
             this.data.user = user;
+
             // returning null means - this guard allows request to pass
             return null;
+
         } else {
             return textResult(errMsg, HTTP_STATUS_CODE.BadRequest);
         }
@@ -76,22 +88,25 @@ export class ModelUserGuard extends Guard {
 }
 ```
 
-Now you have defined the guard but in order to use this guard, you need to assign it to some worker.
+Now let's use this guard on some worker -
 
 ```
-import { Controller, Guards } from "fortjs";
-import { ModelUserGuard } from "location where guard is defined";
+import { Controller, guards } from "fortjs";
+import { ValidUserGuard } from "@/guards";
 
 
 export class UserController extends Controller {
 
-    @Guards(ModelUserGuard)
+    @guards(ValidUserGuard)
     addUser(){
-        
+        const user = this.data.user ;
     }
     
 }
 ```
+### Summary
 
-**Note:-** A guard can be assigned to multiple worker.
-
+* A guard allows you to extract reusable logic like validation, authentication etc 
+* A guard can be independently used by multiple workers
+* A guard makes your code much clean
+* A guard can be independently unit tested

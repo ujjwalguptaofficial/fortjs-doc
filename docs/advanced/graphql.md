@@ -4,6 +4,8 @@ Keywords: "graphql, integrate, fortjs, node"
 Description: "How to use graphql in node using fortjs"
 ---
 
+# GraphQl
+
 FortJs provides a seperate package - [fort-graphql](https://github.com/ujjwalguptaofficial/fortjs-graphql) for integration of graphql.
 
 ## Uses
@@ -60,8 +62,9 @@ Fort.create({
     defaultPath: "default" 
 }).then(() => {
     console.log("Your fort is located at address - localhost:4000");
+    
     // setup graphql
-
+    
     new FortGraphQl().initiate({
         schema: buildSchema(`
         type Query {

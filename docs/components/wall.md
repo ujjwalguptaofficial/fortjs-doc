@@ -4,39 +4,53 @@ Keywords: "wall, component, options, fortjs, node"
 Description: "Description about wall components & its uses"
 ---
 
-Wall is security layer on top of your app. It controls whether a request should be allowed to enter inside the app. It can also be used to do some tasks and pass data inside app.
+# Wall
+
+Wall is a top layer for every http request. It controls whether a request should be allowed or not. It can also be used to do some tasks and pass data inside Controller.
 
 There can be multiple wall for an app & all walls are called in the same order as they are defined.
 
-Wall has two events -
-
-* **onIncoming** - called when a request wants to enter inside the fort (app). If this events returns null means request is allowed to enter otherwise rejects with the result returned.
-
-    If there are multiple walls then "onIncoming" is called in order as they are defined.
-* **onOutgoing** - called when a request is about to leave. This is an optional event & Result returned from this event is ignored. onOutgoing is called with returned response & based on that response you can take actions, even you can modify the whole result.
-
-    If there are multiple walls then "onOutgoing" is called in reverse order as they are defined.
-
-
 A wall have access to following - 
 
-* Request - [request](/tutorial/http-request)
-* Response - [response](/tutorial/http-response)
-* Cookie - [cookie](/tutorial/cookie)
-* Session - [session](/tutorial/session)
-* Query string data - [query](/tutorial/query)
-* Data from other components - [data](/tutorial/data)
+* [Request](/docs/types/http-request.md)
+* [Response](/docs/types/http-response.md)
+* [Cookie](/docs/concepts/cookie.md)
+* [Session](/docs/concepts/session.md)
+* [Query data](/docs/concepts/query.md)
+* [Data from other components](/docs/concepts/data.md)
 
-<br/>
-# Creating wall
+## Events
 
-<br/>
-Wall is a class which - Extends the class "Wall" from fortjs.
+Wall has two events -
 
-```
+### onIncoming
+
+It is called when a request is initiated. If this events returns null means request is allowed to enter otherwise rejected with the result returned.
+
+If there are multiple walls then "onIncoming" is called in order as they are defined.
+
+### onOutgoing 
+
+It called when a request has been executed from component lifecyles. 
+
+This is an optional event & result returned from this event is ignored. `onOutgoing` is called with returned response & based on that response you can take actions such as -
+
+* Adding/Removing Header
+* Modifying result
+
+If there are multiple walls then "onOutgoing" is called in reverse order as they are defined.
+
+
+
+## Creating wall
+
+Wall is a class which extends the class "Wall" from fortjs.
+
+```javascript
 import { Wall } from "fortjs"
 
 export class AppWall extends Wall {
+
     async onIncoming() {
         console.log("request is asking for entering into the fort");
         if (some condition) {
@@ -56,7 +70,7 @@ export class AppWall extends Wall {
 }
 ```
 
-Now you have defined the wall but in order to use this wall, you need to assign it to App. Open app.ts/.js file and add your wall to the walls array.
+Let's use this wall - open app.ts/.js file and add your wall to the walls array.
 
 ```
 import { Fort } from "fortjs";
@@ -74,7 +88,7 @@ Fort.walls = [AppWall]
 
 ```
 
-## How to modify returning result
+### How to modify returning result
 
 ```
 class AppWall extends Wall {
