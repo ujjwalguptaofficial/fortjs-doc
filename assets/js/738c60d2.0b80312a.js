@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy=self.webpackChunkmy||[]).push([[4178],{4286:l=>{l.exports=JSON.parse('{"label":"hello","permalink":"/fortjs-doc/blog/tags/hello","allTagsPath":"/fortjs-doc/blog/tags","count":2}')}}]);
