@@ -4,38 +4,24 @@ Keywords: "request, post, body, fortjs, node"
 Description: "fortjs body member details"
 ---
 
-`body` is class member of  Guard and Controller. It is used to access body data sent in http post request. 
+# Body
 
-```
-import { Controller, viewResult, Worker, HTTP_METHOD, jsonResult, htmlResult, textResult, DefaultWorker, redirectResult } from "fortjs";
-import { UserService } from "../services/user_service";
+`body` is class member of [Guard](/docs/components/guard.md) and [Controller](/docs/controller.md). It is used to access body data sent in http post request. 
+
+```javascript
+import { Controller, worker, HTTP_METHOD,  textResult } from "fortjs";
 
 export class DefaultController extends Controller {
 
-    @Worker(HTTP_METHOD.Post)
+    @worker(HTTP_METHOD.Post)
     async login() {
         // access post data
         const userId = this.body.userId;
         const pwd = this.body.password;
 
-        if (userId != null && pwd != null) {
-            const userService = new UserService();
-            const user = userService.getUser(userId);
-            if (user != null && user.password === pwd) {
-                this.session.set('userId', userId);
-                return textResult(`Authenticated`);
-            }
-            else {
-                const result = textResult("Invalid credential");
-                return result;
-            }
-        }
-        else {
-            const result = textResult("Invalid credential");
-            return result;
-        }
+        return textResult("OK")
     }
 }
 ```
 
-By default fortjs parses the body data. But it can be turned off by setting option - `shouldParsePost` . Please check [bootstrap](/tutorial/bootstrap) doc for more info.
+By default fortjs parses the body data. But it can be turned off by setting option - `shouldParsePost` . Please check [bootstrap](/docs/setup.md) doc for more info.

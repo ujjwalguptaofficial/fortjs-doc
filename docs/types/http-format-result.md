@@ -4,6 +4,8 @@ Keywords: "http format result, type, options, fortjs, node"
 Description: "HttpFormatResult type description"
 ---
 
+# HttpFormatResult
+
 The type HttpFormatResult is used for formatting http response.
 
 ```

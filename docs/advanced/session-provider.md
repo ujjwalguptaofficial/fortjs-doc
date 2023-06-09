@@ -10,6 +10,7 @@ By default fortjs provides a memory session provider which stores all your data 
 
 You can create your own session provider & store it in database or wherever you want. A session provider is a class which extends the class - `SessionProvider`.
 
+## Implement a session provider
 Let's see how we can implement a simple memory session provider - 
 
 ```
@@ -71,6 +72,8 @@ export class CustomSessionProvider extends SessionProvider {
 }
 
 ```
+
+## Use custom session provider
 
 After you have created a session provider - you need to tell fortjs to use new session provider.
 

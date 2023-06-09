@@ -4,22 +4,21 @@ Keywords: "swagger, automatic generate, integrate, fortjs, node"
 Description: "Swagger integration in fortjs"
 ---
 
+# Initiate Swagger  
+
 FortJs provides a seperate library - [fortjs-swagger](https://github.com/ujjwalguptaofficial/fortjs-swagger) for swagger integration. It provides automatic generation of swagger documents by taking documents related information from you.
 
 ##  1. Install library
 
-<br/>
-`npm install fortjs-swagger`
+```
+npm install fortjs-swagger
+```
 
-<br/>
 ## 2. Initiate
 
-<br/>
 initiate the swagger after the fortjs has started.
 
-e.g -
-
-```
+```javascript
 import * as Path from "path";
 import { Fort } from "fortjs";
 import { Swagger } from "fortjs-swagger";
@@ -65,24 +64,22 @@ No, This is only setup to initiate swagger. We need to tell fortjs what we are e
 Consider the below controller
 
 ```
-import { Controller, textResult, DefaultWorker, jsonResult, Worker, Route, HTTP_STATUS_CODE, HTTP_METHOD, Guards, Shields } from 'fortjs';
+import { Controller, textResult, defaultWorker, jsonResult, worker, route, HTTP_STATUS_CODE, HTTP_METHOD, Guards, Shields } from 'fortjs';
 import { UserService } from '../services/user_service';
-import { ModelUserGuard } from '../guards/model_user_guard';
 import { User } from '../models/user';
 import { Response, Body, Param, Summary, Description, Security } from 'fortjs-swagger';
 
 
 export class UserController extends Controller {
 
-    @DefaultWorker()
+    @defaultWorker()
     async getUsers() {
         const service = new UserService();
         return jsonResult(service.getUsers());
     }
 
-    @Worker([HTTP_METHOD.Post])
-    @Route("/")
-    @Guards([ModelUserGuard])
+    @worker([HTTP_METHOD.Post])
+    @route("/")
     async addUser() {
         const user = this.data.user;
         const service = new UserService();
@@ -90,9 +87,8 @@ export class UserController extends Controller {
         return jsonResult(newUser, HTTP_STATUS_CODE.Created);
     }
 
-    @Worker([HTTP_METHOD.Put])
-    @Guards([ModelUserGuard])
-    @Route("/")
+    @worker([HTTP_METHOD.Put])
+    @route("/")
     async updateUser() {
 
         const user: User = this.data.user;
@@ -106,8 +102,8 @@ export class UserController extends Controller {
 
     }
 
-    @Worker([HTTP_METHOD.Get])
-    @Route("/{id}")
+    @worker([HTTP_METHOD.Get])
+    @route("/{id}")
     async getUser() {
 
         const userId = Number(this.param.id);
@@ -119,8 +115,8 @@ export class UserController extends Controller {
 
     }
 
-    @Worker([HTTP_METHOD.Delete])
-    @Route("/{id}")
+    @worker([HTTP_METHOD.Delete])
+    @route("/{id}")
     async removeUser() {
 
         const userId = Number(this.param.id);
@@ -147,7 +143,7 @@ import { Response, Summary, Description} from 'fortjs-swagger';
 @Summary('get all users')
 @Description('return all saved users') 
 @Response(HTTP_STATUS_CODE.Ok, [User])
-@DefaultWorker()
+@defaultWorker()
 async getUsers() {
     const service = new UserService();
     return jsonResult(service.getUsers());
@@ -160,9 +156,9 @@ Here we have used three different decorators -
 * Description - used to describe the end point in details. This is not necessary most of the time.
 * Response -  used to define the response returned. In this example - we are telling swagger that : for http status "OK" the result will be array of model User. You can define multiple response in the same way i.e by using response decorator multiple time.
 
-<br/>In the similar way - we can define other workers.
+In the similar way - we can define other workers.
 
-# * More resources - 
-<br/>
+## More resources
+
 * Examples - https://github.com/ujjwalguptaofficial/fortjs-swagger/tree/master/examples
    

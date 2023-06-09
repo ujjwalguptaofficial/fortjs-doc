@@ -10,7 +10,7 @@ In order to create a view engine - You need to create a class which will impleme
 
 e.g - Let's see how we can use ejs as view engine. You can download the code for below example here - <a href="https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/ejs" target="_blank">ViewEngine configurtion example</a>
 
-```
+```javascript
 import { ViewEngine, ViewEngineData, getViewFromFile } from "fortjs";
 import * as ejs from "ejs"; 
 
@@ -23,11 +23,11 @@ export class EjsViewEngine implements ViewEngine {
 }
 ```
 
-The method `render` will be called by fortjs with value of type [ViewEngineData](/tutorial/type/view-engine-data). You need to use this value and return html string.
+The method `render` will be called by fortjs with value of type [ViewEngineData](/docs/types/view-engine-data.md). You need to use this value and return html string.
 
 After you have created view engine, you need to tell fort to use this view engine. Open app.ts /app.js
 
-```
+```javascript
 import { Fort } from 'fortjs';
 import { routes } from './routes';
 import { EjsViewEngine } from './ejs_view_engine';
@@ -42,10 +42,9 @@ Fort.create();
 Now We have successfully integrated our view engine with fortjs. Let's test our view engine setup - 
 
 ## Create a view
-<br/>
 create a file "index.ejs" inside the folder - "views". Paste the below code inside the file -
 
-```
+```html
 <html lang="en">
 
 <head>
@@ -66,10 +65,10 @@ In the above code - `title` and `msg` will be sent from the controller and rende
 
 Now let's pass data from Controller and call our view engine for rendering this view - 
 
-```
+```javascript
 export class DefaultController extends Controller {
 
-    @DefaultWorker()
+    @defaultWorker()
     async default() {
         const model = {
             title: "FortJs",

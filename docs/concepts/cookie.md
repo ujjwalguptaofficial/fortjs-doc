@@ -4,16 +4,18 @@ Keywords: "cookie, http, manipulation, fortjs, node"
 Description: "How to access Http Cookie in node using fortjs"
 ---
 
+# Cookie
+
 `cookie` is class member of Wall, Guard , Shield and Controller.
 
 Let's see how we can use cookie -
 
 ```
-import { Controller, DefaultWorker textResult, viewResult } from "fortjs";
-import { HttpCookie } from "fortjs";
+import { Controller, defaultWorker textResult } from "fortjs";
 
 export class DefaultController extends Controller {
-    @DefaultWorker()
+
+    @defaultWorker()
     async default() {
         
         // check exist

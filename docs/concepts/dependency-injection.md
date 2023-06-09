@@ -4,45 +4,44 @@ Keywords: "dependency injection, assign, singleton, fortjs, node js"
 Description: "Dependency injection in nodejs"
 ---
 
-FortJs provides "Assign" And "Singleton" decorator for dependency Injection. 
+# Dependency Injection
 
-## Assign
-<br/>
-Assign can be used in controller and all type of component.
+Dependency Injection is a process of injecting dependency into different parts by framework. it allows to write unit testable code.
 
-e.g - 
+FortJs provides `assign` and `singleton` decorator for dependency Injection. 
+## assign
+assign can be used in controller and all type of component.
 
-To inject "hello world" to a variable value
+Let's inject "hello world" to a variable value
 
 
 ```
 export class UserController extends Controller {
     service: UserService;
 
-    @Worker()
-    index(@Assign('hello world') value) {
+    @worker()
+    index(@assign('hello world') value) {
+
         console.log(value) // hello world
     }
 }
 ```
-<div class="top-border" style="margin: 25px 0;"></div>
-## Singleton
-<br/>
-Singleton creates a single object & maintain this across whole application.
 
-e.g -
+## singleton
 
-To inject a service in a controller constructor
+`singleton` allows you to inject a class dependency and maintain a single instance of the class across whole application.
+
+Let's inject a class `UserService` in a controller constructor
 
 ```
 export class UserController extends Controller {
     service: UserService;
 
-    constructor(@Singleton(UserService) service) {
+    constructor(@singleton(UserService) service) {
         super();
         this.service = service;
     }
 }
 ```
 
-By using `Singleton` you can save memory as its create only one instance of class & maintains throughout the app.  
+By using `singleton` you can save memory as its create only one instance of class and maintains throughout the app. 

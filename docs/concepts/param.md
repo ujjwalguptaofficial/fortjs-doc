@@ -4,19 +4,21 @@ Keywords: "param, route, customize, fortjs, node"
 Description: "parameterizing route in fortjs"
 ---
 
-`param` is class member of  Guard and Controller. It is used to extract route data for placeholder based routing.
+# param
 
-e.g - consider the route - "abc.com/{value}/hi" . Here value is a placeholder and this can be extracted using param. 
+you can use `param` to extract route data for variable routing. It is class member of Guard and Controller. 
 
-```
+e.g - consider the route - "abc.com/{value}/hi" . Here value is a variable and this can be extracted using param. 
+
+```javascript
 export class FileController extends Controller {
    
-    @Route("/scripts/{file}.js")
-    @Worker()
+    @route("/scripts/{file}.js")
+    @worker()
     async getScripts() {
         const fileName = this.param.file;
     }
 }
 ```
 
-For more info about routing, please check the [route](route) doc.
+For more info about routing, please check the [route](/docs/route.md) doc.

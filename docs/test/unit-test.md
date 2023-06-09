@@ -4,40 +4,45 @@ Keywords: "test, unit, e2e, fortjs, node"
 Description: "Setting up unit test in fortjs"
 ---
 
-As the codes written in fortjs are simple & clean, we want similar approach for test cases. Let's see one example for unit testing "UserController"- 
+# Unit test
+
+As the codes written in fortjs are simple & clean, we want similar approach for test cases. 
+
+Let's see one example for unit testing "UserController"- 
 
 Consider UserController implments Rest Api & codes are - 
 
 ```
-import { Controller, textResult, DefaultWorker, jsonResult, Worker, Route, HTTP_STATUS_CODE, HTTP_METHOD, Guards, Singleton } from 'fortjs';
-import { UserService } from '../services/user_service';
-import { ModelUserGuard } from '../guards/model_user_guard';
-import { User } from '../models/user';
+import { Controller, textResult, defaultWorker, jsonResult, worker, route, HTTP_STATUS_CODE, HTTP_METHOD, guards, singleton } from 'fortjs';
+import { UserService } from '@/services';
+import { ModelUserGuard } from '@/guards';
+import { User } from '@/models/user';
 
 export class UserController extends Controller {
 
     service: UserService;
-    constructor(@Singleton(UserService) service: UserService) {
+
+    constructor(@singleton(UserService) service: UserService) {
         super();
         this.service = service;
     }
 
-    @DefaultWorker()
+    @defaultWorker()
     async getUsers() {
         return jsonResult(this.service.getUsers());
     }
 
-    @Worker(HTTP_METHOD.Post)
-    @Route("/")
-    @Guards(ModelUserGuard)
+    @worker(HTTP_METHOD.Post)
+    @route("/")
+    @guards(ModelUserGuard)
     async addUser() {
         const user = this.data.user;
         const newUser = this.service.addUser(user);
         return jsonResult(newUser, HTTP_STATUS_CODE.Created);
     }
 
-    @Worker(HTTP_METHOD.Put)
-    @Route("/")
+    @worker(HTTP_METHOD.Put)
+    @route("/")
     async updateUser() {
         const user = new User().init(this.body);
         const userUpdated = this.service.updateUser(user);
@@ -50,8 +55,8 @@ export class UserController extends Controller {
 
     }
 
-    @Worker(HTTP_METHOD.Get)
-    @Route("/{id}")
+    @worker(HTTP_METHOD.Get)
+    @route("/{id}")
     async getUser() {
 
         const userId = Number(this.param.id);
@@ -75,6 +80,7 @@ describe('UserController', () => {
     beforeAll(async () => {
         await createApp();
         // UserController has dependency of UserService, which is injected by fortjs at run time. 
+        
         // Here UserService is a fake service in memory
         controller = new UserController(new UserService());
     });

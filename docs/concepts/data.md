@@ -4,14 +4,15 @@ Keywords: "data, components, options, fortjs, node"
 Description: "How to pass & access components data"
 ---
 
+# Data
 
-`data` is class member of Wall, Guard , Shield and Controller. It is used to transfer data from one component to another and finally to worker.
+`data` is class member of Wall, Guard , Shield and Controller. It is used to transfer data from one component to another till worker.
 
-e.g - Let's see how we can pass data from wall to controller - 
+e.g - Let's see how we can pass data from **Wall** to **Controller** - 
 
-### Wall
+## Pass data from Wall
 
-```
+```javascript
 import { Wall, textResult } from "fortjs";
 export class RequestLogger extends Wall {
 
@@ -34,14 +35,14 @@ export class RequestLogger extends Wall {
 
 The above wall is using `data` to pass ip to other components.
 
-### Access ip address passded from Wall in Controller
+## Access data passed from Wall in Controller
 
-```
-import { Controller, textResult, DefaultWorker } from "fortjs";
+```javascript
+import { Controller, textResult, defaultWorker } from "fortjs";
 
 export class DefaultController extends Controller {
 
-    @DefaultWorker()
+    @defaultWorker()
     async default() {
         // access ip 
         const ip = this.data.ip;

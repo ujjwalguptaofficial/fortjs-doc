@@ -5,32 +5,37 @@ Keywords: "logger, customization, fortjs, node"
 Description: "How to use & customize logger in fortjs"
 ---
 
-Logging is a very necessary part of development. We log for debugging, saving exception, information etc.
+# Logger
 
-That's why fortjs provides a default logger which is very simple & logs everything in console. The advantage of provided logger is that you don't need to import it everywhere.
+Logging is a required part of development. We log for debugging, saving exception, information etc.
+
+That's why fortjs provides a default logger which is very simple & logs everything in console. The advantage of provided logger is that you don't need to import it everywhere which makes your code clean.
 
 The `logger` is a class member of all components i.e controller, shield, wall, guard. Let's see an example - 
 
-```
-import { Controller, Worker } from "fortjs";
+```javascript
+import { Controller, worker } from "fortjs";
 
 export class UserController extends Controller {
    
-   @Worker()
+   @worker()
    async getAllUsers(){
        const users = [{
            id:1,
            name:'ujjwal'
        }];
+
        // log users
        this.logger.debug('users are', users);
    }
 }
 ```
 
-But you might want to log everything in files or database, so want to customize the logger. Logger can be customized very easily by creating a class & extending `Logger` 
+## Customize
 
-```
+You might want to log everything in files or database, so want to customize the default logger. Logger can be customized very easily by creating a class & extending `Logger` 
+
+```javascript
 import { Logger } from 'fortjs';
 
 export class CustomLogger extends Logger {
@@ -44,7 +49,7 @@ export class CustomLogger extends Logger {
 
 Now you need to tell framework to use your logger - 
 
-```
+```javascript
 import { Fort } from 'fortjs';
 
 Fort.logger = CustomLogger;
@@ -58,7 +63,6 @@ Logger has following methods available -
 * error(...args)
 * log(...args)
 
-<br/>Since you are extending, you can create your own method too.
+Since you are extending, you can create your own method too.
 
-<br/>
 For more help - You can see examples for [winston](https://www.npmjs.com/package/winston) implementation : [https://github.com/ujjwalguptaofficial/fortjs/tree/master/example/winston](https://github.com/ujjwalguptaofficial/fortjs/tree/master/example/winston)

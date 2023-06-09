@@ -4,6 +4,7 @@ Keywords: "http response, type, options, fortjs, node"
 Description: "Type HttpResponse member description"
 ---
 
+# HttpResponse
 
 ```
 type HttpResponse = {

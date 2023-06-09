@@ -4,15 +4,17 @@ Keywords: "test, unit, e2e, fortjs, node"
 Description: "Setting up e2e test in fortjs"
 ---
 
+# E2E Test
+
 For e2e test - we recommend to use Axios. But feel free to use your favourite http client library.
 
 Let's see an example - Consider UserController implments Rest Api & codes are - 
 
 ```
-import { Controller, textResult, DefaultWorker, jsonResult, Worker, Route, HTTP_STATUS_CODE, HTTP_METHOD, Guards, Singleton } from 'fortjs';
-import { UserService } from '../services/user_service';
-import { ModelUserGuard } from '../guards/model_user_guard';
-import { User } from '../models/user';
+import { Controller, textResult, defaultWorker, jsonResult, worker, route, HTTP_STATUS_CODE, HTTP_METHOD, guards, singleton } from 'fortjs';
+import { UserService } from '@/services';
+import { ModelUserGuard } from '@/guards';
+import { User } from '@/models';
 
 export class UserController extends Controller {
 
@@ -22,22 +24,22 @@ export class UserController extends Controller {
         this.service = service;
     }
 
-    @DefaultWorker()
+    @defaultWorker()
     async getUsers() {
         return jsonResult(this.service.getUsers());
     }
 
-    @Worker(HTTP_METHOD.Post)
-    @Route("/")
-    @Guards(ModelUserGuard)
+    @worker(HTTP_METHOD.Post)
+    @route("/")
+    @guards(ModelUserGuard)
     async addUser() {
         const user = this.data.user;
         const newUser = this.service.addUser(user);
         return jsonResult(newUser, HTTP_STATUS_CODE.Created);
     }
 
-    @Worker(HTTP_METHOD.Put)
-    @Route("/")
+    @worker(HTTP_METHOD.Put)
+    @route("/")
     async updateUser() {
         const user = new User().init(this.body);
         const userUpdated = this.service.updateUser(user);
@@ -50,8 +52,8 @@ export class UserController extends Controller {
 
     }
 
-    @Worker(HTTP_METHOD.Get)
-    @Route("/{id}")
+    @worker(HTTP_METHOD.Get)
+    @route("/{id}")
     async getUser() {
 
         const userId = Number(this.param.id);
@@ -66,8 +68,7 @@ export class UserController extends Controller {
 }
 ```
 
-## Test code - 
-
+## Test code
 
 ```
 import axios from "axios";
@@ -77,7 +78,7 @@ describe('/user', () => {
 
     let httpRequest;
     beforeAll(async () => {
-         await createApp();
+        await createApp();
         httpRequest = axios.create({
             baseURL: process.env.APP_URL + "/user",
             timeout: 1000

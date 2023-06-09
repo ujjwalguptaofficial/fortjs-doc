@@ -10,7 +10,7 @@ By default FortJs doesn't handle xml data in http body but can be configured ver
 
 You need to create a class extending abstract class `XmlParser`
 
-```
+```javascript
 import { XmlParser} from "fortjs";
 
 export class XmlToJsonParser extends XmlParser {
@@ -24,7 +24,7 @@ export class XmlToJsonParser extends XmlParser {
 
 and pass this class in App configuration - 
 
-```
+```javascript
 import { Fort } from 'fortjs';
 import { XmlToJsonParser } from './xml-parser';
 

@@ -4,18 +4,20 @@ Keywords: "format response, multiple response, mime type, fortjs, node"
 Description: "Formatting response in nodejs using fortjs"
 ---
 
+# Format response
+
 You can customize the format of your response and based on [content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation) fortjs select the appropriate response. If an appropriate response is not found then a response with status code - 406 is returned.
 
-A result of type - [HttpFormatResult](/tutorial/type/http-format-result) is used to return the response with different format.
+A result of type - [HttpFormatResult](/docs/types/http-format-result.md) is used to return the response with different format.
 
 Let's see an example -
 
 ```
-import { Controller, DefaultWorker, HttpFormatResult, HTTP_STATUS_CODE, MIME_TYPE} from "fortjs";
+import { Controller, defaultWorker, HttpFormatResult, HTTP_STATUS_CODE, MIME_TYPE} from "fortjs";
 
 export class RandomController extends Controller {
     
-    @DefaultWorker()
+    @defaultWorker()
     async format() {
         const result = {
             statusCode: HTTP_STATUS_CODE.Ok,

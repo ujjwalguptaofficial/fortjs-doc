@@ -4,9 +4,11 @@ Keywords: "http result, type, options, fortjs, node"
 Description: "Type HttpResult member description"
 ---
 
-The type `httpResult` is used by workers to return the result. 
+# HttpResult
 
-Structure of httpResult is - 
+The type `HttpResult` is used by workers to return the result. 
+
+Structure of HttpResult is - 
 
 ```
 type HttpResult = {
