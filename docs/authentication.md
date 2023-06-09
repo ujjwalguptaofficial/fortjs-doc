@@ -9,26 +9,27 @@ Description: "How to authenticate in nodejs using fortjs"
 
 There are multiple ways in which we can authenticate. In this doc guide - we will learn how to do session authentication based on userid/password combination.
 
-So the concept is simple - a registered user has userid and password. They can access the system once they have entered valid credential. We need to design a login page through which user can login.
+Consider this scenario - A registered user has userid and password. They can access the system once they have entered valid credential. We need to design a login page through which user can login.
 
 Let's consider that our app has a default controller and it can be accessed by anyone without login. Basically it contains a home page, a login page, a registration page etc.
 
 ```
 export class DefaultController extends Controller {
-    @DefaultWorker()
+
+    @defaultWorker()
     async default() {
         const result = await viewResult('controller:default,action:default');
         return result;
     }
 
-    @Worker(HTTP_METHOD.Get)
-    @Route("/login")
+    @worker(HTTP_METHOD.Get)
+    @route("/login")
     async getloginForm() {
         const result = viewResult("login_form");
         return result;
     } 
 
-    @Worker(HTTP_METHOD.Post)
+    @worker(HTTP_METHOD.Post)
     async login() {
         const {emailId, password} = this.body;
 
