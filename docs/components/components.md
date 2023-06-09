@@ -34,7 +34,7 @@ There are three types of components -
         </ul>
     </li>
     <li>
-        After <a href="/docs/wall">Wall</a> allows the request, it is sent to <a target="_blank" href="/docs/components/shield">Shield</a> and if shield 
+        After [Wall](/docs/components/wall.md) allows the request, it is sent to <a target="_blank" href="/docs/components/shield">Shield</a> and if shield 
         <ul>
             <li>Allows - It is sent to next component which is <a target="_blank" href="/docs/components/guard">Guard</a> </li>
             <li> Rejects - The result is considered as final result. The result has to go through wall outgoing event and finally http response is sent.</li>

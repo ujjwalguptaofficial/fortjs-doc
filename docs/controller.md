@@ -13,14 +13,14 @@ e.g - A real world application created for university may have sections - Studen
 
 A controller has following members - 
 
-* Request - [request](/tutorial/http-request)
-* Response - [response](/tutorial/http-response)
-* Cookie - [cookie](/tutorial/cookie)
-* Session - [session](/tutorial/session)
-* Query string data - [query](/tutorial/query)
-* Post data - [body](/tutorial/body)
-* Route parameter -  [param](/tutorial/param)
-* Data from other components - [data](/tutorial/data)
+* [Request](/docs/types/http-request.md)
+* [Response](/docs/types/http-response.md)
+* [Cookie](/docs/concepts/cookie.md)
+* [Session](/docs/concepts/session.md)
+* [Query data](/docs/concepts/query.md)
+* [Body data](/docs/concepts/body.md)
+* [Route parameter](/docs/concepts/param.md)
+* [Data from other components](/docs/concepts/data.md)
 
 ## Creating controller
 
