@@ -7,7 +7,7 @@ Description: "How to create & render views"
 
 # View
 
-A view is a HTML page which needs some data also called model to show those datas to users.The data(model) is passed from controller to view where view engine accepts the data and create the html page.
+A view is a HTML page which needs some data also called **model** to show those datas to users.The data(model) is passed from controller to view where view engine accepts the data and create the html page.
 
 ## viewResult
 
@@ -16,13 +16,14 @@ A view is rendered using the method `viewResult`. The viewResult accepts two par
 1. view identification - view location or view name or id
 2. model
 
-<br/>
 Let's see an example - 
 
-```
+```javascript
+import { defaultWorker, viewResult } from "fortjs"
+
 export class DefaultController extends Controller {
     
-    @DefaultWorker()
+    @defaultWorker()
     async default() {
         const model = {
             title: 'FortJs'
