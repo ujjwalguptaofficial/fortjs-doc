@@ -153,7 +153,7 @@ For more information on routes, please read [routes doc](/docs/route.md).
 
 We only need to provide controller route list to fortjs - 
 
-```js title="src/routes"
+```js title="src/index"
 import * as path from "path";
 import { Fort } from "fortjs";
 import { routes } from "@/routes";

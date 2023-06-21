@@ -7,7 +7,7 @@ Description: "Description about worker in fortjs"
 
 # Worker
 
-Worker is a class method which does particular task and return the final result. 
+Worker is a class method which acts as end point. It does particular task and return the final result. 
 
 > For simpler understanding - Consider worker is a person who does a particular task and return the result.
 
@@ -84,4 +84,4 @@ export class UserController extends Controller {
 }
 ```
 
-A route allows you to customize the path of worker or end point.
+A [route](/docs/route.md) allows you to customize the path of worker or end point.
