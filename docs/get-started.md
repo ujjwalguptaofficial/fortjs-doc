@@ -192,6 +192,8 @@ We hope this gives you basic understanding of fortjs. If you have any doubt or r
 
 ## Resources
 
+* [Fortjs examples](https://github.com/ujjwalguptaofficial/fortjs-examples)
+
 * [Creating REST API using Typescript](https://medium.com/fortjs/rest-api-using-typescript-94004d9ae5e6)
 
 * [Creating REST API using es6](https://medium.com/fortjs/rest-api-in-nodejs-using-es6-227765440b2b)
