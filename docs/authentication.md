@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 title: "Authentication"
-keywords: "authentication, example, tutorial, fortjs, node"
+keywords: [authentication, example, tutorial, fortjs, node]
 description: "How to authenticate in nodejs using fortjs"
 ---
  

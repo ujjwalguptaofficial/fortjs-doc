@@ -1,6 +1,6 @@
 ---
 title: "Expect Body"
-keywords: "body, secure body, validation, fortjs, node"
+keywords: [body, secure body, validation, fortjs, node]
 description: "This page tells about decorator ExpectBody & how to use this."
 ---
 

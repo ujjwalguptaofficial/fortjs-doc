@@ -1,6 +1,6 @@
 ---
 title: "Swagger"
-keywords: "swagger, automatic generate, integrate, fortjs, node"
+keywords: [swagger, automatic generate, integrate, fortjs, node]
 description: "How to integrate swagger in fortjs"
 ---
 

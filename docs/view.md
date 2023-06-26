@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 title: "View"
-keywords: "view, render, fortjs, node"
+keywords: [view, render, fortjs, node]
 description: "How to create & render views"
 ---
 

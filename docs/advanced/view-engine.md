@@ -1,6 +1,6 @@
 ---
 title: "View Engine"
-keywords: "view engine, cutomize, options, fortjs, node"
+keywords: [view engine, cutomize, options, fortjs, node]
 description: "Creating custom view engine in fortjs"
 ---
 

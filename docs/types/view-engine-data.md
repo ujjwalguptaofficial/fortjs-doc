@@ -1,6 +1,6 @@
 ---
 title: "View Engine Data"
-keywords: "view engine, data, types, fortjs, node"
+keywords: [view engine, data, types, fortjs, node]
 description: "Type viewEngineData member description"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "XmlBodyParser"
-keywords: "xml, parser, accept xml, body, node"
+keywords: [xml, parser, accept xml, body, node]
 description: "Configure fortjs to accept xml data as http body"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Initialize Controller"
-keywords: "test, unit, initialize, fortjs, node"
+keywords: [test, unit, initialize, fortjs, node]
 description: "initialize is a method in a controller which initializes a controller."
 ---
 

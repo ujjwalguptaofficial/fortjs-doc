@@ -1,6 +1,6 @@
 ---
 title: "Guard"
-keywords: "guard, component, types, fortjs, node"
+keywords: [guard, component, types, fortjs, node]
 description: "Guard is security layer on top of Worker"
 ---
 

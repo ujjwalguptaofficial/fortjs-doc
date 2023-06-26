@@ -1,6 +1,6 @@
 ---
 title: "Session Provider"
-keywords: "session provider, create session provider, options, fortjs, node"
+keywords: [session provider, create session provider, options, fortjs, node]
 description: "Customize session provider in fortjs"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Http Format Result"
-keywords: "http format result, type, options, fortjs, node"
+keywords: [http format result, type, options, fortjs, node]
 description: "HttpFormatResult type description"
 ---
 

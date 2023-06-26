@@ -1,6 +1,6 @@
 ---
 title: "GraphQl"
-keywords: "graphql, integrate, fortjs, node"
+keywords: [graphql, integrate, fortjs, node]
 description: "How to use graphql in node using fortjs"
 ---
 

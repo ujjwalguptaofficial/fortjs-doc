@@ -1,6 +1,6 @@
 ---
 title: "Unit Test"
-keywords: "test, unit, e2e, fortjs, node"
+keywords: [test, unit, e2e, fortjs, node]
 description: "Setting up unit test in fortjs"
 ---
 

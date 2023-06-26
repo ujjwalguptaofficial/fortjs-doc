@@ -1,6 +1,6 @@
 ---
 title: "Customize Error"
-keywords: "customize error, handle error, fortjs, node"
+keywords: [customize error, handle error, fortjs, node]
 description: "How to customize error in nodejs using fortjs"
 ---
 

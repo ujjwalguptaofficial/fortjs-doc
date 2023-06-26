@@ -1,6 +1,6 @@
 ---
 title: "Http Request"
-keywords: "http request, type, options, fortjs, node"
+keywords: [http request, type, options, fortjs, node]
 description: "Type http request member description"
 ---
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 title: "Route"
-keywords: "route, customize, options, fortjs, node"
+keywords: [route, customize, options, fortjs, node]
 description: "Different types of route and how to customize them in fortjs"
 ---
 

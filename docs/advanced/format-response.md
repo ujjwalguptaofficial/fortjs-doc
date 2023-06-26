@@ -1,6 +1,6 @@
 ---
 title: "Format Response"
-keywords: "format response, multiple response, mime type, fortjs, node"
+keywords: [format response, multiple response, mime type, fortjs, node]
 description: "Formatting response in nodejs using fortjs"
 ---
 

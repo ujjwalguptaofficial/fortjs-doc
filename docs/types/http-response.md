@@ -1,6 +1,6 @@
 ---
 title: "Http Response"
-keywords: "http response, type, options, fortjs, node"
+keywords: [http response, type, options, fortjs, node]
 description: "Type HttpResponse member description"
 ---
 

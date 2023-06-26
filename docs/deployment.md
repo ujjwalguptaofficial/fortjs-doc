@@ -1,7 +1,7 @@
 ---
 sidebar_position: 17
 title: "Deployment"
-keywords: "deploy, instructions, fortjs, node"
+keywords: [deploy, instructions, fortjs, node]
 description: "Deployment note in nodejs using fortjs"
 ---
 
