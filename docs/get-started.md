@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
-Title: "Get Started"
-Keywords: "introduction, get started, fort-creator fortjs, node"
-Description: "Fortjs introduction & how to use."
+title: "Get Started"
+keywords: "introduction, get started, fort-creator, fortjs, node"
+description: "In this get started tutorial - we will see how to setup a project and understand basic terminology about fortjs."
 ---
 
 # Get started

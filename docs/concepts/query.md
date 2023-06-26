@@ -1,7 +1,7 @@
 ---
-Title: "Query"
-Keywords: "query string, variable, fortjs, node"
-Description: "Accessing query string value in fortjs"
+title: "Query"
+keywords: "query string, variable, fortjs, node"
+description: "Accessing query string value in fortjs"
 ---
 
 # query

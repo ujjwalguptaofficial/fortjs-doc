@@ -1,7 +1,7 @@
 ---
-Title: "Decorator"
-Keywords: "route, worker, guard, shield, fortjs, node"
-Description: "This page tells about different decorator present in fortjs."
+title: "Decorator"
+keywords: "route, worker, guard, shield, fortjs, node"
+description: "This page tells about different decorator present in fortjs."
 ---
 
 # Decorators

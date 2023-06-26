@@ -1,7 +1,7 @@
 ---
-Title: "Cookie"
-Keywords: "cookie, http, manipulation, fortjs, node"
-Description: "How to access Http Cookie in node using fortjs"
+title: "Cookie"
+keywords: "cookie, http, manipulation, fortjs, node"
+description: "How to access Http Cookie in node using fortjs"
 ---
 
 # Cookie

@@ -1,8 +1,8 @@
 ---
 sidebar_position: 9
-Title: "Logger"
-Keywords: "logger, customization, fortjs, node"
-Description: "How to use & customize logger in fortjs"
+title: "Logger"
+keywords: "logger, customization, fortjs, node"
+description: "How to use & customize logger in fortjs"
 ---
 
 # Logger

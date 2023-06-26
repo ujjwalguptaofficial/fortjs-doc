@@ -1,8 +1,8 @@
 ---
 sidebar_position: 7
-Title: "Validation"
-Keywords: "validation, expect-body, expect-query, fortjs, node"
-Description: "How to validate data in fortjs using different components & decorators."
+title: "Validation"
+keywords: "validation, expect-body, expect-query, fortjs, node"
+description: "How to validate data in fortjs using different components & decorators."
 ---
 
 # Validation

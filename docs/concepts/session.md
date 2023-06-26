@@ -1,7 +1,7 @@
 ---
-Title: "Session"
-Keywords: "session, uses, example, fortjs, node"
-Description: "Using session in fortjs"
+title: "Session"
+keywords: "session, uses, example, fortjs, node"
+description: "Using session in fortjs"
 ---
 # Session
 

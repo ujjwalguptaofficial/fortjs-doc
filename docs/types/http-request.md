@@ -1,7 +1,7 @@
 ---
-Title: "Http Request"
-Keywords: "http request, type, options, fortjs, node"
-Description: "Type http request member description"
+title: "Http Request"
+keywords: "http request, type, options, fortjs, node"
+description: "Type http request member description"
 ---
 
 # HttpRequest

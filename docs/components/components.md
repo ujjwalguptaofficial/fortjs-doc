@@ -1,8 +1,8 @@
 ---
 sidebar_position: 11
-Title: "Components"
-Keywords: "components, modularize, app, fortjs, node"
-Description: "Description about components of fortjs"
+title: "Components"
+keywords: "components, modularize, app, fortjs, node"
+description: "Description about components of fortjs"
 ---
 
 # Components

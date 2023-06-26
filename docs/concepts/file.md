@@ -1,7 +1,7 @@
 ---
-Title: "File"
-Keywords: "file, upload, fortjs, node"
-Description: "Access request file in nodejs using fortjs"
+title: "File"
+keywords: "file, upload, fortjs, node"
+description: "Access request file in nodejs using fortjs"
 ---
 
 # File

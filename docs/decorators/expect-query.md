@@ -1,7 +1,7 @@
 ---
-Title: "Expect Query"
-Keywords: "query, secure query, validation, fortjs, node"
-Description: "This page tells about decorator ExpectQuery & how to use this."
+title: "Expect Query"
+keywords: "query, secure query, validation, fortjs, node"
+description: "This page tells about decorator ExpectQuery & how to use this."
 ---
 
 # expectQuery

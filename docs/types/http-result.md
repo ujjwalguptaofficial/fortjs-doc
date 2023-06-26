@@ -1,7 +1,7 @@
 ---
-Title: "HttpResult"
-Keywords: "http result, type, options, fortjs, node"
-Description: "Type HttpResult member description"
+title: "HttpResult"
+keywords: "http result, type, options, fortjs, node"
+description: "Type HttpResult member description"
 ---
 
 # HttpResult

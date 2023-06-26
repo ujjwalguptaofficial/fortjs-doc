@@ -1,7 +1,7 @@
 ---
-Title: "Shield"
-Keywords: "shield, component, modular, fortjs, node"
-Description: "Description about Shield component & how to use"
+title: "Shield"
+keywords: "shield, component, modular, fortjs, node"
+description: "Description about Shield component & how to use"
 ---
 
 # Shield

@@ -1,7 +1,7 @@
 ---
-Title: "Param"
-Keywords: "param, route, customize, fortjs, node"
-Description: "parameterizing route in fortjs"
+title: "Param"
+keywords: "param, route, customize, fortjs, node"
+description: "parameterizing route in fortjs"
 ---
 
 # param

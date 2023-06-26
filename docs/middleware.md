@@ -1,8 +1,8 @@
 ---
 sidebar_position: 10
-Title: "Middleware"
-Keywords: "middleware, pattern, fortjs, node"
-Description: "How to use middleware pattern in fortjs."
+title: "Middleware"
+keywords: "middleware, pattern, fortjs, node"
+description: "How to use middleware pattern in fortjs."
 ---
 
 # Middleware

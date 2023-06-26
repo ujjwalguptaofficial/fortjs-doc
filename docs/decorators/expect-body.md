@@ -1,7 +1,7 @@
 ---
-Title: "Expect Body"
-Keywords: "body, secure body, validation, fortjs, node"
-Description: "This page tells about decorator ExpectBody & how to use this."
+title: "Expect Body"
+keywords: "body, secure body, validation, fortjs, node"
+description: "This page tells about decorator ExpectBody & how to use this."
 ---
 
 # expectBody

@@ -1,7 +1,7 @@
 ---
-Title: "Wall"
-Keywords: "wall, component, options, fortjs, node"
-Description: "Description about wall components & its uses"
+title: "Wall"
+keywords: "wall, component, options, fortjs, node"
+description: "Description about wall components & its uses"
 ---
 
 # Wall

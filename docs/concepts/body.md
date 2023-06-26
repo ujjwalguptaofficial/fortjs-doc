@@ -1,7 +1,7 @@
 ---
-Title: "Body"
-Keywords: "request, post, body, fortjs, node"
-Description: "fortjs body member details"
+title: "Body"
+keywords: "request, post, body, fortjs, node"
+description: "fortjs body member details"
 ---
 
 # Body

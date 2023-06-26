@@ -1,7 +1,7 @@
 ---
-Title: "Socket.io"
-Keywords: "socket, integration, options, fortjs, node"
-Description: "How to use socket.io in fortjs"
+title: "Socket.io"
+keywords: "socket, integration, options, fortjs, node"
+description: "How to use socket.io in fortjs"
 ---
 
 # Socket.io Configuration

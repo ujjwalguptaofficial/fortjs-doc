@@ -1,8 +1,8 @@
 ---
 sidebar_position: 2
-Title: "Controller"
-Keywords: "controller, section, fortjs, node"
-Description: "Description about controller in fortjs"
+title: "Controller"
+keywords: "controller, section, fortjs, node"
+description: "Description about controller in fortjs"
 ---
 
 # Controller

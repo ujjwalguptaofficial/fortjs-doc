@@ -1,7 +1,7 @@
 ---
-Title: "Dependency Injection"
-Keywords: "dependency injection, assign, singleton, fortjs, node js"
-Description: "Dependency injection in nodejs"
+title: "Dependency Injection"
+keywords: "dependency injection, assign, singleton, fortjs, node js"
+description: "Dependency injection in nodejs"
 ---
 
 # Dependency Injection

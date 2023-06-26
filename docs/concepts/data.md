@@ -1,7 +1,7 @@
 ---
-Title: "Data"
-Keywords: "data, components, options, fortjs, node"
-Description: "How to pass & access components data"
+title: "Data"
+keywords: "data, components, options, fortjs, node"
+description: "How to pass & access components data"
 ---
 
 # Data

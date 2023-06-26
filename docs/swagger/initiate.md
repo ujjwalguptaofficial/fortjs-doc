@@ -1,7 +1,7 @@
 ---
-Title: "Swagger Initialization"
-Keywords: "swagger, automatic generate, integrate, fortjs, node"
-Description: "Swagger integration in fortjs"
+title: "Swagger Initialization"
+keywords: "swagger, automatic generate, integrate, fortjs, node"
+description: "Swagger integration in fortjs"
 ---
 
 # Initiate Swagger  
