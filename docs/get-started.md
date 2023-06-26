@@ -7,7 +7,7 @@ Description: "Fortjs introduction & how to use."
 
 # Get started
 
-In this get started tutorial - we will see how to setup the project.
+In this get started tutorial - we will see how to setup a project and understand basic terminology about fortjs.
 
 ## Setup
 
