@@ -18,10 +18,10 @@ Fortjs exposes its httpserver object and this object can be used to initiate soc
 ```
 import { Fort } from "fortjs";
 import { routes } from "./routes";
-import * as socketIo from "socket.io";
+import { Server } from "socket.io";
 
 const initSocketIo = () => {
-    const io = socketIo(Fort.httpServer);
+    const io = new Server(Fort.httpServer);
     io.on("connection", (socket) => {
         Fort.logger.info("user connected");
         socket.on('disconnect', () => {
@@ -30,6 +30,7 @@ const initSocketIo = () => {
 
         socket.on('chat message', (msg) => {
             Fort.logger.info(`message is ${msg}`);
+            io.emit('chat message', msg);
         });
     });
 }
@@ -39,4 +40,6 @@ Fort.create();
 
 ```
 
-We have created a method - "initSocketIo" which will initializes the socket.io. This uses `httpServer` object.
+We have created a method - "initSocketIo" which will initializes the socket.io `Server` using `httpServer` object.
+
+Here is example for implementation - [Fortjs socket.io](https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/socket.io)
