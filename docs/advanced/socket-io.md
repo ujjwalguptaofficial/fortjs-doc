@@ -1,7 +1,5 @@
 ---
-title: "Socket.io"
 keywords: [socket, integration, options, fortjs, node]
-description: "How to use socket.io in fortjs"
 ---
 
 # Socket.io Configuration
@@ -9,7 +7,7 @@ description: "How to use socket.io in fortjs"
 Socket.IO enables real-time, bidirectional and event-based communication.
 It works on every platform, browser or device, focusing equally on reliability and speed.
 
-For more info about socke.io, visit - https://socket.io/
+For more info about socket.io, visit - https://socket.io/
 
 socket.io can be injected into fortjs very easily. Let's see how ?
 

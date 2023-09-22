@@ -56,7 +56,20 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      metadata: [{ name: 'keywords', content: 'nodejs, framework, typescript, javascript, MVC' }],
+      metadata: [
+        { name: 'keywords', content: 'nodejs, framework, typescript, javascript, MVC' },
+        { name: 'robots', content: 'index, follow' },
+        { name: 'Revisit-After', content: '1 days' },
+        { name: 'Rating', content: 'General' },
+        { name: 'author', content: 'Ujjwal Gupta' },
+        { name: 'og:site_name', content: 'Fortjs Doc' },
+        { name: 'og:url', content: 'https://ujjwalguptaofficial.github.io/fortjs-doc/' },
+        { name: 'og:type', content: 'Fortjs Doc' },
+        { name: 'og:image', content: '/img/icons/fort_js_logo_1200_630.png' },
+        { name: 'og:image', content: '/img/icons/fort_js_logo_500_500.png' },
+        { name: 'twitter:creator', content: '@ujjwal_kr_gupta' },
+        { name: 'twitter:image', content: 'https://ujjwalguptaofficial.github.io/fortjs-doc/img/icons/fort_js_logo_1200_630.png' },
+      ],
       navbar: {
         title: 'FortJs',
         // logo: {
