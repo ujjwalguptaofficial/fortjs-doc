@@ -57,7 +57,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       metadata: [
-        { name: 'keywords', content: 'nodejs, framework, typescript, javascript, MVC' },
+        { name: 'keywords', content: 'nestjs, framework, typescript, javascript, MVC' },
         { name: 'robots', content: 'index, follow' },
         { name: 'Revisit-After', content: '1 days' },
         { name: 'Rating', content: 'General' },

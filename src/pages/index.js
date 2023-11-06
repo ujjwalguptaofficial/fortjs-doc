@@ -30,8 +30,10 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`Component based MVC framework for nodejs`}
+      description="Component based MVC web framework for nodejs targeting good code structures & modularity."
+      keywords="nestjs, nodejs, framework, typescript, javascript, MVC"
+    >
       <HomepageHeader />
       <main>
         <HomepageFeatures />
