@@ -1,7 +1,7 @@
 ---
 sidebar_position: 9
 title: "Logger"
-keywords: [logger, customization, fortjs, node]
+keywords: [logger, customisation, node]
 description: "How to use & customize logger in fortjs"
 ---
 
@@ -14,7 +14,7 @@ That's why fortjs provides a default logger which is very simple & logs everythi
 The `logger` is a class member of all components i.e controller, shield, wall, guard. Let's see an example - 
 
 ```javascript
-import { Controller, worker } from "fortjs";
+import { Controller, worker, jsonResult } from "fortjs";
 
 export class UserController extends Controller {
    
@@ -27,6 +27,8 @@ export class UserController extends Controller {
 
        // log users
        this.logger.debug('users are', users);
+
+       return jsonResult(users);
    }
 }
 ```

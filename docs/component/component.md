@@ -5,9 +5,9 @@ keywords: [components, modularize, app, fortjs, node]
 description: "Description about components of fortjs"
 ---
 
-# Components
+# Component
 
-Components are most important part of fort application. They are independent & every component has its own lifecycle and scope. It helps you to modularize your app & reutilize codes.
+Component are most important part of fort application. It helps you to write modular code and reuse. They are independent & every component has its own lifecycle and scope. 
 
 There are three types of components - 
 
