@@ -83,7 +83,7 @@ Here you can see that `DefaultController` has been mapped with path "/*". This i
 
 For more info on controller, please read [Controller doc](./controller.md)
 
-### Worker
+### Route
 
 Route are endpoint which is coupled with controller method. When the endpoint is called, the method tied with that endpoint is executed.
 
