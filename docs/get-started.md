@@ -7,7 +7,7 @@ description: "In this get started tutorial - we will see how to setup a project 
 
 # Get started
 
-In this get started tutorial - we will see how to setup a project and understand basic terminology about fortjs.
+Fort.js is a web framework for Node.js that aims to provide a simple and efficient way to build web applications. In this tutorial, we'll go through the steps to set up a basic project and understand basic terminology about fortjs.
 
 ## Setup
 
@@ -26,38 +26,38 @@ You will see a prompt to choose project language with options -
 
 Choose your language and fort-creator will create a project for you.
 
-Once the project is successfully initated, run these command - 
+Once the project is successfully created, run these command - 
 
 ```
 cd <project name>
 npm run dev
 ```
 
-Now see your app in action by visiting url - <a target="_blank" href="http://localhost:4000">localhost:4000</a>
+Open your browser and navigate to `http://localhost:4000` - You will see fortjs default page.
 
 ## Basics
 
 Let's understand some basic of fortjs -
 
-1. Controllers
-2. Workers
-3. Routes
-4. Bootstrapping
+1. Controller
+2. Route
+3. Bootstrapping
 
-### Controllers
+### Controller
 
-Controller are classes which contains the logic of your application. Each class represents an end point which is mapped with a route.
+Controller is a class that defines methods to handle specific HTTP endpoints, encapsulating the logic for processing incoming requests and producing appropriate responses. Controllers play a central role in organizing and structuring the application's request-handling logic.
+
+👉 Each controller represents an end point which is mapped with a route.
 
 In our current code - `DefaultController` is mapped with route `/*'. 
 
 ```js title="src/controllers/default_controller"
 
-import { Controller, worker, viewResult, assign, route } from "fortjs";
+import { Controller, viewResult, assign, http } from "fortjs";
 
 export class DefaultController extends Controller {
 
-    @worker()
-    @route("/")
+    @http.get("/")
     async index(@assign('FortJs') title) {
 
         const data = {
@@ -81,20 +81,20 @@ export const routes = [{
 
 Here you can see that `DefaultController` has been mapped with path "/*". This is a controller level route.
 
-For more info on controller, please read [Controller doc](/docs/controller.md)
+For more info on controller, please read [Controller doc](./controller.md)
 
 ### Worker
 
-`Worker` are method inside `Controller` which acts as end point. A special decorator `worker` is used to mark a method as worker.
+Route are endpoint which is coupled with controller method. When the endpoint is called, the method tied with that endpoint is executed.
+
+A special decorator `http` is used to defined which `Http Method` you want to support for your end point and the path of your endpoint.
 
 ```js title="src/controllers/default_controller"
-
-import { Controller, worker, viewResult, assign, route } from "fortjs";
+import { Controller, viewResult, assign, http } from "fortjs";
 
 export class DefaultController extends Controller {
 
-    @worker()
-    @route("/")
+    @http.get("/")
     async index(@assign('FortJs') title) {
 
         const data = {
@@ -107,26 +107,18 @@ export class DefaultController extends Controller {
 }
 ```
 
-The `index` method here is a worker. 
-
-For more info about worker - please read [worker doc](/docs/worker.md)
-
-### Route
-
-In the worker code - we are using `route` decorator to customize the worker path. Here we have used "/" path in the route.
+In the above code - `http.get` decorator is used to make our endpoint support only get `Http Method` and parameter value "/" is passed which will set our endpoint path. 
 
 This is how when we hit - `http://localhost:4000/`, the index method is run and we see a html page in the reponse.
 
 Let's create another method `helloWorld` which will be mapped with endpoint `hello-world` and it will return text `Hello World`.
 
 ```js title="src/controllers/default_controller"
-
-import { Controller, worker, viewResult, assign, route, textResult } from "fortjs";
+import { Controller, viewResult, assign, http } from "fortjs";
 
 export class DefaultController extends Controller {
 
-    @worker()
-    @route("/")
+    @http.get("/")
     async index(@assign('FortJs') title) {
 
         const data = {
@@ -137,8 +129,7 @@ export class DefaultController extends Controller {
 
     }
 
-    @worker()
-    @route("/hello-world")
+    @http.get("/hello-world")
     async helloWorld(){
         return textResult("Hello World");
     }
@@ -147,11 +138,11 @@ export class DefaultController extends Controller {
 
 now hit the url - [http://localhost:4000/hello-world](http://localhost:4000/hello-world)
 
-For more information on routes, please read [routes doc](/docs/route.md).
+For more information on routes, please read [routes doc](./route.md).
 
 ### Bootstrapping
 
-We only need to provide controller route list to fortjs - 
+Bootstrapping is very simple in fortjs. The minimum requirement is to define your controller routes and provide routes to fortjs - 
 
 ```js title="src/index"
 import * as path from "path";
@@ -159,14 +150,8 @@ import { Fort } from "fortjs";
 import { routes } from "@/routes";
 
 export const createApp = async () => {
-    Fort.folders = [{
-        alias: "/",
-        path: path.join(__dirname, "../static")
-    }];
     Fort.routes = routes;
-
     process.env.APP_URL = `http://localhost:${Fort.port}`;
-
     await Fort.create();
 };
 
@@ -180,10 +165,7 @@ if (process.env.NODE_ENV !== "test") {
 
 ```
 
-You can also see `Fort.folders` code. This is used to mount a folder to a route path. 
-
-There are many more options. Please read [Bootstrapping doc](/docs/setup.md) for more information.
-
+Read [Bootstrapping doc](/docs/setup.md) for more information.
 -----
 
 We hope this gives you basic understanding of fortjs. If you have any doubt or requirements - please create a discussion or issue on github.
@@ -194,6 +176,8 @@ We hope this gives you basic understanding of fortjs. If you have any doubt or r
 
 * [Fortjs examples](https://github.com/ujjwalguptaofficial/fortjs-examples)
 
+* [Rest Api Example] (https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/rest)
+
 * [Creating REST API using Typescript](https://medium.com/fortjs/rest-api-using-typescript-94004d9ae5e6)
 
 * [Creating REST API using es6](https://medium.com/fortjs/rest-api-in-nodejs-using-es6-227765440b2b)
@@ -201,5 +185,3 @@ We hope this gives you basic understanding of fortjs. If you have any doubt or r
 * [MongoDb Example](https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/mongodb)
 
 * [Crud operation using html form](https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/crud)
-
-* [Rest Api Example] (https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/rest)

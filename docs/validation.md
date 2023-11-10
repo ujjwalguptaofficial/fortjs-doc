@@ -7,7 +7,7 @@ description: "How to validate data in fortjs using different components & decora
 
 # Validation
 
-Validation is an important part of any application & that's why fortjs provides several components and decorators to help you write validation code in easy & standard way.
+Validation is an important part of any application & that's why fortjs provides several components and decorators to help you write validation code in easy & modular way.
 
 Let's see how - 
 
