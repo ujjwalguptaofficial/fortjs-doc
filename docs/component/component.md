@@ -7,17 +7,17 @@ description: "Description about components of fortjs"
 
 # Component
 
-Component are most important part of fort application. It helps you to write modular code and reuse. They are independent & every component has its own lifecycle and scope. 
+Components are a vital part of a Fort application, facilitating the writing of modular and reusable code. They operate independently, each having its own lifecycle and scope.
 
-There are three types of components - 
+There are three types of components in Fort:
 
 1. [Wall](/docs/component/wall)
-
 2. [Shield](/docs/component/shield)
-
 3. [Guard](/docs/component/guard)
 
-## Concept 
+These components play distinct roles in the application's architecture, contributing to its flexibility and maintainability.
+
+## Component Flow 
 
 <!-- <img src={require("/static/img/icons/fort_component.png").default} height="600"/> -->
 
@@ -28,11 +28,48 @@ Initialize Components
     |
 Execute Walls (Incoming)
     |
+    | (If Wall Rejects)
+    |----------------------|
+    |                      |
+    | Response Flow        |
+    |                      |
+    |----------------------|
+    |
+    | (If Wall Allows)
+    |----------------------|
+    |                      |
+    | Execute Shields       |
+    |                      |
+    |----------------------|
+    |
 Execute Shields
+    |
+    | (If Shield Rejects)
+    |----------------------|
+    |                      |
+    | Execute Walls        |
+    | (Outgoing)           |
+    |                      |
+    |----------------------|
+    |
+    | (If Shield Allows)
+    |----------------------|
+    |                      |
+    | Execute Guards       |
+    |                      |
+    |----------------------|
     |
 Execute Guards
     |
-Execute Controller
+    | (If Guard Rejects)
+    |----------------------|
+    |                      |
+    | Execute Walls        |
+    | (Outgoing)           |
+    |                      |
+    |----------------------|
+    |
+    | (If Guard Allows)
     |----------------------|
     |                      |
     | Execute Controller   |
@@ -40,46 +77,64 @@ Execute Controller
     |                      |
     |----------------------|
     |
+Execute Controller
+    |
 Execute Walls (Outgoing)
     |
 Response Flow
+    |
 
 ```
+👉 **The above picture illustrates the architecture of a Fort.js app and the flow of an HTTP request within the app:**
 
-**The above picture shows the architecture of fortjs app and flow of http request inside app -** 
+When an HTTP request enters a Fort.js app, it embarks on a journey through a well-defined sequence of components, each playing a crucial role in the app's architecture. The journey is orchestrated as follows:
 
-<ul>
-    <li>
-    When a http request comes to your app - it has to go through sequence of components i.e <a href="/docs/component/wall">Wall</a>, <a target="_blank" href="/docs/component/shield">Shield</a> & <a target="_blank" href="/docs/component/guard">Guard</a> and if everyone allows then request is transferred to Worker inside <a target="_blank" href="/docs/controller">Controller</a> where the actual resource is present.
-    </li>
-    <li>The Http Request has to first go through component <a href="/docs/component/wall">Wall</a>. The incoming event of wall is called and if wall 
-        <ul>
-            <li>Allows - It is sent to next lower level component which is <a target="_blank" href="/docs/component/shield">Shield</a></li>
-            <li>Rejects - The result is considered as final result and result is sent as http response & its lifecycle is ended there.</li>
-        </ul>
-    </li>
-    <li>
-        After [Wall](/docs/component/wall.md) allows the request, it is sent to <a target="_blank" href="/docs/component/shield">Shield</a> and if shield 
-        <ul>
-            <li>Allows - It is sent to next component which is <a target="_blank" href="/docs/component/guard">Guard</a> </li>
-            <li> Rejects - The result is considered as final result. The result has to go through wall outgoing event and finally http response is sent.</li>
-        </ul>
-    </li>
-    <li>
-        After <a target="_blank" href="/docs/component/shield">Shield</a> allows - the request is allowed to go inside <a target="_blank" href="/docs/controller">Controller</a> & control is transferred to <a target="_blank" href="/docs/component/guard">Guard</a> & if guard
-        <ul>
-            <li>Allows - It is sent to Worker where the actual resource is present.</li>
-            <li> Rejects - The result is considered as final result. The result has to go through wall outgoing event and finally http response is sent.</li>
-        </ul>
-    </li>
-</ul>
+1. **Initialize Components:**
+   - The app initializes its components, preparing for the incoming request.
 
-### Summary
+2. **Execute Walls (Incoming):**
+   - The request encounters the first line of defense, the [Wall](/docs/component/wall). 
+   - If the Wall rejects the request, the journey concludes with a direct response flow.
+   - If the Wall allows, the request proceeds to the next phase.
 
-* It is not necessary to create any components, you can have just Controller and Worker. But it is highly recommended to use components since components helps to modularize your app into small dedicated features making your code cleaner, reutilizable & testable.
+3. **Execute Shields:**
+   - The [Shield](/docs/component/shield) evaluates the request, determining whether to grant access to the next stage.
+   - If the Shield rejects, the journey redirects to execute outgoing Walls, leading to the response flow.
+   - If the Shield allows, the request advances to the next component.
 
-* Here we saw Components are being used to block the request, but it can be also used to do some work and pass the result from one component to another. Check out particular component to know more. 
+4. **Execute Guards:**
+   - The [Guard](/docs/component/guard) assesses the request, deciding whether it's authorized to proceed to the controller method.
+   - If the Guard rejects, the journey reroutes to execute outgoing Walls, concluding with the response flow.
+   - If the Guard allows, the request moves forward to the final phase.
 
-e.g - The validation of data, extracting some information like ip address & passing from one component to another etc.
+5. **Execute Controller Method:**
+   - The request reaches the [Controller](/docs/controller), executing the designated method that encapsulates the desired resource.
+
+6. **Execute Walls (Outgoing):**
+   - Outgoing [Walls](/docs/component/wall) may perform additional actions before the response is sent.
+   - The journey proceeds to the final phase.
+
+7. **Response Flow:**
+   - The HTTP response is constructed, reflecting the outcomes of the entire journey through the app.
+
+In this structured and modular flow, each component contributes to the app's security, logic, and overall functionality, ensuring a robust and controlled handling of incoming HTTP requests.
+
+**Summary:**
+
+1. **Not Mandatory, Highly Recommended:**
+   - While it's not mandatory to create individual components, it is highly recommended. You can build your application with just Controllers and Workers, but incorporating components offers significant advantages. Components facilitate the modularization of your app into dedicated features, resulting in cleaner, more reusable, and testable code.
+
+2. **Modularization for Clean Code:**
+   - Components serve as dedicated building blocks for specific functionalities. They play a pivotal role in modularizing your application, making the codebase cleaner and more maintainable.
+
+3. **Flexibility and Testability:**
+   - Leveraging components enhances the flexibility of your application. Each component has its own lifecycle and scope, providing a clear separation of concerns. This separation not only makes the codebase more modular but also significantly improves testability.
+
+4. **Beyond Blocking Requests:**
+   - While we explored components being used to block requests in this guide, their utility extends beyond that. Components can also perform specific tasks and pass results from one component to another. For example, they can handle data validation, extract information like IP addresses, and seamlessly transfer data between different parts of the application.
+
+By embracing components, you empower your Fort.js application with a structured and modular architecture, fostering code quality, reusability, and efficient testing practices.
+
+*For more details on each component's functionalities, refer to the specific documentation for each component type.*
 
  
