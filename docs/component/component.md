@@ -122,7 +122,7 @@ In this structured and modular flow, each component contributes to the app's sec
 **Summary:**
 
 1. **Not Mandatory, Highly Recommended:**
-   - While it's not mandatory to create individual components, it is highly recommended. You can build your application with just Controllers and Workers, but incorporating components offers significant advantages. Components facilitate the modularization of your app into dedicated features, resulting in cleaner, more reusable, and testable code.
+   - While it's not mandatory to create individual components, it is highly recommended. You can build your application with just Controllers and methods inside controllers, but incorporating components offers significant advantages. Components facilitate the modularization of your app into dedicated features, resulting in cleaner, more reusable, and testable code.
 
 2. **Modularization for Clean Code:**
    - Components serve as dedicated building blocks for specific functionalities. They play a pivotal role in modularizing your application, making the codebase cleaner and more maintainable.

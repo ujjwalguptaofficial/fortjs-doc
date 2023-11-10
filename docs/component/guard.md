@@ -1,4 +1,5 @@
 ---
+sidebar_position: 3
 title: "Guard"
 keywords: [guard, component, types, fortjs, node]
 description: "Guard is security layer on top of Worker"
