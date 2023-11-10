@@ -11,11 +11,11 @@ Component are most important part of fort application. It helps you to write mod
 
 There are three types of components - 
 
-1. [Wall](/docs/components/wall)
+1. [Wall](/docs/component/wall)
 
-2. [Shield](/docs/components/shield)
+2. [Shield](/docs/component/shield)
 
-3. [Guard](/docs/components/guard)
+3. [Guard](/docs/component/guard)
 
 ## Concept 
 
@@ -25,23 +25,23 @@ There are three types of components -
 
 <ul>
     <li>
-    When a http request comes to your app - it has to go through sequence of components i.e <a href="/docs/components/wall">Wall</a>, <a target="_blank" href="/docs/components/shield">Shield</a> & <a target="_blank" href="/docs/components/guard">Guard</a> and if everyone allows then request is transferred to Worker inside <a target="_blank" href="/docs/controller">Controller</a> where the actual resource is present.
+    When a http request comes to your app - it has to go through sequence of components i.e <a href="/docs/component/wall">Wall</a>, <a target="_blank" href="/docs/component/shield">Shield</a> & <a target="_blank" href="/docs/component/guard">Guard</a> and if everyone allows then request is transferred to Worker inside <a target="_blank" href="/docs/controller">Controller</a> where the actual resource is present.
     </li>
-    <li>The Http Request has to first go through component <a href="/docs/components/wall">Wall</a>. The incoming event of wall is called and if wall 
+    <li>The Http Request has to first go through component <a href="/docs/component/wall">Wall</a>. The incoming event of wall is called and if wall 
         <ul>
-            <li>Allows - It is sent to next lower level component which is <a target="_blank" href="/docs/components/shield">Shield</a></li>
+            <li>Allows - It is sent to next lower level component which is <a target="_blank" href="/docs/component/shield">Shield</a></li>
             <li>Rejects - The result is considered as final result and result is sent as http response & its lifecycle is ended there.</li>
         </ul>
     </li>
     <li>
-        After [Wall](/docs/components/wall.md) allows the request, it is sent to <a target="_blank" href="/docs/components/shield">Shield</a> and if shield 
+        After [Wall](/docs/component/wall.md) allows the request, it is sent to <a target="_blank" href="/docs/component/shield">Shield</a> and if shield 
         <ul>
-            <li>Allows - It is sent to next component which is <a target="_blank" href="/docs/components/guard">Guard</a> </li>
+            <li>Allows - It is sent to next component which is <a target="_blank" href="/docs/component/guard">Guard</a> </li>
             <li> Rejects - The result is considered as final result. The result has to go through wall outgoing event and finally http response is sent.</li>
         </ul>
     </li>
     <li>
-        After <a target="_blank" href="/docs/components/shield">Shield</a> allows - the request is allowed to go inside <a target="_blank" href="/docs/controller">Controller</a> & control is transferred to <a target="_blank" href="/docs/components/guard">Guard</a> & if guard
+        After <a target="_blank" href="/docs/component/shield">Shield</a> allows - the request is allowed to go inside <a target="_blank" href="/docs/controller">Controller</a> & control is transferred to <a target="_blank" href="/docs/component/guard">Guard</a> & if guard
         <ul>
             <li>Allows - It is sent to Worker where the actual resource is present.</li>
             <li> Rejects - The result is considered as final result. The result has to go through wall outgoing event and finally http response is sent.</li>

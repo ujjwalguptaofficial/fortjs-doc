@@ -67,9 +67,9 @@ e.g - if session is present then fulfill the request otherwise redirect to login
 
 But this is repeatative logic which we can extract into a common method and reuse this.
 
-For this - Fortjs provides [component](/docs/components/components.md). We can use shield or guard - this completely depends upon requirement.
+For this - Fortjs provides [component](/docs/component/component.md). We can use shield or guard - this completely depends upon requirement.
 
-Let's consider - we want to restrict at controller level and for this we need to create a [shield](/docs/components/shield.md). 
+Let's consider - we want to restrict at controller level and for this we need to create a [shield](/docs/component/shield.md). 
 
 Let's create our `Authentication Shield` and put our authentication logic inside it - 
 
@@ -106,7 +106,7 @@ export class UserController extends Controller {
 
 Now our AuthenticationShield will protect the UserController from unauthorized access.
 
-In similar way - you can create a [guard](/docs/components/guard.md) to restrict at worker level.
+In similar way - you can create a [guard](/docs/component/guard.md) to restrict at worker level.
 
 Here is example link for above guide - [Authentiction Example](https://github.com/ujjwalguptaofficial/fortjs/tree/master/example/authentication)
 

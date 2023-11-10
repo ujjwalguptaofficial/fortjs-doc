@@ -6,7 +6,7 @@ description: "fortjs body member details"
 
 # Body
 
-`body` is class member of [Guard](/docs/components/guard.md) and [Controller](/docs/controller.md). It is used to access body data sent in http post request. 
+`body` is class member of [Guard](/docs/component/guard.md) and [Controller](/docs/controller.md). It is used to access body data sent in http post request. 
 
 ```javascript
 import { Controller, worker, HTTP_METHOD,  textResult } from "fortjs";
