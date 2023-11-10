@@ -7,94 +7,113 @@ description: "How to authenticate in nodejs using fortjs"
  
 # Authentication
 
-There are multiple ways in which we can authenticate. In this doc guide - we will learn how to do session authentication based on userid/password combination.
+> Authentication is the process of verifying the identity of a user, system, or entity attempting to access a particular resource or service. It ensures that the entity requesting access is who it claims to be.
 
-Consider this scenario - A registered user has userid and password. They can access the system once they have entered valid credential. We need to design a login page through which user can login.
+There are multiple ways to implement authentication. In this documentation guide, we will focus on learning how to perform session authentication based on a user ID/password combination.
 
-Let's consider that our app has a default controller and it can be accessed by anyone without login. Basically it contains a home page, a login page, a registration page etc.
+## Registering user into system
 
-```
+Consider the following scenario: a registered user possesses a user ID and password, granting access to the system upon entering valid credentials. Our application includes a default controller featuring a login page, a registration page. Notably, this default controller is accessible to anyone without requiring a login.
+
+```js
+import { http, Controller, textResult } from "fortjs"
 export class DefaultController extends Controller {
 
-    @defaultWorker()
-    async default() {
-        const result = await viewResult('controller:default,action:default');
-        return result;
-    }
-
-    @worker(HTTP_METHOD.Get)
-    @route("/login")
-    async getloginForm() {
-        const result = viewResult("login_form");
+    @http.get("/login")
+    async getLoginPage() {
+        const result = viewResult("loginPage");
         return result;
     } 
 
-    @worker(HTTP_METHOD.Post)
+    @http.get("/register")
+    async getRegisterPage() {
+        const result = viewResult("registerPage");
+        return result;
+    } 
+
+    @http.post("/login")
     async login() {
         const {emailId, password} = this.body;
 
-        if (emailId != null && pwd != null) {
-            const userService = new UserService();
-            const user = userService.getUserByEmail(emailId);
+        const userService = new UserService();
+        const user = userService.getUserByEmail(emailId);
 
-            if (user != null && user.password === pwd) {
-                this.session.set('userId', user.id);
-                this.session.set('emailId', emailId);
-                return textResult(`Authenticated`);
-            }
-            else {
-               return textResult("Invalid credential");
-            }
+        if (user != null && user.password === pwd) {
+
+            // highlight-start
+            this.session.set('userId', user.id);
+            this.session.set('emailId', emailId);
+            // highlight-end
+
+            return textResult(`Authenticated`);
         }
         else {
-            return textResult("Please make sure, you are sending emailId and password");
+            return textResult("Invalid credential");
         }
     }
 }
 ```
 
-In the above code - we have three worker.
+In the provided code, three methods are present:
 
-* **default** - is used to show the home page
-* **getloginForm** - is used to show the login form when request is "GET"
-* **login** - is  used to login into the sytem through POST request. This method retrieve emailId and password from body and check whether emailId/password is correct. If data correct - then it creates the session. When session is created, framework creates a cookie and sent to browser. Framework tracks user by cookie. 
+- **getLoginPage:** This method is utilized to display the login form when the request is 'GET'.
+- **getRegisterPage:** It is employed to showcase the user registration page.
+- **login:** This method is responsible for the login process through a POST request. It retrieves the email ID and password from the request body, validates whether the provided credentials are correct, and, if so, creates a session. When a session is established, the framework generates a cookie and sends it to the browser. The framework subsequently tracks the user using this cookie.
 
-Once the session has been set for a user. It can be accessed anywhere in the system (any controller/worker) using - `this.session.get('userId')`  or `this.session.isExist('userId')`
+Once a session has been established for a user, it becomes accessible throughout the system, including any controller or component, using `this.session`. For example:
 
-In order to not allow unauthenticated user to access restricted method : we can check in every worker - If session is set or not and then take actions.
+```js
+// Get userId from the session
+this.session.get('userId');
 
-e.g - if session is present then fulfill the request otherwise redirect to login page or send a text response with http code 401.
-
-But this is repeatative logic which we can extract into a common method and reuse this.
-
-For this - Fortjs provides [component](/docs/component/component.md). We can use shield or guard - this completely depends upon requirement.
-
-Let's consider - we want to restrict at controller level and for this we need to create a [shield](/docs/component/shield.md). 
-
-Let's create our `Authentication Shield` and put our authentication logic inside it - 
+// Check if the session exists
+this.session.isExist('userId');
 
 ```
+These methods allow convenient retrieval of user-related information stored in the session.
+
+---
+
+## Restricting User Access to resource
+
+To prevent unauthenticated users from accessing restricted methods, a common practice is to check the session in every method. If the session is set, proceed with the request; otherwise, redirect to the login page or send a text response with HTTP code 401.
+
+However, this logic tends to be repetitive and can be extracted into a common method for reuse. Fort.js facilitates this through [components](/docs/component/component.md). Depending on the specific requirements, you can use Shield or Guard.
+
+:::info
+Shields allow you to protect your controller, ensuring that only authorized users can access it. Guards, on the other hand, enable you to protect your controller methods, adding an additional layer of authorization at the method level.
+:::
+
+Let's consider the scenario where we want to restrict access at the controller level. To achieve this, we'll create an [Shield](/docs/component/shield.md) named `AuthenticationShield`. We'll encapsulate our authentication logic within this shield.
+
+### Creating Shield
+
+To create the `AuthenticationShield`, we need to define a class that extends the `Shield` class from Fortjs.
+
+```js
 import { Shield, textResult,  redirectResult } from "fortjs";
 export class AuthenticationShield extends Shield {
 
     async protect() {
         
         const isExist = await this.session.isExist('userId');
-
-        if (exist) { // user is authenticated so allow
-            return null;
-
-        } else { //user is not authenticated, so redirect to login page
-
-            return redirectResult("/default/login");
+        if(!exist) {
+            //user is not authenticated, so return error message with 401
+            return textResult("Not authenticated", 401);
         }
+
+        // returning nothing or null means shield has allowed 
     }
 }
 ```
 
-Now we can add this shield to any controllers where we need to authorize. Let's add this into user controller - 
+### Using shield
 
-```
+Now, we can add this shield to any controllers where authorization is required. Let's incorporate this into the `UserController`.
+
+To utilize the shield, the `shields` decorator is used, which can accept multiple shields.
+
+```js
 import { Controller, shields } from "fortjs";
 import { AuthenticationShield } from "@/shields";
 
@@ -104,11 +123,12 @@ export class UserController extends Controller {
 }
 ```
 
-Now our AuthenticationShield will protect the UserController from unauthorized access.
+Now, our `AuthenticationShield` will safeguard the `UserController` from unauthorized access. Any attempt by an unauthenticated user to access the `UserController` will result in an unauthenticated error response, as defined in the shield logic.
 
-In similar way - you can create a [guard](/docs/component/guard.md) to restrict at worker level.
+Similarly, you can create a [Guard](/docs/component/guard.md) to restrict access at the controller method level.
 
-Here is example link for above guide - [Authentiction Example](https://github.com/ujjwalguptaofficial/fortjs/tree/master/example/authentication)
+For a complete example, refer to the [Authentication Example](https://github.com/ujjwalguptaofficial/fortjs/tree/master/example/authentication).
 
-
-
+:::tip
+👉 In this documentation, we've demonstrated how to use Shields to restrict access to a controller, specifically for session authentication. However, the same logic can be applied to other types of authentication, such as Basic Authentication or JWT Authentication. If you encounter any challenges or need assistance, feel free to ask in the GitHub discussion channel.
+:::
