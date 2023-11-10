@@ -85,9 +85,9 @@ For more info on controller, please read [Controller doc](./controller.md)
 
 ### Http Route
 
-Http Route are endpoint which is coupled with controller method. When the endpoint is called, the method tied with that endpoint is executed.
+Http Route are endpoint which is associated with controller method. When the endpoint is called, the method associated with that endpoint is executed.
 
-A special decorator `http` is used to define which **Http Metho**` you want to support for your end point and the path of your endpoint.
+A special decorator `http` is used to define which **Http Method**` you want to support for your end point and the path of your endpoint.
 
 Below is code from created project -
 

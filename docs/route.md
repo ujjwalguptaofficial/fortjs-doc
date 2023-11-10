@@ -1,54 +1,38 @@
 ---
 sidebar_position: 4
 title: "Route"
-keywords: [route, customize, options, fortjs, node]
-description: "Different types of route and how to customize them in fortjs"
+keywords: [Rest api route, route configuration, route handling, url mapping, Routing in fortjs]
+description: "Explore the documentation for a specific route in Fort.js, including details on the associated controller route and HTTP route. Understand the purpose and usage of this route to efficiently handle incoming requests and enhance your Fort.js application."
 ---
 
 # Route
 
-A route is basically a path. It is mapped with Controller and will target a Controller method.
+In the context of web frameworks a **route** refers to a mapping between a URL pattern and a specific piece of code (usually a controller method) that should be executed when that URL is requested. Routes define how an application responds to different HTTP requests.
 
-So route in fortjs has two parts - 
+In Fort.js, a route consists of two parts:
 
-* Controller - A class
-* Worker - A method inside that class
+- **Controller route:** The route associated with the class.
+- **HTTP route:** The route associated with the method inside the class.
 
-## Example
+This distinction helps organize and structure the routing configuration in Fortjs.
 
-Consider an url - "abc.com/user/add" and let's split it - 
+## Rest API
 
-* abc.com - domain of the website 
-* /user - controller route
-* /add - worker route
- 
----
+Let's understand routing configuration by creating a **Rest API** : A User rest api
 
-Let's take another example - "abc.com/user/1/2/3" and split it again - 
+### Create controller
 
-* abc.com - domain of the website
-* /user - controller route
-* /1/2/3 - worker route
+The first step is to create a controller and associate it with a controller route. Let's name it - `UserController`
 
-but you can also make some part of worker route as controller depends upon the requirement
+```javascript
+import { Controller,} from "fortjs";
 
-e.g - The above route can be also breaked as - 
+export class UserController extends Controller {
 
-* abc.com - domain of the website
-* /user/1 - controller route
-* /2/3 - worker route
+}
+```
 
-## Configure route
-
-Let's see how the route is configured in fortjs - 
-
-### Controller Route 
-
-In order to create a controller route we must have a [controller](/docs/controller.md). This controller is mapped with a path.
-
-e.g - Consider you have created a controller - "UserController"
-
-You need to map Controller with a path. 
+The second step is to associate with it a path and add this to `Fort.routes` array -
 
 ```
 import { Fort } from "fortjs";
@@ -60,162 +44,136 @@ Fort.routes = [{
     path: "/user"
 }]
 
-Fort.create();
+await Fort.create();
 
 ```
-In the above example we are mapping "UserContoller" with a path "/user" inside the `routes` member of App.
 
-### Worker Route
+Here we have used path "/user", which means - `UserController` will be executed when path "/user" will be called.
 
-Worker route is mapped to a [Worker](/docs/worker.md) inside Controller.
 
-Let's say we want to create the worker route "add" - you need to create a method with the name "add" and add decoarator "worker" above it . The decorator worker treats method name as route and add to route list -
+### Create Http Route 
+
+HTTP routes in Fortjs serve as endpoints that are tightly linked with controller methods. When a specific endpoint is invoked, the corresponding method in the associated controller is executed. 
+
+A special decorator `http` is used to -
+
+1. define which **Http Method**` you want to support for your end point. 
+2. path of your endpoint
+
+now let's create some endpoints for our rest API.
+
+#### Get
+
+Let's define our first route to fetch all users. Our objective is to trigger the associated controller method when the URL is 'http://localhost:4000/user/all'.
 
 ```javascript
-import { Controller, worker, textResult } from "fortjs";
+import { Controller, http, jsonResult} from "fortjs";
 
 export class UserController extends Controller {
 
-    @worker()
-    async add () {
-       return textResult("add is called");
+    // highlight-start
+    @http.get("/all")
+    fetchAllUsers(){
+        const allUsers = [];
+        return jsonResult(allUsers);
     }
+    // highlight-end
 }
 ```
 
-So, When url will be - "abc.com/user/add" then add method will be called.
+In the code snippet, we've created a **UserController** with a method called **fetchAllUsers**. This method is linked to the path "/all" and HTTP method **GET** using the decorator `@http.get("/all")`. Therefore, it will be triggered when the URL is 'http://localhost:4000/user/all'
 
-#### Customizing route
+:::info
 
-We can customize the worker route by using decorator "route".
+Wondering about the presence of '/user' in the route 'http://localhost:4000/user/all'? It's the controller route we configured in the controller section. This setup offers a neat structure for organizing related routes under the common path '/user'.
+
+:::
+
+**Note:** We won't delve into the details of the logic for fetching the user, as covering the logical part is beyond the scope of this documentation.
+
+---
+
+Now let's create an endpoint that will return the user by ID. Our objective is to trigger the method when the URL is 'http://localhost:4000/user/1', where 1 is the user's ID. This ID can vary, for example, the user ID can be 2, 3, 4, etc.
 
 ```javascript
-import { Controller, worker, textResult, route } from "fortjs";
+import { Controller, http, jsonResult} from "fortjs";
 
 export class UserController extends Controller {
 
-    @worker()
-    @route("/addCustom") // changing the route name
-    async add () {
-       return textResult("add is called");
+    @http.get("/all")
+    fetchAllUsers(){
+        const allUsers = [];
+        return jsonResult(allUsers);
     }
+
+    // highlight-start
+    @http.get("/{userId}")
+    fetchUserById(){
+        const userId = this.param.userId;
+        const user = {};
+        return jsonResult(user);
+    }
+    // highlight-end
 }
 ```
 
-You can see in the code , we have used 'route' decorator to override the route. So, now when url will be - "abc.com/user/addCustom" then add method will be called.
+In the above snippet, we have created a method fetchUserById. This method is linked to the path "/{userId}" and HTTP method GET using the decorator @http.get("/{userId}"). Therefore, it will be triggered when the URL is 'http://localhost:4000/user/1' or 'http://localhost:4000/user/2'.
 
-##### Restricting the worker based on http method
+This covers our GET route customization. Now let's learn about POST route.
 
-Currently with any of http methods (GET,POST, etc.) "add" method will be hit. But let's say you want to hit this only when http method is POST.
+#### POST
 
-In this case - you need to provide desired http methods to worker. Let's see an example - 
+:::info
+The POST HTTP method is used to submit or send data to the specified resource. When a client makes a POST request, the data is included in the body of the request. 
+:::
 
-```
-import { Controller, worker,textResult,HTTP_METHOD } from "fortjs";
+Let's create an endpoint for creating a user. Our objective is to execute the 'createUser' method when the URL is 'http://localhost:4000/user' and the HTTP method is **POST**
+
+```js
+import { Controller, http, jsonResult} from "fortjs";
 
 export class UserController extends Controller {
 
-    @worker(HTTP_METHOD.POST) // This method will be only hit when any of the http method specified in worker will match.
-    async add () {
-       return textResult("add is called");
+    @http.get("/all")
+    fetchAllUsers(){
+        const allUsers = [];
+        return jsonResult(allUsers);
     }
+
+    @http.get("/{userId}")
+    fetchUserById(){
+        const userId = this.param.userId;
+        const user = {};
+        return jsonResult(user);
+    }
+
+    // highlight-start
+    @http.post("/")
+    createUser(){
+        const newUserData = this.body;
+        return jsonResult(newUserData);
+    }
+    // highlight-end
 }
 ```
 
-##### Single route & multiple http method
+In the above snippet, we have created a method createUser. This method is linked to the path "/" and HTTP method **POST** using the decorator @http.post("/"). Therefore, it will be triggered when the URL is 'http://localhost:4000/user' and HTTP method is **POST**
 
-How about you want to create a route "add" which will hit different worker based on http methods. This pattern is highly used in rest api implementation . 
+---
 
-Let's see an example -
+In addition to the examples mentioned earlier, you can utilize other HTTP methods as follows:
 
-```
-import { Controller, worker, textResult, HTTP_METHOD, route } from "fortjs";
+- Patch: `@http.patch`
+- Put: `@http.put`
+- Delete: `@http.delete`
 
-export class UserController extends Controller {
-    
-    @worker(HTTP_METHOD.GET)
-    @route("/add")
-    async addWithGet() { // This will be called when method will be GET
-       return textResult("add with method get is called");
-    }
+Feel free to incorporate these methods into your routes as needed.
 
-    @worker(HTTP_METHOD.POST)
-    @route("/add")
-    async addWithPost() { // This will be called when method will be POST
-       return textResult("add with method post is called");
-    }
-}
-```
+:::tip
+🚀 Explore a Complete REST API Implementation Example 🚀
 
-##### Params in route
+[Fort.js REST API Examples](https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/rest)
 
-**1. Constant param : **
-
-So far we have created a route - "abc.com/user/add". How about little more complex route - "abc.com/user/add/1". 
-
-For this, we just need to modify our route.
-
-```javascript
-import { Controller, worker, textResult, HTTP_METHOD, route } from "fortjs";
-
-export class UserController extends Controller {
-    
-    @worker()
-    @route("/add/1")
-    async add () {
-       return textResult("add is called");
-    }
-}
-```
-**2. Variable param :**
-
-In the url - you can see "1" is the constant value but for certain requirements - the place where 1 is present can be any value. 
-
-e.g - "abc.com/user/add/2", "abc.com/user/add/hi", "abc.com/user/add/1000" etc.
-
-Basically a part of the url is a variable which can hold any value.
-
-You can declare a variable in a route by using `{}`.
-
-```javascript
-import { Controller, worker, textResult,HTTP_METHOD, route } from "fortjs";
-
-export class UserController extends Controller {
-    
-    @worker()
-    @route("/add/{value}")
-    async add () {
-       const value = this.param.value; // variable values are present in 'param' member of the controller.
-       return textResult("add is called");
-    }
-}
-```
-
-**3. Variable & Constant :** 
-
-How about a route where you want to return some file based on some extension. 
-
-e.g - "abc.com/file/scripts/jquery.js" . In this example - "jquery" is variable value and ".js" is constant value
-
-So here :
-
-* controller route is - 'file'
-* worker route is - 'scripts/jquery.js'
-
-```javascript
-import { Controller, worker, textResult,HTTP_METHOD, route } from "fortjs";
-
-export class FileController extends Controller {
-    
-    @worker()
-    @route("/scripts/{fileName}.js")
-    async getScripts () {
-       const fileName = this.param.fileName; 
-
-       return textResult(`fileName is ${fileName}");
-    }
-}
-```
-
-
+Feel free to dive into this comprehensive example to see how Fort.js can be used to build RESTful APIs.
+:::
 
