@@ -40,14 +40,14 @@ Open your browser and navigate to `http://localhost:4000` - You will see fortjs 
 Let's understand some basic of fortjs -
 
 1. Controller
-2. Route
+2. Http Route
 3. Bootstrapping
 
 ### Controller
 
 Controller is a class that defines methods to handle specific HTTP endpoints, encapsulating the logic for processing incoming requests and producing appropriate responses. Controllers play a central role in organizing and structuring the application's request-handling logic.
 
-👉 Each controller represents an end point which is mapped with a route.
+👉 Each controller represents an endpoint which is mapped with a path called controller route.
 
 In our current code - `DefaultController` is mapped with route `/*'. 
 
@@ -83,11 +83,13 @@ Here you can see that `DefaultController` has been mapped with path "/*". This i
 
 For more info on controller, please read [Controller doc](./controller.md)
 
-### Route
+### Http Route
 
-Route are endpoint which is coupled with controller method. When the endpoint is called, the method tied with that endpoint is executed.
+Http Route are endpoint which is coupled with controller method. When the endpoint is called, the method tied with that endpoint is executed.
 
-A special decorator `http` is used to defined which `Http Method` you want to support for your end point and the path of your endpoint.
+A special decorator `http` is used to define which **Http Metho**` you want to support for your end point and the path of your endpoint.
+
+Below is code from created project -
 
 ```js title="src/controllers/default_controller"
 import { Controller, viewResult, assign, http } from "fortjs";
@@ -107,7 +109,7 @@ export class DefaultController extends Controller {
 }
 ```
 
-In the above code - `http.get` decorator is used to make our endpoint support only get `Http Method` and parameter value "/" is passed which will set our endpoint path. 
+In the above code - `http.get` decorator is used to make our endpoint support only **Get** `Http Method` and parameter value "/" is passed which will set our endpoint path. 
 
 This is how when we hit - `http://localhost:4000/`, the index method is run and we see a html page in the reponse.
 
