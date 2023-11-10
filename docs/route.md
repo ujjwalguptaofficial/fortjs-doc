@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 title: "Route"
 keywords: [Rest api route, route configuration, route handling, url mapping, Routing in fortjs]
 description: "Explore the documentation for a specific route in Fort.js, including details on the associated controller route and HTTP route. Understand the purpose and usage of this route to efficiently handle incoming requests and enhance your Fort.js application."

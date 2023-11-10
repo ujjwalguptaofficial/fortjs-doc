@@ -19,7 +19,32 @@ There are three types of components -
 
 ## Concept 
 
-<img src={require("/static/img/icons/fort_component.png").default} height="600"/>
+<!-- <img src={require("/static/img/icons/fort_component.png").default} height="600"/> -->
+
+```sql
+HTTP Request
+    |
+Initialize Components
+    |
+Execute Walls (Incoming)
+    |
+Execute Shields
+    |
+Execute Guards
+    |
+Execute Controller
+    |----------------------|
+    |                      |
+    | Execute Controller   |
+    | Method               |
+    |                      |
+    |----------------------|
+    |
+Execute Walls (Outgoing)
+    |
+Response Flow
+
+```
 
 **The above picture shows the architecture of fortjs app and flow of http request inside app -** 
 

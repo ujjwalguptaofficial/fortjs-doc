@@ -8,10 +8,9 @@ description: "This page tells about different decorator present in fortjs."
 
 FortJs provides following decorators - 
 
-1. [ExpectBody](/docs/decorators/expect-body.md)
-2. [Worker](/docs/worker.md)
-3. [Route](/docs/route.md)
-4. [Wall](/docs/component/wall.md)
-5. [Shield](/docs/component/shield.md)
-6. [Guard](/docs/component/guard.md)
-7. [ExpectQuery](/docs/decorators/expect-query.md)
+1. [validator](/docs/decorators/validate.md)
+2. [worker](/docs/advanced/worker.md)
+3. [route](/docs/route.md)
+4. [wall](/docs/component/wall.md)
+5. [shield](/docs/component/shield.md)
+6. [guard](/docs/component/guard.md)

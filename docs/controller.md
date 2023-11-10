@@ -53,6 +53,6 @@ Fort.routes = [{
 
 In the code we are adding our controller into routes array along  with a path. The path is used to associate the controller with a top level route.
 
-e.g - Consider your website is abc.com, when user hits the url - "abc.com/user" then the controller - 'UserController' will be called. 
+e.g - Consider your website is abc.com, when user hits the url - "abc.com/user" then the controller - 'UserController' will be executed. 
 
-Note :- You must have - [worker](/docs/worker.md) inside the controller otherwise it won't work.
+**Note:-** You must have method inside the controller with HTTP route to allow execution of controller.

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 title: "Worker"
 keywords: [worker, route, controller method, fortjs, node]
 description: "Description about worker in fortjs"

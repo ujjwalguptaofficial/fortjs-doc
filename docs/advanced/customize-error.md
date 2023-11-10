@@ -20,7 +20,7 @@ export class CustomErrorHandler extends ErrorHandler {
 }
 ```
 
-So basically it returns a customized http response similar to [worker](../worker.md).
+So basically it returns a customized http response similar to [worker](/docs/advanced/worker.md).
 
 After creating the error handler class - you need to inform fortjs about this.
 

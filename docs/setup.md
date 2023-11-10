@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 8
 title: "Bootstrap"
 keywords: [bootstrap, setup, initiate, start, fortjs, node]
 description: "fortjs bootstrap information & how to bootstrap"
