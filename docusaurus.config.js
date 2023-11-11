@@ -68,7 +68,7 @@ const config = {
         { name: 'og:image', content: '/img/icons/fort_js_logo_1200_630.png' },
         { name: 'og:image', content: '/img/icons/fort_js_logo_500_500.png' },
         { name: 'twitter:creator', content: '@ujjwal_kr_gupta' },
-        { name: 'twitter:image', content: 'https://ujjwalguptaofficial.github.io/fortjs-doc/img/icons/fort_js_logo_1200_630.png' },
+        { name: 'twitter:image', content: 'https://fortjs.net/img/icons/fort_js_logo_1200_630.png' },
       ],
       navbar: {
         title: 'FortJs',
