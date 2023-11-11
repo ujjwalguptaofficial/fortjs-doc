@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
 title: "Get Started"
-keywords: [introduction, get started, fort-creator, fortjs, node]
-description: "In this tutorial, we'll go through the steps to set up a basic project and understand basic terminology about fortjs."
+keywords: [Fort.js, web framework, Node.js, getting started, setup, basics, web development, JavaScript, TypeScript, server-side, MVC architecture, RESTful APIs, modular code, controllers, routes, components, dependency injection, shields, guards, documentation]
+description: "Get started quickly with Fort.js, a powerful and modular web framework for Node.js. Follow this comprehensive guide to set up your project, understand the basics, and explore essential features for building robust web applications."
 ---
 
 # Get started
