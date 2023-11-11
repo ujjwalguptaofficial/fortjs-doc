@@ -1,8 +1,8 @@
 ---
 sidebar_position: 3
 title: "Guard"
-keywords: [guard, component, types, fortjs, node]
-description: "Guard is security layer on top of Worker"
+keywords: [Fort.js, Guard, Access Control, Security, Documentation]
+description: "Learn about creating and using Guards in Fort.js to control access to controller methods."
 ---
 
 # Guard

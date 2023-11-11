@@ -32,7 +32,7 @@ export default function Home() {
     <Layout
       title={`Fortjs - A Node.js Web Framework for Powerful and Scalable Applications`}
       description="Fortjs is a feature-rich Node.js web framework designed for building powerful, scalable, and maintainable web applications. Explore its flexibility, simplicity, and extensive capabilities."
-      keywords="Fort.js, Node.js, Web Framework, JavaScript, TypeScript, MVC, REST, HTTP, Web Development, Scalable Applications"
+      keywords="Fort.js, Nestjs, Node.js, Web Framework, JavaScript, TypeScript, MVC, REST, HTTP, Web Development, Scalable Applications"
     >
       <HomepageHeader />
       <main>

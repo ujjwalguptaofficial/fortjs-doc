@@ -1,8 +1,8 @@
 ---
 sidebar_position: 11
-title: "Components"
-keywords: [components, modularize, app, fortjs, node]
-description: "Description about components of fortjs"
+title: "Component"
+keywords: [Fort.js, Components, Walls, Shields, Guards, Application Structure, Security, Documentation]
+description: "Explore the versatile components in Fort.js, including Walls, Shields, and Guards. Learn how to use them to enhance your application's structure and security."
 ---
 
 # Component
