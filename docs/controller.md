@@ -7,9 +7,9 @@ description: "Description about controller in fortjs"
 
 # Controller
 
-A Controller is a class which contains methods to be used as end points or routes. You can consider it like a section where different resource and services are available.
+A **Controller** is a class that contains methods serving as endpoints or routes. Think of it as a section where different resources and services are available.
 
-e.g - A real world application created for university may have sections - StudentSection, TeacherSection, LibrarySection etc.
+For example, in a real-world application designed for a university, you might have sections like `StudentSection`, `TeacherSection`, `LibrarySection`, etc.
 
 A controller has following members - 
 
@@ -24,12 +24,11 @@ A controller has following members -
 
 ## Creating controller
 
-Controller is a class which extends the class "Controller" from fortjs.
+A **Controller** is a class that extends the `Controller` class from Fort.js.
 
+### Example
 
-## Example
-
-```
+```javascript
 import { Controller } from "fortjs";
 
 export class UserController extends Controller {
@@ -37,22 +36,20 @@ export class UserController extends Controller {
 }
 ```
 
-In order to make this controller active, you need to assign it to routes of Fort. A controller is associated with a path.
+To make this controller active, you need to assign it to the routes of Fort. A controller is associated with a path.
 
-```
+```javascript
 import { Fort } from "fortjs";
 import { UserController } from "./controllers";
-
 
 Fort.routes = [{
     controller: UserController,
     path: "/user"
-}]
-
+}];
 ```
 
-In the code we are adding our controller into routes array along  with a path. The path is used to associate the controller with a top level route.
+In the code, we are adding our controller to the `routes` array along with a path. The path is used to associate the controller with a top-level route.
 
-e.g - Consider your website is abc.com, when user hits the url - "abc.com/user" then the controller - 'UserController' will be executed. 
+For example, if your website is `abc.com`, when a user hits the URL "abc.com/user", the `UserController` will be executed.
 
-**Note:-** You must have method inside the controller with HTTP route to allow execution of controller.
+**Note:** You must have a method inside the controller with an HTTP route to allow the execution of the controller.
