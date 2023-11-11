@@ -7,10 +7,13 @@ description: "fortjs bootstrap information & how to bootstrap"
 
 # Setup
 
-Bootstrapping fortjs is very easy. The minimal requirement is to define a route - that's all. After that you can use different configuration to customize as per your need. 
- 
+:::info
+Bootstrapping in the context of software development refers to the process of initializing and preparing a system or application for execution. It involves setting up the necessary components, configurations, and resources to ensure that the system is in a ready state to start processing requests or tasks.
+:::
 
-```
+Bootstrapping in Fort.js is straightforward. The minimum requirement involves defining your controller routes and providing them to Fort.js.
+
+```js
 import { Fort } from "fortjs";
 import { UserController } from "./controllers";
 
@@ -30,7 +33,7 @@ Fort.create().then(()=>{
 
 FortJs provides different configurations like - port, folders, appName etc.
 
-```
+```js
 import { Fort } from "fortjs";
 import { UserController } from "./controllers";
 
@@ -43,7 +46,7 @@ Fort.routes = [{
 Fort.create();
 ```
 
-### Configuration list
+### Configuration options
 
 * **appName** - name of application - default is fort. Visible in header and cookie. Change name if you dont want any one to know the framework name.
 * **port** - Port at which app will listen, default - 4000
@@ -53,3 +56,4 @@ Fort.create();
 * **eTag** - eTag Settings
 * **walls** - List of walls
 * **customErrorHandler** - A custom error handler class which will be used when framework detects error.
+* **shouldParsePost** - Whethere to parse post request or not. It is boolean value and default value is true.
