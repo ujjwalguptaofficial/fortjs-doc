@@ -1,8 +1,8 @@
 ---
 sidebar_position: 2
 title: "Controller"
-keywords: [controller, section, fortjs, node"]
-description: "Description about controller in fortjs"
+keywords: [Fort.js Controller, Web Framework Documentation, Node.js Controller, MVC, HTTP Request Handling, Web Application Logic]
+description: Explore the documentation for Fort.js controllers, the key components for handling HTTP requests, organizing application logic, and building robust web applications.
 ---
 
 # Controller

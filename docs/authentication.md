@@ -1,8 +1,8 @@
 ---
 sidebar_position: 5
 title: "Authentication"
-keywords: [authentication, example, tutorial, fortjs, node]
-description: "How to authenticate in nodejs using fortjs"
+keywords: [Fort.js Authentication, Web Framework Documentation, Node.js Authentication, User Session, Web Application Security]
+description: "Learn how to implement authentication in Fort.js, covering session-based authentication for securing your web applications. Explore the documentation for robust user authentication."
 ---
  
 # Authentication
