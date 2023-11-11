@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'FortJs',
   tagline: 'Component Based MVC Web Framework For Nodejs',
-  url: 'https://ujjwalguptaofficial.github.io',
-  baseUrl: '/fortjs-doc/',
+  url: 'https://fortjs.net',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
