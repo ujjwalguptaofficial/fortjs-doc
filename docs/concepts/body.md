@@ -30,7 +30,7 @@ Certainly! Here's the prettified version:
 
 ## Inject Body Data
 
-You can inject body data into components or controller methods for easy access to HTTP request body data. This also allows you to type the HTTP body.
+You can inject body data into components or controller methods for easy access to HTTP request body data.
 
 To achieve this, use the `@asBody` decorator.
 
@@ -61,8 +61,8 @@ Please ensure that the structure of the `user` object aligns with the expected f
 In typescript: you can assign a type to user variable. For example -
 
 ```js
-import {user} from "@/models";
-async createUser(@asBody user: User) {
+import { UserDTO } from "@/models";
+async createUser(@asBody user: UserDTO) {
     
 }
 ```
