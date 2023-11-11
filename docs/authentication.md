@@ -91,7 +91,7 @@ Let's consider the scenario where we want to restrict access at the controller l
 To create the `AuthenticationShield`, we need to define a class that extends the `Shield` class from Fortjs.
 
 ```js
-import { Shield, textResult,  redirectResult } from "fortjs";
+import { Shield, textResult } from "fortjs";
 export class AuthenticationShield extends Shield {
 
     async protect() {
