@@ -7,15 +7,19 @@ description: "Guard is security layer on top of Worker"
 
 # Guard
 
-Guard is security layer on top of Worker which means it is called after controller is initiated. It contols whether a request should be allowed to call the **Worker**.
+A **Guard** is a security layer on top of a Worker in Fort.js, meaning it is called after the controller is initiated. It controls whether a request should be allowed to call the controller methods or worker.
 
-The guard is useful for - 
-* Validation of data. 
-* Authentication at Worker level.
-* Doing some task and passing it to worker. In this case - guard will be used as subordinate.
+## Use Cases
 
-<br/>
-There can be multiple guards for a worker and they are called in same order as declared.
+- Data validation at the method level.
+- Authentication at the controller method level.
+- Performing tasks and passing them to the Worker.
+
+## Multiple Guards
+
+Multiple guards can be assigned to a Worker, and they are called in the same order as declared.
+
+## Guard members
 
 A guard has following member - 
 
@@ -28,18 +32,22 @@ A guard has following member -
 * [Route parameter](/docs/concepts/param.md)
 * [Data from other components](/docs/concepts/data.md)
 
-## Creating guard
+## Creating a Guard
 
-Guard is a class which extends the class "Guard" from fortjs. It has `check` method as lifecycle of Guard. 
+A **Guard** is a class that extends the `Guard` class from Fort.js. It has a `check` method as its lifecycle.
 
-The `check` method can perform any task such as validation etc and return the result. The method can return two types of data - 
+### Lifecycle Method
 
-1. **null** - It means guard has passed the request.
-2. **Http response** - It means guard has rejected the request. The http resonse is directly returned to the user.
+The `check` method can perform various tasks, such as validation, and return the result. It can return two types of data:
+
+1. **null** - It means the guard has passed the request.
+2. **HTTP response** - It means the guard has rejected the request. The HTTP response is directly returned to the user.
+
+Explore the powerful capabilities of Guards by implementing them in your Fort.js application.
 
 ### Example
 
-Let's create a Guard which validates a user object. It passes if the user is valid and rejects if not.
+Let's create a Guard that validates user data sent in the HTTP body. It will allow the request to proceed if the user is valid and reject it otherwise.
 
 
 ```javascript
@@ -63,8 +71,7 @@ export class ValidUserGuard extends Guard {
             // pass user to worker method, so that they dont need to parse again
             this.data.user = user;
 
-            // returning null means - this guard allows request to pass
-            return null;
+            return null; // Guard allows the request to pass
 
         } else {
             return textResult(errMsg, HTTP_STATUS_CODE.BadRequest);
@@ -89,7 +96,7 @@ export class ValidUserGuard extends Guard {
 }
 ```
 
-Now let's use this guard on some worker -
+Now you can use this guard on any controller method:
 
 ```
 import { Controller, guards } from "fortjs";
@@ -105,9 +112,12 @@ export class UserController extends Controller {
     
 }
 ```
-### Summary
 
-* A guard allows you to extract reusable logic like validation, authentication etc 
-* A guard can be independently used by multiple workers
-* A guard makes your code much clean
-* A guard can be independently unit tested
+This guard will validate the user data before allowing the request to proceed to the addUser method in the UserController.
+
+## Summary
+
+* Guards enable the extraction of reusable logic such as validation and authentication.
+* Guards can be independently used by multiple controller methods, enhancing code reusability.
+* The use of guards contributes to cleaner code structures.
+* Guards can be independently unit-tested, ensuring reliability in isolation.

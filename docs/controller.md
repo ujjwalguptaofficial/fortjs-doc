@@ -7,9 +7,11 @@ description: "Description about controller in fortjs"
 
 # Controller
 
-A **Controller** is a class that contains methods serving as endpoints or routes. Think of it as a section where different resources and services are available.
+A **Controller** is a class that contains methods also known as [worker](/docs/advanced/worker.md) serving as endpoints or routes. Think of it as a section where different resources and services are available.
 
 For example, in a real-world application designed for a university, you might have sections like `StudentSection`, `TeacherSection`, `LibrarySection`, etc.
+
+## Controller member
 
 A controller has following members - 
 
