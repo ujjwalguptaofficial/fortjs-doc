@@ -56,4 +56,5 @@ Fort.create();
 * **eTag** - eTag Settings
 * **walls** - List of walls
 * **customErrorHandler** - A custom error handler class which will be used when framework detects error.
-* **shouldParsePost** - Whethere to parse post request or not. It is boolean value and default value is true.
+* **shouldParseBody** - Whether to parse http body data in post request or not. It is boolean value and default value is true.
+* **shouldParseCookie** - Whether to parse cookie or not. It is boolean value and default value is true.
