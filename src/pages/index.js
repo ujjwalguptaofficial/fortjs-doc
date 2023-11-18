@@ -16,10 +16,13 @@ function HomepageHeader() {
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg"
+            className="button button--secondary button--lg home-link-button"
             to="/docs/get-started">
-            Get started
+            Get Started - 5min ⏱️
           </Link>
+          <a href='https://github.com/ujjwalguptaofficial/fortjs/discussions/categories/q-a' target='_blank' className='button button--secondary button--lg'>
+            Get Help
+          </a>
         </div>
       </div>
     </header>
