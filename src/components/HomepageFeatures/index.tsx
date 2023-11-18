@@ -10,39 +10,83 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Based on custom architecture - Fort',
+    title: 'Scalability',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Inspired by real world - <a href="https://github.com/ujjwalguptaofficial/fort">Fort</a> is an
-        architecture on top of MVC
+        FortJs provides a scalable architecture for building both small and large web applications.
       </>
     ),
   },
   {
-    title: 'Modularity',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Faster 🚀',
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        FortJs provides components which allows you to make apps more modular and reusable.
+        Fortjs delivers unparalleled speed, surpassing popular alternatives like Express and Nest by more than two times, providing a high-performance solution for web applications. Take a look at <a href="https://github.com/ujjwalguptaofficial/fortjs#benchmark">Benchmark</a>
       </>
     ),
   },
   {
-    title: 'Next Gen Code',
+    title: 'Reusable Components',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Use es6, es7 along with typescript or javascript.
+        Components like walls, shields, and guards offer a modular and reusable approach to building applications.
       </>
     ),
   },
   {
-    title: 'Fully Customizable',
+    title: 'Intuitive Routing',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Everything can be customized starting from your view engine, sessions - use redis etc.
+        FortJs simplifies routing, making it intuitive for developers to define and manage routes.
+      </>
+    ),
+  },
+  {
+    title: 'Dependency Injection',
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    description: (
+      <>
+        The framework includes a robust dependency injection system, promoting clean and organized code.
+      </>
+    ),
+  },
+  {
+    title: 'Unit Testable',
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    description: (
+      <>
+        FortJs is designed to be unit-testable, enabling developers to write tests for their code, ensuring stability and maintainability.
+      </>
+    ),
+  },
+  {
+    title: 'Modern Development',
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    description: (
+      <>
+        FortJs is built with modern development practices in mind, providing a contemporary and efficient development experience.
+      </>
+    ),
+  },
+  {
+    title: 'Flexibility',
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    description: (
+      <>
+        FortJs offers flexibility in how components are used, allowing developers to tailor the framework to their specific needs. You can configure almost everything.
+      </>
+    ),
+  },
+  {
+    title: 'Fort Architecture',
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    description: (
+      <>
+        The framework follows a well-architected design architecture <a href="https://github.com/ujjwalguptaofficial/fort">Fort</a> , promoting a structured and organized development approach.
       </>
     ),
   },
@@ -51,7 +95,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Fortjs architecture allows you to write beautiful code which are self explanable and readable.
+        The FortJs architecture enables you to craft elegant, self-explanatory, and readable code.
       </>
     ),
   },
@@ -65,11 +109,11 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Strong typescript support',
+    title: 'TypeScript Supported',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        We understand the importance of typings and that's why we provide very strong typings support.
+        With native TypeScript support, fortjs empowers developers to leverage the benefits of static typing for a more robust and error-resistant codebase.
       </>
     ),
   },

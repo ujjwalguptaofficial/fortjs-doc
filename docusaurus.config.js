@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'FortJs',
-  tagline: 'Component Based MVC Web Framework For Nodejs',
+  tagline: 'A feature-rich Node.js web framework designed for building powerful, scalable, and maintainable web applications.',
   url: 'https://fortjs.net',
   baseUrl: '/',
   onBrokenLinks: 'throw',
