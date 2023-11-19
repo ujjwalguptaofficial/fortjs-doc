@@ -49,5 +49,3 @@ export class UserController extends Controller {
 ```
 
 In this corrected example, the `@asParam()` decorator without any arguments injects the entire `params` object. You can then access specific path parameters using their names as properties of the `params` object, such as `params.userId` in this case.
-
-I appreciate your understanding, and thank you for pointing out the error.
