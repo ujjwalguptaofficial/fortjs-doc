@@ -128,7 +128,7 @@ export class DefaultController extends Controller {
 
     }
 
-    //hightlight-start
+    //highlight-start
     @http.get("/hello-world")
     async helloWorld(){
         return textResult("Hello World");
