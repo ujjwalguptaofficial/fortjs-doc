@@ -151,7 +151,9 @@ import { Fort } from "fortjs";
 import { routes } from "@/routes";
 
 export const createApp = async () => {
+    //highlight-start
     Fort.routes = routes;
+    //highlight-end
     process.env.APP_URL = `http://localhost:${Fort.port}`;
     await Fort.create();
 };
