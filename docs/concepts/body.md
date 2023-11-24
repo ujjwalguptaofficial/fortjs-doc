@@ -1,32 +1,41 @@
 ---
-title: "Body"
-keywords: [request, post, body, http body , node]
-description: "fortjs body member details"
+title: "Http Body"
+keywords: [request body, post data, body, http body ,nodejs]
+description: "Explore the HTTP body handling capabilities in Fort.js. Learn how to access and parse the request body in a Fort.js application."
 ---
 
-# Body
+# HTTP Body
 
-`body` is class member of [Guard](/docs/component/guard.md) and [Controller](/docs/controller.md). It is used to access body data sent in http post request. 
+The `body` is a class member of [Guard](/docs/component/guard.md) and [Controller](/docs/controller.md). It provides access to the HTTP body data sent in an HTTP request.
 
 ```javascript
-import { Controller, worker, HTTP_METHOD,  textResult } from "fortjs";
+import { Controller, worker, HTTP_METHOD, textResult } from "fortjs";
 
 export class DefaultController extends Controller {
 
     @worker(HTTP_METHOD.Post)
     async login() {
-        // access post data
+        //highlight-start
+        // Access post data
         const userId = this.body.userId;
-        const pwd = this.body.password;
+        const password = this.body.password;
+        //highlight-end
 
-        return textResult("OK")
+        return textResult("OK");
     }
 }
 ```
 
-By default fortjs parses the body data. But it can be turned off by setting option - `shouldParsePost` . Please check [bootstrap](/docs/setup.md) doc for more info.
+In the example above, `this.body` is used to retrieve data from the HTTP body of a POST request in a Fort.js controller. Adjust the properties based on the structure of your incoming data.
 
-Certainly! Here's the prettified version:
+## Body Parsing Configuration
+
+By default, Fort.js parses the body data. However, you can turn off this feature by setting the option - `shouldParseBody`. Please refer to the [bootstrap](/docs/setup.md) documentation for more information.
+
+```js
+// In your bootstrap file
+Fort.shouldParseBody = false;
+```
 
 ## Inject Body Data
 
