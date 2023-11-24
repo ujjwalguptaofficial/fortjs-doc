@@ -20,7 +20,7 @@ type HttpResult = {
 };
 ```
 
-FortJs provides some helper method which return result of type HttpResult. These are - 
+FortJs provides some helper method which return result of type IHttpResult. These are - 
 
 * textResult - used to return text result.
 * jsonResult - used to return json result.
