@@ -9,30 +9,17 @@ description: "A Wall in Fort.js acts as the initial gatekeeper for incoming HTTP
 
 A **Wall** serves as the primary gatekeeper for every HTTP request in a Fort.js application. It determines whether a request should be allowed or rejected. Additionally, walls can perform tasks and pass data to the other Components.
 
-- **Top Layer:**
-  - Walls are positioned as the top layer for every incoming HTTP request.
-
-- **Global App Control:**
-  - They control aspects that affect the entire application, such as setting CORS headers, counting the number of requests, and other global configurations.
-
-- **Task Execution:**
-  - Walls can execute tasks, such as data validation, ensuring the integrity of incoming information.
-
-- **Sequential Order:**
-  - Multiple walls can be defined, and they are called in the same order as specified, allowing for a structured execution flow.
-
-- **Data Passing:**
-  - Besides controlling access, walls can pass relevant data inside the other Components for further processing.
-
-- **Customization:**
-  - Walls provide a space for custom logic tailored to the specific needs of the application.
-
-- **Reusability:**
-  - Their modular nature fosters reusability, enabling developers to build and reuse walls for similar functionalities.
-
 In summary, Walls play a crucial role as the initial layer of a Fortjs application, controlling global aspects, executing tasks, and facilitating seamless data transfer to subsequent layers.
 
-A wall have access to following - 
+## Use cases 
+
+* Setting cors 
+* Counting no of requests
+* Calculating some global data like ip address of the client
+
+## Wall members
+
+A wall has following member- 
 
 * [Request](/docs/types/http-request.md)
 * [Response](/docs/types/http-response.md)
@@ -115,7 +102,7 @@ Fort.walls = [AppWall]
 
 ```
 
-## Use case
+## Use case examples
 
 ### Pass ip address of the incoming request to other components
 
