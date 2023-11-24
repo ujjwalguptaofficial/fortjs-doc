@@ -104,6 +104,36 @@ Fort.walls = [AppWall]
 
 ## Use case examples
 
+### Setting cors
+
+```js
+import { Wall } from 'fortjs';
+
+export class HeaderWall extends Wall {
+  // This Wall is designed to handle CORS (Cross-Origin Resource Sharing) by setting appropriate headers
+  async onIncoming() {
+    // Set headers for CORS handling
+    this.response.setHeader(
+      'Access-Control-Allow-Headers',
+      'Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Workspaceid',
+    );
+    this.response.setHeader('Access-Control-Allow-Credentials', 'true');
+    this.response.setHeader('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS, PATCH');
+
+    // Define allowed hosts
+    const ALLOWED_HOSTS = [
+      'http://localhost:8080'
+    ];
+
+    // Check if the request origin is allowed
+    const { origin } = this.request.headers;
+    if (ALLOWED_HOSTS.indexOf(origin as string) >= 0) {
+      this.response.setHeader('Access-Control-Allow-Origin', origin);
+    }
+  }
+}
+```
+
 ### Pass ip address of the incoming request to other components
 
 ```js
