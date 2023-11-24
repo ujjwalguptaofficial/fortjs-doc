@@ -7,7 +7,7 @@ description: "Implement secure JWT authentication in Fort.js using Passport.js. 
 
 # Passport JWT Authentication
 
-So far, we've utilized sessions for user persistence, but an alternative is JWT Authentication, offering stateless persistence. To implement this, we employ the [JWT strategy](https://www.passportjs.org/packages/passport-jwt/).
+So far, we've utilized **sessions** for user persistence, but an alternative is **JWT Authentication**, offering stateless persistence. To implement this, we employ the [JWT strategy](https://www.passportjs.org/packages/passport-jwt/).
 
 Let's install the strategy and register it - 
 

@@ -15,6 +15,8 @@ This guide walks you through the implementation of a comprehensive end-to-end au
 
 ## Requirements
 
+In every web application, it's essential to include the following common logic:
+
 ### 1. Registration and Login Routes
 
 #### 1.1 Registration Page
@@ -153,7 +155,7 @@ export class AuthController extends Controller {
 }
 ```
 
-In the AuthController, two routes, /login and /register, are defined with the GET HTTP method. The getLoginPage method renders the login page, and the getRegisterPage method renders the registration page using the viewResult function.
+In the AuthController, two routes, `/login` and `/register`, are defined with the **GET** HTTP method. The `getLoginPage` method renders the login page, and the `getRegisterPage` method renders the registration page using the `viewResult` function.
 
 For information on how `viewResult` works, refer to [viewResult Doc](/docs/view.md).
 
@@ -260,4 +262,6 @@ export class ProtectedController extends Controller {
 }
 ```
 
-In the next chapter, we will learn how to implement [JWT Authentication](/docs/authentication/passport/passport-jwt.md).
+For a complete example, refer to the [Passportjs session Auth Example](https://github.com/ujjwalguptaofficial/fortjs-passport/tree/main/examples/session).
+
+👉 In the next chapter, we will learn how to implement [JWT Authentication using passportjs](/docs/authentication/passport/passport-jwt.md).
