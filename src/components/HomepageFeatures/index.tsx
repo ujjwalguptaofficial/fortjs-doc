@@ -23,7 +23,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Fortjs delivers unparalleled speed, surpassing popular alternatives like Express and Nest by more than two times, providing a high-performance solution for web applications. Take a look at <a href="https://github.com/ujjwalguptaofficial/fortjs#benchmark">Benchmark</a>
+        Fortjs delivers unparalleled speed, surpassing popular alternatives like Express and Nest by <b>more than three times</b>, providing a high-performance solution for web applications. Take a look at <a href="https://github.com/ujjwalguptaofficial/fortjs#benchmark">Benchmark</a>
       </>
     ),
   },

@@ -24,6 +24,7 @@ function HomepageHeader() {
             Get Help
           </a>
         </div>
+        <div style={{ marginTop: "20px", fontWeight: "bold" }}>3x 🚀 faster than nestjs and expressjs</div>
       </div>
     </header>
   );
