@@ -1,4 +1,5 @@
 ---
+sidebar_position: 2
 title: "Param"
 keywords: [param, route, url param, fortjs, node]
 description: "parameterizing route in fortjs"

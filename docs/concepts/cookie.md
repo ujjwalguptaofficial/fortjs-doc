@@ -1,4 +1,5 @@
 ---
+sidebar_position: 7
 title: "Cookie"
 keywords: [cookie, http, manipulation, fortjs, node]
 description: "How to access Http Cookie in node using fortjs"

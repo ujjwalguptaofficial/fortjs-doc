@@ -1,4 +1,5 @@
 ---
+sidebar_position: 4
 title: "Data"
 keywords: [data, components, options, fortjs, node]
 description: "How to pass & access components data"

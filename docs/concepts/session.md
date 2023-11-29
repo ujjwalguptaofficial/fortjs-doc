@@ -1,4 +1,5 @@
 ---
+sidebar_position: 6
 title: "Session"
 keywords: [FortJs, Node.js, web framework, session, session store, documentation]
 description: "Learn about sessions in FortJs, a web framework for Node.js. Understand how to manage session data and customize the session store."

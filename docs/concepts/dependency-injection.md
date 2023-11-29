@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 5
 title: "Dependency Injection"
 keywords: [Dependency Injection, singleton, assign, JavaScript framework, Web development, Code modularity, Unit testing]
 description: "Learn about Dependency Injection in Fort.js and how to use decorators such as `@singleton` and `@assign` for injecting dependencies into controllers and components. These decorators provide a clean and modular way to manage dependencies, making your code more maintainable and testable.

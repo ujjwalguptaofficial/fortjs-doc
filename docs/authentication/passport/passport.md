@@ -157,7 +157,7 @@ export class AuthController extends Controller {
 
 In the AuthController, two routes, `/login` and `/register`, are defined with the **GET** HTTP method. The `getLoginPage` method renders the login page, and the `getRegisterPage` method renders the registration page using the `viewResult` function.
 
-For information on how `viewResult` works, refer to [viewResult Doc](/docs/view.md).
+For information on how `viewResult` works, refer to [viewResult Doc](/docs/concepts/view.md).
 
 ### User Login
 

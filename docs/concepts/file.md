@@ -1,4 +1,5 @@
 ---
+sidebar_position: 8
 title: "File"
 keywords: [Fort.js, File Handling, File Upload, Web Development]
 description: "Explore file handling capabilities in Fort.js, including file uploads and storage. Learn how to implement robust file handling functionality for your web application."
