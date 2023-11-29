@@ -6,11 +6,17 @@ description: "How to customize error in nodejs using fortjs"
 
 # Customize Error
 
-In order to customize the error response , you need to create a class which extend class `ErrorHandler` and override the available methods.
+Handling various errors, such as exceptions or route not found scenarios, is common in a web server. FortJs provides default handling for these errors with simple HTTP responses. However, you might want to customize these responses for better messages or to facilitate error logging.
 
-e.g - Let's say you want to customize the error response for status code - **404**.
+To achieve this customization, follow these steps:
 
-```
+## Create ErrorHandler
+
+To customize error responses in FortJs, create a class that extends the ErrorHandler class and override the available methods.
+
+For example, if you want to customize the error response for the status code 404:
+
+```js
 import { ErrorHandler } from "fortjs";
 
 export class CustomErrorHandler extends ErrorHandler {
@@ -20,11 +26,11 @@ export class CustomErrorHandler extends ErrorHandler {
 }
 ```
 
-So basically it returns a customized http response similar to [worker](/docs/advanced/worker.md).
+## Use ErrorHandler
 
-After creating the error handler class - you need to inform fortjs about this.
+Once you've created the error handler class to customize HTTP responses, you need to inform FortJs about it.
 
-```
+```js
 import { Fort } from "fortjs";
 import { UserController } from "./controllers";
 import { CustomErrorHandler } from "./extra/custom_error_handler";
@@ -36,24 +42,36 @@ Fort.routes = [{
     path: "/user"
 }];
 
-Fort.errorHandler = CustomErrorHandler;    
+//highlight-start
+Fort.errorHandler = CustomErrorHandler;  
+//highlight-end
 
 Fort.create();
 ```
 
-The methods available for override are - 
+## Error Handling Methods
 
-* onServerError(ex: IException): Promise&lt;HttpResult | HttpFormatResult&gt;
-* onBadRequest(ex: IException): Promise&lt;HttpResult | HttpFormatResult&gt;
-* onForbiddenRequest(): Promise&lt;HttpResult | HttpFormatResult&gt;
-* onNotAcceptableRequest(): Promise&lt;HttpResult | HttpFormatResult&gt;
-* onMethodNotAllowed(): Promise&lt;HttpResult | HttpFormatResult&gt;
-* onNotFound(url: string): Promise&lt;HttpResult | HttpFormatResult&gt;
-  
-<br/>
-You can see some methods also have parameters. So its upto you how you want to use those params.
+When creating a custom error handler in FortJs, you have several methods that you can override to customize the handling of specific HTTP error scenarios. The available methods are:
 
-e.g - for onServerError (Status code - 500), you should not show the exception information to users but you should definitely log those errors.
+1. `onServerError(ex: IException): Promise<IHttpResult>`
+   - Override this method to handle server errors (Status code - 500). It is recommended not to expose exception information to users but to log the errors.
 
-**Note:-** It is highly recommended to create a custom error handler and atleast override the onServerError method and log the exception, otherwise you won't have any information regarding the exception occured.
+2. `onBadRequest(ex: IException): Promise<IHttpResult>`
+   - Override this method to handle bad request errors.
 
+3. `onForbiddenRequest(): Promise<IHttpResult>`
+   - Override this method to handle forbidden request errors.
+
+4. `onNotAcceptableRequest(): Promise<IHttpResult>`
+   - Override this method to handle not acceptable request errors.
+
+5. `onMethodNotAllowed(): Promise<IHttpResult>`
+   - Override this method to handle method not allowed errors.
+
+6. `onNotFound(url: string): Promise<IHttpResult>`
+   - Override this method to handle not found errors, providing the requested URL.
+
+For example, for `onServerError` (Status code - 500), it's advisable not to show exception information to users but to log the errors.
+
+**Note:**
+It is highly recommended to create a custom error handler and at least override the `onServerError` method to log the exception. This ensures that you have information about the exceptions that occur.
