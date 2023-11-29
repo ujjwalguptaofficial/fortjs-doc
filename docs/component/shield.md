@@ -20,8 +20,8 @@ There can be multiple shields for a controller, and every shield is called in th
 
 A shield has following member - 
 
-* [Request](/docs/types/http-request.md)
-* [Response](/docs/types/http-response.md)
+* [Request](/docs/interfaces/http-request.md)
+* [Response](/docs/interfaces/http-response.md)
 * [Cookie](/docs/concepts/cookie.md)
 * [Session](/docs/concepts/session.md)
 * [Query data](/docs/concepts/query.md)

@@ -23,11 +23,11 @@ export class EjsViewEngine implements ViewEngine {
 }
 ```
 
-The method `render` will be called by fortjs with value of type [ViewEngineData](/docs/types/view-engine-data.md). You need to use this value and return html string.
+The method `render` will be called by fortjs with value of type [ViewEngineData](/docs/interfaces/view-engine-data.md). You need to use this value and return html string.
 
 After you have created view engine, you need to tell fort to use this view engine. Open app.ts /app.js
 
-```javascript
+```js
 import { Fort } from 'fortjs';
 import { routes } from './routes';
 import { EjsViewEngine } from './ejs_view_engine';

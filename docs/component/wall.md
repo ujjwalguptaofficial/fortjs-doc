@@ -21,8 +21,8 @@ In summary, Walls play a crucial role as the initial layer of a Fortjs applicati
 
 A wall has following member- 
 
-* [Request](/docs/types/http-request.md)
-* [Response](/docs/types/http-response.md)
+* [Request](/docs/interfaces/http-request.md)
+* [Response](/docs/interfaces/http-response.md)
 * [Cookie](/docs/concepts/cookie.md)
 * [Session](/docs/concepts/session.md)
 * [Query data](/docs/concepts/query.md)

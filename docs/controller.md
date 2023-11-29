@@ -15,8 +15,8 @@ For example, in a real-world application designed for a university, you might ha
 
 A controller has following members - 
 
-* [Request](/docs/types/http-request.md)
-* [Response](/docs/types/http-response.md)
+* [Request](/docs/interfaces/http-request.md)
+* [Response](/docs/interfaces/http-response.md)
 * [Cookie](/docs/concepts/cookie.md)
 * [Session](/docs/concepts/session.md)
 * [Query data](/docs/concepts/query.md)
