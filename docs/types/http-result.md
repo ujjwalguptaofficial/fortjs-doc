@@ -4,21 +4,42 @@ keywords: [http result, type, options, fortjs, node]
 description: "Type HttpResult member description"
 ---
 
-# HttpResult
+# IHttpResult
 
-The type `HttpResult` is used by workers to return the result. 
+The interface `HttpResult` is used by workers or components to return the result. 
 
-Structure of HttpResult is - 
-
-```
-type HttpResult = {
+```js
+export interface IHttpResult {
     statusCode: HTTP_STATUS_CODE;
     responseData: any;
     contentType: MIME_TYPE;
-    file ? : FileResultInfo;
-    shouldRedirect ? : boolean;
-};
+    type: HTTP_RESULT_TYPE;
+}
 ```
+
+## Returning data
+
+Let's see an example to return a text data -
+
+```js
+import { Controller, http, HTTP_STATUS_CODE, MIME_TYPE  } from "fortjs";
+
+export class UserController extends Controller {
+   
+    @http.get("/")
+    async default () {
+       return {
+            statusCode: HTTP_STATUS_CODE.Ok,
+            responseData: "Hello World",
+            contentType: MIME_TYPE.Text
+        };
+    }
+}
+```
+
+In the above snippet - we are sending data "Hello World" with MIME Type `Text` which tells browser to consider this as text result. 
+
+## Helper methods
 
 FortJs provides some helper method which return result of type IHttpResult. These are - 
 
@@ -30,40 +51,19 @@ FortJs provides some helper method which return result of type IHttpResult. Thes
 * downloadResult - used to return a file which will be downloaded by browser.
 * redirectResult - used to return a result which will tell browser to redirect url.
 
-<br/>
 
-## Example
+## Returning text data using helper method
 
-### Retruning a string using httpResult
-
-```
-import { Controller, defaultWorker, HTTP_STATUS_CODE, MIME_TYPE  } from "fortjs";
-
-export class UserController extends Controller {
-   
-    @defaultWorker()
-    async default () {
-       return {
-            statusCode: HTTP_STATUS_CODE.Ok,
-            responseData: "This is default worker for section user",
-            contentType: MIME_TYPE.Text
-        };
-    }
-}
-```
-
-### Retruning a string using helper method - textResult
-
-```
-import { Controller, defaultWorker, textResult } from "fortjs";
+```js
+import { Controller, http, textResult } from "fortjs";
 
 export class UserController extends Controller {
     
-    @defaultWorker()
+    @http.get("/")
     async default () {
-       return textResult("This is default worker for section user");
+       return textResult("Hello World");
     }
 }
 ```
 
-You can see - helper methods make things easy and looks pretty cool.
+You can see - helper methods make things very easy and clean.
