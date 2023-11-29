@@ -1,48 +1,47 @@
 ---
 title: "Session"
-keywords: [session, uses, example, fortjs, node]
-description: "Using session in fortjs"
+keywords: [FortJs, Node.js, web framework, session, session store, documentation]
+description: "Learn about sessions in FortJs, a web framework for Node.js. Understand how to manage session data and customize the session store."
 ---
+
 # Session
 
-Session is a State Management Technique. It enables you to store and retrieve values for a user as the user navigates pages in a Web application.
+Session is a state management technique that empowers you to store and retrieve values for a user as they navigate through pages in a web application.
 
+## Using session
 
-Let's see how we can use session - 
+FortJs provides a session property that is available in all components.
 
-```
-import { Controller, defaultWorker, textResult, viewResult } from "fortjs";
+```js
+import { Controller, http, textResult } from "fortjs";
 
 export class DefaultController extends Controller {
 
-    @defaultWorker()
+    @http.get("/")
     async default() {
-        // check if session exist
+        // Check if session exists
         const isSessionExist = await this.session.isExist('userId');
 
-        // add value to session
+        // Add value to session
         await this.session.set('userId', 45);
 
-        // get session value
+        // Get session value
         const userIdFromSession = await this.session.get('userId');
 
-        // remove session
+        // Remove session
         await this.session.remove('session_name');
 
-        // set multiple session at a time
+        // Set multiple sessions at a time
         await this.session.setMany({
-            'user_id' : 1,
-            'name' : 'ujjwal gupta'
-        })
+            'user_id': 1,
+            'name': 'ujjwal gupta'
+        });
 
         return textResult('Welcome to FortJs');
     }
 }
 ```
 
-By default fortjs stores all your session data in memory which means data will be lost when nodejs process is stopped or restarted. 
+By default, FortJs stores all your session data in memory, which means data will be lost when the Node.js process is stopped or restarted.
 
-If you want to preserve your session values, then you need to store your value in a database or use any tools or service. You can customize the session store by creating a [session provider](/docs/advanced/session-provider.md).
-
-
-You should take a look at our [authentication](https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/authentication) example. In this example - a login page is shown to user and when user logs in - session is created. Login method is present in "default controller".
+If you want to preserve your session values, you need to store your values in a database or use any tools or services. You can customize the session store by creating a [session store](/docs/advanced/session-store.md)."
