@@ -7,7 +7,7 @@ description: "Type HttpResponse member description"
 # HttpResponse
 
 ```
-type HttpResponse = {
+interface IHttpResponse {
     setHeader(name: string, value: number | string | string[]): void;
     getHeader(name: string): number | string | string[] | undefined;
     getHeaders(): OutgoingHttpHeaders;

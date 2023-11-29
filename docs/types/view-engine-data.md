@@ -6,10 +6,10 @@ description: "Type viewEngineData member description"
 
 # ViewEngineData
 
-The type ViewEngineData is used by ViewEngine to get view related data from workers.
+The interface IViewEngineData is used by ViewEngine to get view related data from workers.
 
 ```
-type ViewEngineData = {
+interface IViewEngineData {
 
     /**
      * name of the view or path of view
@@ -24,5 +24,5 @@ type ViewEngineData = {
      * @type {*}
      */
     model: any;
-};
+}
 ```
