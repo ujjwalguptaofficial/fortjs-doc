@@ -7,7 +7,9 @@ description: "Get started quickly with Fort.js, a powerful and modular web frame
 
 # Get started
 
-Fort.js is a web framework for Node.js that aims to provide a simple and efficient way to build web applications. In this tutorial, we'll go through the steps to set up a basic project and understand basic terminology about fortjs.
+Fort.js is a web framework for Node.js that aims to provide a simple and efficient way to build web server applications with focus on simplicity, performance, reusability and scalability. 
+
+In this tutorial, we'll go through the steps to set up a basic project and understand basic terminology about fortjs.
 
 ## Setup
 
