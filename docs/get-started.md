@@ -171,6 +171,7 @@ if (process.env.NODE_ENV !== "test") {
 ```
 
 Read the [Bootstrapping documentation](/docs/setup.md) for more detailed information.
+
 ---
 
 We hope this provides you with a basic understanding of Fortjs. If you have any doubts or specific requirements, please feel free to create a discussion or issue on [GitHub](https://github.com/ujjwalguptaofficial/fortjs).
@@ -181,11 +182,11 @@ We hope this provides you with a basic understanding of Fortjs. If you have any 
 
 * [Fortjs examples](https://github.com/ujjwalguptaofficial/fortjs-examples)
 
-* [Rest Api Example] (https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/rest)
+* [Rest Api Example](https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/rest)
 
-* [Article of Creating REST API using Typescript](https://medium.com/fortjs/rest-api-using-typescript-94004d9ae5e6)
+<!-- * [Article of Creating REST API using Typescript](https://medium.com/fortjs/rest-api-using-typescript-94004d9ae5e6)
 
-* [Article of Creating REST API using es6](https://medium.com/fortjs/rest-api-in-nodejs-using-es6-227765440b2b)
+* [Article of Creating REST API using es6](https://medium.com/fortjs/rest-api-in-nodejs-using-es6-227765440b2b) -->
 
 * [MongoDb Example](https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/mongodb)
 
