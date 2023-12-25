@@ -1,6 +1,6 @@
 ---
-title: "valide Decorator"
-keywords: [validate decorator]
+title: "validate Decorator"
+keywords: [validate, validation]
 description: "This page tells about decorator ExpectQuery & how to use this."
 ---
 
