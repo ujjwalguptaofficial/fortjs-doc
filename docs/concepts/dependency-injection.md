@@ -54,7 +54,7 @@ In this example, the `UserService` class is injected into the `UserController` a
 The dependency injection can be also performed on controller methods or any component methods which is called by framework.
 
 ```javascript
-import { Controller, singleton } from "fortjs";
+import { Controller, singleton, http } from "fortjs";
 import { UserService } from "@/services";
 
 export class UserController extends Controller {
