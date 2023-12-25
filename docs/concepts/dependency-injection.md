@@ -65,7 +65,7 @@ export class UserController extends Controller {
         this.service = service;
     }
 
-    @http.body()
+    @http.post("/")
     //highlight-next-line
     addUser(@singleton(UserService) service){
 
@@ -86,7 +86,7 @@ import { Controller, assign, http } from "fortjs";
 
 export class UserController extends Controller {
 
-    @http.get()
+    @http.get("/")
     //highlight-next-line
     index(@assign('hello world') value) {
         console.log(value); // Output: hello world
