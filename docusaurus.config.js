@@ -6,6 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+  plugins:[
+    require.resolve('docusaurus-lunr-search')
+  ],
   title: 'FortJs',
   tagline: 'A feature-rich Node.js web framework designed for building powerful, scalable, and maintainable web applications.',
   url: 'https://fortjs.net',
