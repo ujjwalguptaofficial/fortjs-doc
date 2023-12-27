@@ -5,7 +5,7 @@ keywords: [query string, http query, get request, fortjs, node]
 description: "Accessing query string value in fortjs"
 ---
 
-# query
+# query string
 
 `query` can be used to get the query string value. It is class member of  Wall, Guard, Shield and Controller.
 
