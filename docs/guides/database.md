@@ -138,7 +138,7 @@ Let's create a file `user_service.js` inside the folder `services`
 import User from '@/models/user';
 export class UserService {
   
-  findAll(){
+  async findAll(){
     const users = await User.findAll();
     return users;
   }
