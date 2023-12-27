@@ -155,7 +155,7 @@ While we can directly import the service file and use it, it is recommended to i
 By injecting the service as a dependency, we adhere to the principles of dependency injection, promoting a cleaner and more modular design. This makes it easier to substitute dependencies during testing and allows for better code maintainability.
 
 ```js
-import { Controller, jsonResult, singleton } from 'fortjs';
+import { Controller, jsonResult, singleton, http } from 'fortjs';
 import { UserService } from '@/services/user_service';
 
 export class UserController extends Controller {
@@ -165,6 +165,7 @@ export class UserController extends Controller {
     this.userService = userService;
   }
 
+  @http.get("/")
   async getAllUsers() {
     const users = await this.userService.findAll();
     return jsonResult(users);
