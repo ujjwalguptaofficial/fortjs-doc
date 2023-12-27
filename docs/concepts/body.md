@@ -10,11 +10,11 @@ description: "Explore the HTTP body handling capabilities in Fort.js. Learn how 
 The `body` is a class member of [Guard](/docs/component/guard.md) and [Controller](/docs/controller.md). It provides access to the HTTP body data sent in an HTTP request.
 
 ```javascript
-import { Controller, worker, HTTP_METHOD, textResult } from "fortjs";
+import { Controller, http, textResult } from "fortjs";
 
 export class DefaultController extends Controller {
 
-    @worker(HTTP_METHOD.Post)
+    @http.post("/login")
     async login() {
         //highlight-start
         // Access post data
@@ -63,7 +63,7 @@ export class UserController extends Controller {
 }
 ```
 
-In this example, the `@asBody()` decorator is used on the `user` parameter of the `createUser` method. This automatically injects the data from the HTTP request body into the `user` parameter. You can then use this data within your method to perform the desired logic, such as creating a user in this case.
+In this example, the `@asBody` decorator is used on the `user` parameter of the `createUser` method. This automatically injects the data from the HTTP request body into the `user` parameter. You can then use this data within your method to perform the desired logic, such as creating a user in this case.
 
 Please ensure that the structure of the `user` object aligns with the expected format and content of the data sent in the HTTP request body.
 

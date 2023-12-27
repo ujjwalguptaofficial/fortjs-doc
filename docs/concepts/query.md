@@ -41,7 +41,7 @@ export class UserController extends Controller {
 
     @http.get("/user-info")
     //highlight-next-line
-    async getUserInfo(@asQuery() queryParams) {
+    async getUserInfo(@asQuery queryParams) {
         // The 'queryParams' parameter now contains the data from the HTTP query string
         console.log(queryParams);
 
@@ -53,6 +53,6 @@ export class UserController extends Controller {
 }
 ```
 
-In this example, the `@asQuery()` decorator is used on the `queryParams` parameter of the `getUserInfo` method. This automatically injects the data from the HTTP query string into the `queryParams` parameter. You can then use this data within your method to perform the desired logic, such as processing user information in this case.
+In this example, the `@asQuery` decorator is used on the `queryParams` parameter of the `getUserInfo` method. This automatically injects the data from the HTTP query string into the `queryParams` parameter. You can then use this data within your method to perform the desired logic, such as processing user information in this case.
 
 Please ensure that the structure of the `queryParams` object aligns with the expected format and content of the data sent in the HTTP query string.

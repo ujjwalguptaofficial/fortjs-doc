@@ -12,10 +12,10 @@ you can use `param` to extract route data for variable routing. It is class memb
 e.g - consider the route - "abc.com/{value}/hi" . Here value is a variable and this can be extracted using param. 
 
 ```javascript
+import { http, Controller} from "fortjs";
 export class FileController extends Controller {
    
-    @route("/scripts/{file}.js")
-    @worker()
+    @http.get("/scripts/{file}.js")
     async getScripts() {
         const fileName = this.param.file;
     }
@@ -35,8 +35,8 @@ import { Controller, http, textResult, asParam } from "fortjs";
 
 export class UserController extends Controller {
 
-    @http.get("/user/:userId")
-    async getUserById(@asParam() params) {
+    @http.get("/user/{userId}")
+    async getUserById(@asParam params) {
         // The 'params' object contains all path parameters
         const userId = params.userId;
         console.log(userId);
@@ -49,4 +49,4 @@ export class UserController extends Controller {
 }
 ```
 
-In this corrected example, the `@asParam()` decorator without any arguments injects the entire `params` object. You can then access specific path parameters using their names as properties of the `params` object, such as `params.userId` in this case.
+In this corrected example, the `@asParam` decorator without any arguments injects the entire `params` object. You can then access specific path parameters using their names as properties of the `params` object, such as `params.userId` in this case.
