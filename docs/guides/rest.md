@@ -71,7 +71,7 @@ export class UserController extends Controller {
 
   @http.get("/{id}")
   async getUser() {
-    const { id } = this.params;
+    const { id } = this.param;
     const user = this.userService.getUser(id);
     return jsonResult(user);
   }
