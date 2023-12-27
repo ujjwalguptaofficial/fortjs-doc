@@ -175,4 +175,5 @@ export class UserController extends Controller {
 
 Similar to the above snippet, you can use any other database and ORM library. Here are links to some examples:
 
+- [PgSQL examples](https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/pgsql)
 - [MongoDB examples](https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/mongodb)
