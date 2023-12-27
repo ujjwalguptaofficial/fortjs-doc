@@ -46,7 +46,7 @@ Create a Sequelize model for your database table. For example, let's create a Us
 // models/user.js
 
 import { DataTypes } from 'sequelize';
-import {sequelize} from '@/sequelize';
+import { sequelize } from '@/sequelize';
 
 export const User = sequelize.define('User', {
   username: {
@@ -79,6 +79,7 @@ Let's use `initiateDatabase` method in our application setup code. Update your i
 ```js
 import { Fort } from "fortjs";
 import { UserController } from "./controllers";
+import { sequelize } from "@/sequelize";
 
 async function initiateDatabase(){
     // Initialize Sequelize
@@ -112,11 +113,12 @@ Now you can use the Sequelize models in your Fort.js controllers or services. Fo
 
 ```js title=controllers/userController.js 
 
-import { Controller, jsonResult } from 'fortjs';
-import User from '@/models/user';
+import { Controller, jsonResult, http } from 'fortjs';
+import { User } from '@/models/user';
 
 export class UserController extends Controller {
 
+  @http.get("/")
   async getAllUsers() {
     const users = await User.findAll();
     return jsonResult(users);
@@ -135,7 +137,7 @@ By creating a service layer, you can encapsulate database-related logic, making 
 Let's create a file `user_service.js` inside the folder `services` 
 
 ```js title=services/user_service.js
-import User from '@/models/user';
+import { User } from '@/models/user';
 export class UserService {
   
   async findAll(){
@@ -159,6 +161,7 @@ import { UserService } from '@/services/user_service';
 export class UserController extends Controller {
 
   constructor(@singleton(UserService) userService){
+    super();
     this.userService = userService;
   }
 
