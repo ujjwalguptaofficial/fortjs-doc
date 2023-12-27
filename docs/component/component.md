@@ -139,6 +139,6 @@ In this structured and modular flow, each component contributes to the app's sec
 
 By embracing components, you empower your Fort.js application with a structured and modular architecture, fostering code quality, reusability, and efficient testing practices.
 
-*For more details on each component's functionalities, refer to the specific documentation for each component type.*
+For more details on each component's functionalities, refer to the specific documentation for each component type.
 
  
