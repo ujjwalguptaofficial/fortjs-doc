@@ -14,9 +14,11 @@ e.g - Conside the url - abc.com/?userid=5&name=ujjwal
 There are two variables in query string - `userid` and `name` . We can use `query` to access those value.
 
 ```javascript
+import {http, Controller, textResult} from "fortjs";
+
 export class DefaultController extends Controller {
 
-    @defaultWorker()
+    @http.get("/")
     async default() {
         const userId = this.query.userid;
         const name = this.query.name;
