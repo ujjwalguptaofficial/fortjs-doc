@@ -9,6 +9,10 @@ description: "Explore the versatile components in Fort.js, including Walls, Shie
 
 Components are a vital part of a Fort application, facilitating the writing of modular and reusable code. They operate independently, each having its own lifecycle and scope.
 
+:::tip
+Components in Fort.js act like middleware in Express.js, but they're sprinkled throughout various locations. 
+:::
+
 There are three types of components in Fort:
 
 1. [Wall](/docs/component/wall)
