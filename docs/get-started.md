@@ -180,6 +180,8 @@ We hope this provides you with a basic understanding of Fortjs. If you have any 
 
 ## Resources
 
+* [Guides](/docs/guides/rest.md)
+
 * [Fortjs examples](https://github.com/ujjwalguptaofficial/fortjs-examples)
 
 * [Rest Api Example](https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/rest)
