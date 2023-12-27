@@ -34,7 +34,7 @@ export class UserController extends Controller {
 
 The second step is to associate with it a path and add this to `Fort.routes` array -
 
-```
+```js
 import { Fort } from "fortjs";
 import { UserController } from "@/controllers";
 

@@ -104,3 +104,34 @@ We've utilized the `singleton` decorator to inject the `userService` into our co
 
 Similar to GET and POST API - you can create DELETE api. We will leave this to you but if needed help - feel free to ask in the github discussion.
 
+## 3. Controller route
+
+Let's map our controller to a route. Open `src/index.ts` in your app and then update the routes code to - 
+
+```js
+import { Fort } from "fortjs";
+import { UserController } from "@/controllers";
+
+// here we have mapped UserController with path "/user"
+//highlight-start
+Fort.routes = [
+    {
+        controller: UserController,
+        path: "/user"
+    }
+]
+//highlight-end
+
+await Fort.create();
+```
+
+
+:::tip
+🚀 Explore a Complete REST API Implementation Example 🚀
+
+[Fort.js REST API Examples](https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/rest)
+
+Feel free to dive into this comprehensive example to see how Fort.js can be used to build RESTful APIs.
+:::tip
+
+
