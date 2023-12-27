@@ -137,8 +137,12 @@ Let's create a file `user_service.js` inside the folder `services`
 ```js title=services/user_service.js
 import User from '@/models/user';
 export class UserService {
-  const users = await User.findAll();
-  return users;
+  
+  findAll(){
+    const users = await User.findAll();
+    return users;
+  }
+
 }
 ```
 
