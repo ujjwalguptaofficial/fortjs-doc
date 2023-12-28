@@ -1,3 +1,8 @@
+---
+title: REST API
+keywords: [REST, Fort.js, API, documentation, guide]
+description: Comprehensive guide on building and consuming RESTful APIs with Fort.js
+---
 
 # Rest
 
