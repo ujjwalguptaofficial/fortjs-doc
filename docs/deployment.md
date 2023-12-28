@@ -1,39 +1,28 @@
 ---
 sidebar_position: 17
 title: "Deployment"
-keywords: [deploy, instructions, fortjs, node]
-description: "Deployment note in nodejs using fortjs"
+keywords: [deploy, instructions, Fort.js, Node.js]
+description: "Deployment note in Node.js using Fort.js"
 ---
 
 # Deployment Best Practice
 
-Few things to note when you are deploying your app to production - 
+When deploying your app to production, consider the following best practices:
 
-* Run build for production by using the command - `npm run deploy` or `yarn deploy` . This will generate a production build of your code & files will be in dist folder. So when you want to start the app, you need to run this command - `node bin/app.js` 
+- **Run a Production Build:**
+  Use the command `npm run deploy` or `yarn deploy` to generate a production build in the `dist` folder. To start the app in production, use `node dist/app.js`.
 
-* When runing app in production, make sure "NODE&#95;ENV" is production. Multiple optimization like caching of views, compressing development error message etc. takes place when "NODE&#95;ENV" is production. Check out this link to know how to setup NODE&#95;ENV <a href="https://stackoverflow.com/a/9204973/4393136">https://stackoverflow.com/a/9204973/4393136</a>
+- **Set "NODE_ENV" to "production":**
+  Ensure that the "NODE_ENV" environment variable is set to "production" when running the app. This triggers optimizations such as caching views and compressing development error messages. Learn how to set up "NODE_ENV" [here](https://stackoverflow.com/a/9204973/4393136).
 
-* Customize the error page by using customize error handler. For info about how to customize, visit this link - [custom error handler/](/docs/advanced/customize-error.md)
+- **Customize Error Pages:**
+  Customize the error page using a [custom error handler](/docs/advanced/customize-error.md).
 
-* Use compression - you can configure any third party library for compression in a wall component. But better to configure the compression in the reverse proxy server like - nginix etc. Reverse proxy can be used for multiple purposes like - caching request, compression etc.
+- **Configure Logger:**
+  Set up your logger to save logs in a persistent file or another suitable storage.
 
-## Handling crash 
+- **Use a Process Manager:**
+  Employ a process manager like PM2, Forever, etc., to run your app.
 
-### App Crash :-  
-
-Nodejs app is stopped when an exception is not handled and in this situation your website will be down until you restart the app again. 
-
-For solving this - **Use a process manager** . Process managers can be used for other purposes too like - 
-
-* Configure to improve performance, 
-* Checking runtime performance & resource consumption etc. 
-
-Some of the famous process managers are - PM2, Forever, StrongLoop etc.
-
-### Server Crash :- 
-
-When server crash & it restarts, your app should restart too. But that don't happens until you configure it. 
-
-You can hook your app to os init system or configure your process manager to os init system. We will recommend to configure your app with process manager.
-
-
+- **Implement Compression:**
+  While you can configure any third-party library for compression in a wall component, it's recommended to configure compression in the reverse proxy server (e.g., Nginx). A reverse proxy server can serve multiple purposes, such as caching requests and compression.
