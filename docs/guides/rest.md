@@ -106,7 +106,7 @@ Similar to GET and POST API - you can create DELETE api. We will leave this to y
 
 ## 3. Controller route
 
-Let's map our controller to a route. Open `src/index.ts` in your app and then update the routes code to - 
+To activate our controller, we need to map it to a route. Let's map our controller to a route. Open `src/index.ts` in your app and then update the routes code to - 
 
 ```js
 import { Fort } from "fortjs";
@@ -124,7 +124,6 @@ Fort.routes = [
 
 await Fort.create();
 ```
-
 
 :::tip
 🚀 Explore a Complete REST API Implementation Example 🚀

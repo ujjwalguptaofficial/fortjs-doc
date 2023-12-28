@@ -126,6 +126,28 @@ export class UserController extends Controller {
 }
 ```
 
+## Controller route
+
+To activate our controller, we need to map it to a route. Open the src/routes.js or src/routes.ts file in your app, and then update the routes code as follows:
+
+```js
+export const routes = [
+    {
+        path: "/*",
+        controller: DefaultController
+    },
+    //highlight-start
+    {
+        path: "/user",
+        controller: UserController
+    }
+    //highlight-end
+];
+```
+
+
+now hit the endpoint - `localhost:4000/user` and you should see empty array as you don't have any data in the table.
+
 ## Create Service File
 
 While using models directly can work, it tightly couples our controller to the database, making unit testing of the controller challenging. That's why it's recommended to establish a service layer.
