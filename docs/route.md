@@ -16,15 +16,15 @@ In Fort.js, a route consists of two parts:
 
 This distinction helps organize and structure the routing configuration in Fortjs.
 
-## Rest API
+**Rest API**
 
 Let's understand routing configuration by creating a **Rest API** : A User rest api
 
-### Create controller
+## Create controller
 
 The first step is to create a controller and associate it with a controller route. Let's name it - `UserController`
 
-```javascript
+```js
 import { Controller,} from "fortjs";
 
 export class UserController extends Controller {
@@ -51,7 +51,7 @@ await Fort.create();
 Here we have used path "/user", which means - `UserController` will be executed when path "/user" will be called.
 
 
-### Create Http Route 
+## Create Http Route 
 
 HTTP routes in Fortjs serve as endpoints that are tightly linked with controller methods. When a specific endpoint is invoked, the corresponding method in the associated controller is executed. 
 
@@ -62,7 +62,7 @@ A special decorator `http` is used to -
 
 now let's create some endpoints for our rest API.
 
-#### Get
+### HTTP GET
 
 Let's define our first route to fetch all users. Our objective is to trigger the associated controller method when the URL is 'http://localhost:4000/user/all'.
 
@@ -95,7 +95,7 @@ Wondering about the presence of '/user' in the route 'http://localhost:4000/user
 
 Now let's create an endpoint that will return the user by ID. Our objective is to trigger the method when the URL is 'http://localhost:4000/user/1', where 1 is the user's ID. This ID can vary, for example, the user ID can be 2, 3, 4, etc.
 
-```javascript
+```js
 import { Controller, http, jsonResult} from "fortjs";
 
 export class UserController extends Controller {
@@ -121,7 +121,7 @@ In the above snippet, we have created a method fetchUserById. This method is lin
 
 This covers our GET route customization. Now let's learn about POST route.
 
-#### POST
+### HTTP POST
 
 :::info
 The POST HTTP method is used to submit or send data to the specified resource. When a client makes a POST request, the data is included in the body of the request. 
