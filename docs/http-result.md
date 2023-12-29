@@ -33,6 +33,24 @@ export class MyController extends Controller {
 }
 ```
 
+### With Status code
+
+```js
+import { Controller, http, textResult, HTTP_STATUS_CODE } from "fortjs";
+
+export class MyController extends Controller {
+   
+    @http.get("/hello-world")
+    async default() {
+        // This method returns a simple text result with the content "Hello World".
+        return textResult("Hello World", HTTP_STATUS_CODE.Ok);
+        // or
+       // return textResult("Hello World", 200);
+
+    }
+}
+```
+
 ## JSON data
 
 ```js
@@ -46,6 +64,23 @@ export class MyController extends Controller {
         return jsonResult({
             value: "Hello World"
         });
+    }
+}
+```
+
+### With Status code
+
+```js
+import { Controller, http, textResult, HTTP_STATUS_CODE } from "fortjs";
+
+export class MyController extends Controller {
+   
+    @http.get("/hello-world")
+    async default() {
+        // This method returns a simple text result with the content "Hello World".
+        return jsonResult({
+            value: "Hello World"
+        }, HTTP_STATUS_CODE.Ok);
     }
 }
 ```
