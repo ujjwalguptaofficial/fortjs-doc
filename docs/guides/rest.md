@@ -130,6 +130,8 @@ Fort.routes = [
 await Fort.create();
 ```
 
+Our REST API is ready. Let's test this by entering the endpoint - `localhost:4000/user` in browser or api client like postman etc.
+
 :::tip
 🚀 Explore a Complete REST API Implementation Example 🚀
 

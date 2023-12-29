@@ -145,7 +145,6 @@ export const routes = [
 ];
 ```
 
-
 now hit the endpoint - `localhost:4000/user` and you should see empty array as you don't have any data in the table.
 
 ## Create Service File
