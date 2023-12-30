@@ -6,36 +6,28 @@ description: "Swagger integration in fortjs"
 
 # Initiate Swagger  
 
-FortJs provides a seperate library - [fortjs-swagger](https://github.com/ujjwalguptaofficial/fortjs-swagger) for swagger integration. It provides automatic generation of swagger documents by taking documents related information from you.
+FortJs provides a separate library - [fortjs-swagger](https://github.com/ujjwalguptaofficial/fortjs-swagger) for Swagger integration. It provides automatic generation of Swagger documents by taking documents related information from you.
 
 ##  1. Install library
 
-```
+```bash
 npm install fortjs-swagger
 ```
 
 ## 2. Initiate
 
-initiate the swagger after the fortjs has started.
+Initiate the Swagger after the FortJs has started.
 
 ```javascript
-import * as Path from "path";
+import * as path from "path";
 import { Fort } from "fortjs";
-import { Swagger } from "fortjs-swagger";
-import { routes } from "./routes";
+import { routes } from "@/routes";
+import { swagger } from "fortjs-swagger";
 
-
-Fort.routes = routes;
-
-// allow swagger path to access using url with alias swagger
-Fort.folders = [{
-    alias: "swagger",
-    path: Path.join(__dirname, "../swagger/")
-}];
-
-Fort.create().then(() => {    
-    // initiating swagger 
-    Swagger.create({
+const swaggerPath = path.join(__dirname, "../dist/swagger/");
+//highlight-start
+const initSwagger = async () => {
+    await swagger.create({
         appInfo: {
             title: "Swagger Test",
             description: "Swagger Test",
@@ -45,7 +37,6 @@ Fort.create().then(() => {
             description: "local",
             url: "http://localhost:4000"
         }],
-        // create swagger files at this path
         outputPath: swaggerPath,
         securitySchemes: {
             basicAuth: {
@@ -54,97 +45,99 @@ Fort.create().then(() => {
             }
         }
     });
-})
+}
+//highlight-end
+
+export const createApp = async () => {
+    Fort.folders = [
+        {
+            alias: "/",
+            path: path.join(__dirname, "../static")
+        },
+        {
+            alias: "/swagger",
+            path: swaggerPath
+        }
+    ];
+
+    Fort.routes = routes;
+    await initSwagger();
+    await Fort.create();
+    process.env.APP_URL = `http://localhost:${Fort.port}`;
+};
+
+createApp().then(() => {
+    Fort.logger.debug(`Your fort has been forged and is now ready for exploration at ${process.env.APP_URL}`);
+}).catch(err => {
+    console.error(err);
+});
 ```
 
-Will it generate docs now ?
+**Will it generate docs now?**
 
-No, This is only setup to initiate swagger. We need to tell fortjs what we are expecting exactly i.e - what will be the structure of http request & structure of http response etc.
+No, This is only the setup to initiate Swagger. We need to tell FortJs what we are expecting exactly i.e., what will be the structure of HTTP request & structure of HTTP response, etc.
+
+## Define structure
 
 Consider the below controller
 
-```
-import { Controller, textResult, defaultWorker, jsonResult, worker, route, HTTP_STATUS_CODE, HTTP_METHOD, Guards, Shields } from 'fortjs';
-import { UserService } from '../services/user_service';
-import { User } from '../models/user';
-import { Response, Body, Param, Summary, Description, Security } from 'fortjs-swagger';
+```js
+import { Controller, textResult, jsonResult, HTTP_STATUS_CODE, validate, shields, http, singleton } from 'fortjs';
+import { UserService } from '@/services/user_service';
+import { User } from '@/models/user';
+import { AuthenticationShield } from '@/shields/authentication_shield';
 
-
+@shields(AuthenticationShield)
+@swagger.security('basicAuth')
 export class UserController extends Controller {
 
-    @defaultWorker()
-    async getUsers() {
-        const service = new UserService();
-        return jsonResult(service.getUsers());
+    service: UserService;
+
+    constructor(@singleton(UserService) userService: UserService) {
+        super();
+        this.service = userService;
     }
 
-    @worker([HTTP_METHOD.Post])
-    @route("/")
+    @http.get("/")
+    async getUsers() {
+        return jsonResult(this.service.getUsers());
+    }
+
+    @http.post("/")
+    @validate.body(User)
     async addUser() {
-        const user = this.data.user;
-        const service = new UserService();
-        const newUser = service.addUser(user);
+        const user = this.body as User;
+        const newUser = this.service.addUser(user);
         return jsonResult(newUser, HTTP_STATUS_CODE.Created);
     }
 
-    @worker([HTTP_METHOD.Put])
-    @route("/")
-    async updateUser() {
-
-        const user: User = this.data.user;
-        const userUpdated = new UserService().updateUser(user);
-        if (userUpdated === true) {
-            return textResult("user updated");
-        }
-        else {
-            return textResult("invalid user");
-        }
-
-    }
-
-    @worker([HTTP_METHOD.Get])
-    @route("/{id}")
+    @http.get("/{id}")
     async getUser() {
-
         const userId = Number(this.param.id);
-        const user = new UserService().getUser(userId);
+        const user = this.service.getUser(userId);
         if (user == null) {
-            return textResult("invalid id");
+            return textResult("invalid user id", HTTP_STATUS_CODE.NotFound);
         }
         return jsonResult(user);
-
     }
-
-    @worker([HTTP_METHOD.Delete])
-    @route("/{id}")
-    async removeUser() {
-
-        const userId = Number(this.param.id);
-        const service = new UserService();
-        const user = service.getUser(userId);
-        if (user != null) {
-            service.removeUser(userId);
-            return textResult("user deleted");
-        }
-        else {
-            return textResult("invalid user");
-        }
-     }
- }
+}
 ```
 
-The above controller does operation for a user. And every end point exepects different request and return different response. We need to tell these info to swagger. 
- 
-Let's document the  worker - "getUsers". 
+The above controller does operations for a user. And every endpoint expects a different request and returns a different response. We need to tell these info to Swagger.
 
-```
-import { Response, Summary, Description} from 'fortjs-swagger';
+Let's document the method - "getUser".
 
-@Summary('get all users')
-@Description('return all saved users') 
-@Response(HTTP_STATUS_CODE.Ok, [User])
-@defaultWorker()
-async getUsers() {
+```js
+import { swagger } from 'fortjs-swagger';
+
+//highlight-start
+@swagger.summary('get a single user by id')
+@swagger.response(HTTP_STATUS_CODE.Ok, User)
+@swagger.response(HTTP_STATUS_CODE.NotFound, 'invalid user')
+@swagger.param('id', 1, 'user id')
+//highlight-end
+@http.get("/{id}")
+async getUser() {
     const service = new UserService();
     return jsonResult(service.getUsers());
 }
@@ -152,13 +145,12 @@ async getUsers() {
 
 Here we have used three different decorators -
 
-* Summary - used to define the summary of the end point
-* Description - used to describe the end point in details. This is not necessary most of the time.
-* Response -  used to define the response returned. In this example - we are telling swagger that : for http status "OK" the result will be array of model User. You can define multiple response in the same way i.e by using response decorator multiple time.
+* `summary` - used to define the summary of the endpoint
+* `response` - used to define the response returned. In this example - we are telling Swagger that: for HTTP status "OK" the result will be an array of model User. You can define multiple responses in the same way i.e., by using the `response` decorator multiple times.
+* `param` - used to define route parameter
 
-In the similar way - we can define other workers.
+In the similar way - we can define other methods.
 
 ## More resources
 
-* Examples - https://github.com/ujjwalguptaofficial/fortjs-swagger/tree/master/examples
-   
+* Examples - [fortjs-swagger examples](https://github.com/ujjwalguptaofficial/fortjs-swagger/tree/master/examples)

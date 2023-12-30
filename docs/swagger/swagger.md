@@ -1,16 +1,16 @@
 ---
-title: "Swagger"
-keywords: [swagger, automatic generate, integrate, fortjs, node]
-description: "How to integrate swagger in fortjs"
+title: "Swagger Integration with FortJs"
+keywords: [swagger, automatic generation, integration, fortjs, node]
+description: "Learn how to seamlessly integrate Swagger with FortJs for automatic generation of API documentation. Explore initiation and model definition in Swagger with FortJs."
 ---
 
-# Swagger
+# Swagger Integration with FortJs
 
-Swagger is an open-source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful Web services.
+Swagger, an open-source framework, supported by an extensive ecosystem of tools, facilitates the design, build, documentation, and consumption of RESTful Web services.
 
-FortJs provides a seperate library - [fortjs-swagger](https://github.com/ujjwalguptaofficial/fortjs-swagger) for swagger integration. It provides automatic generation of swagger documents.
+FortJs simplifies Swagger integration with its dedicated library - [fortjs-swagger](https://github.com/ujjwalguptaofficial/fortjs-swagger), enabling automatic generation of Swagger documents.
 
-Read the following docs for more information - 
+Explore the following documentation for a comprehensive understanding:
 
-* [Initiate Swagger](/docs/swagger/initiate.md) 
-* [Defining model in swagger](/docs/swagger/model.md)
+* [Initiate Swagger](/docs/swagger/initiate.md)
+* [Defining Models in Swagger](/docs/swagger/model.md)
