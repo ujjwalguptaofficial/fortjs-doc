@@ -133,17 +133,21 @@ import { swagger } from 'fortjs-swagger';
 //highlight-start
 @swagger.summary('get a single user by id')
 @swagger.response(HTTP_STATUS_CODE.Ok, User)
-@swagger.response(HTTP_STATUS_CODE.NotFound, 'invalid user')
+@swagger.response(HTTP_STATUS_CODE.NotFound, 'invalid user id')
 @swagger.param('id', 1, 'user id')
 //highlight-end
 @http.get("/{id}")
 async getUser() {
-    const service = new UserService();
-    return jsonResult(service.getUsers());
+    const userId = Number(this.param.id);
+    const user = this.service.getUser(userId);
+    if (user == null) {
+        return textResult("invalid user id", HTTP_STATUS_CODE.NotFound);
+    }
+    return jsonResult(user);
 }
 ```
 
-Here we have used three different decorators -
+Here we have used different decorators -
 
 * `summary` - used to define the summary of the endpoint
 * `response` - used to define the response returned. In this example - we are telling Swagger that: for HTTP status "OK" the result will be an array of model User. You can define multiple responses in the same way i.e., by using the `response` decorator multiple times.
