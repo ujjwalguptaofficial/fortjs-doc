@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  plugins:[
+  plugins: [
     require.resolve('docusaurus-lunr-search')
   ],
   title: 'FortJs',
@@ -149,6 +149,14 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      announcementBar: {
+        id: 'support_fortjs',
+        content:
+          'Fortify FortJS with your star ⭐ - Support us on <a href="https://github.com/ujjwalguptaofficial/fortjs">GitHub</a> and be part of the journey!',
+        backgroundColor: 'rgb(61 94 170)',
+        textColor: '#fff',
+        isCloseable: false,
       },
     }),
 };
