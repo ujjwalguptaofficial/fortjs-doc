@@ -4,7 +4,7 @@ description: "Learn how to seamlessly integrate and manage cron jobs using Fortj
 keywords: [Fortjs, Cron, ScheduleTask, Job Scheduling, Task Scheduler, Documentation]
 ---
 
-# Cron: Simplifying Recurrent Job Execution with Fortjs
+# Cron/Scheduler
 
 Cron is a crucial process for running jobs at regular intervals, and Fortjs makes it remarkably easy to create and manage cron jobs.
 
