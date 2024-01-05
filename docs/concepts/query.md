@@ -20,8 +20,7 @@ export class DefaultController extends Controller {
 
     @http.get("/")
     async default() {
-        const userId = this.query.userid;
-        const name = this.query.name;
+        const {userId, name} = this.query;
 
         return textResult(`userId is ${userId} & name is ${name}`);
     }

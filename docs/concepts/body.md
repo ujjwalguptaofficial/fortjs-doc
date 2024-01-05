@@ -18,8 +18,7 @@ export class DefaultController extends Controller {
     async login() {
         //highlight-start
         // Access post data
-        const userId = this.body.userId;
-        const password = this.body.password;
+        const {userId, password} = this.body;
         //highlight-end
 
         return textResult("OK");
