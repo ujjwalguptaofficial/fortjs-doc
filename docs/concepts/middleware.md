@@ -1,43 +1,51 @@
 ---
 sidebar_position: 10
 title: "Middleware"
-keywords: [middleware, pattern, fortjs, node]
-description: "How to use middleware pattern in fortjs."
+keywords: [Middleware, fortjs, node, Middleware, Helmet.js, Fort.js Middleware Example]
+description: "Explore how to use middleware, including Helmet.js, in Fort.js for securing your API."
 ---
 
 # Middleware
 
-Middleware is a technique which is heavily used in nodejs frameworks like express etc. It is based on chain of responsibility pattern means one middleware will call another.
+Middleware is a prevalent design pattern extensively utilized in Node.js frameworks such as Express, among others. It is rooted in the Chain of Responsibility pattern, wherein one middleware calls another in a sequential manner.
 
->Middleware are methods which has parameters - request, response and next callback.
+> Middleware consists of methods with parameters - request, response, and a next callback.
 
-## How to use in fortjs 
+# How to use in Fort.js
 
-every component has access to request and response object. Thus you can use any middleware inside the component and you have the control how to use & in what order.
+Fort.js provides a `middleware` property, enabling the execution of various middleware functions.
 
-### Using helmet
+## Using Helmet
 
-Let's see how to use [helmetjs](https://www.npmjs.com/package/helmet) inside component wall - 
+Let's explore how to incorporate [Helmet.js](https://www.npmjs.com/package/helmet).
+
+> Helmet is a middleware library that allows you to secure your API by setting various HTTP headers.
+
+The Helmet code needs to be executed for every request, and that's why in Fort.js, we need to use the [Wall](/docs/component/wall.md) components.
+
+Let's create a wall where we will execute the `helmet` middleware.
 
 ```javascript
 import { Wall, textResult } from "fortjs";
 import * as helmet from 'helmet';
-export class HelmetWall extends Wall {
-    async onIncoming() {
-        const result = await this.callMiddleWare(helmet());
-    }
 
-    callMiddleWare(middleWare) {
-        return new Promise((res, rej) => {
-            middleWare(this.request, this.response, res);
-        });
+export class HelmetWall extends Wall {
+
+    async onIncoming() {
+        // Execute helmet middleware
+        const result = await this.middleWare(helmet()).execute();
     }
 }
 ```
 
-In a similar way other middleware can be used in any component.
+To use this wall, add it to the `walls` property of `Fort`:
 
-You can download example from here - [Middleware example](https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/middleware)
+```javascript
+import { Fort } from "fortjs";
 
-For detailed information visit this article - [https://medium.com/fortjs/middleware-pattern-in-fortjs-7329cc7cf499](https://medium.com/fortjs/middleware-pattern-in-fortjs-7329cc7cf499) written by [Ujjwal Gupta](https://twitter.com/ujjwal_kr_gupta)
+Fort.walls = [HelmetWall];
+```
 
+Similarly, other middleware can be employed in any component.
+
+You can access the example [here](https://github.com/ujjwalguptaofficial/fortjs-examples/tree/master/middleware).
