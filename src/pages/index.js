@@ -39,7 +39,7 @@ export default function Home() {
       keywords="Fort.js, Nestjs, Node.js, Web Framework, JavaScript, TypeScript, MVC, REST, HTTP, Web Development, Scalable Applications"
     >
       <div className='hero'>
-        <div style={{ margin: '0 100px' }}>
+        <div style={{ margin: '0 100px', marginTop: "-30px", marginBottom: "-30px" }}>
           <h1>Revolutionizing Node.js Development</h1>
           <div style={{ fontWeight: "400", fontSize: "18px" }}>
             <p>
@@ -49,7 +49,7 @@ export default function Home() {
               In contrast, ecosystems like Java and C# offer robust frameworks that facilitate the creation of more maintainable applications. These ecosystems enable new employees to work on the product with relative ease, even without an in-depth understanding of the entire codebase.
             </p>
             <p>
-              Fort.js aims to address this issue by leveraging modern JavaScript and TypeScript. It provides simple APIs and adopts the Fort architecture, which promotes modularity through components without compromising performance (reportedly 3 times faster than Express.js).
+              👉 Fort.js aims to address this issue by leveraging modern JavaScript and TypeScript. It provides simple APIs and adopts the Fort architecture, which promotes modularity through components without compromising performance (reportedly 3 times faster than Express.js).
             </p>
           </div>
         </div>
