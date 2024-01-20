@@ -115,7 +115,7 @@ So, when we access `http://localhost:4000/`, the `index` method is executed, and
 Let's create another method `helloWorld` which will be mapped with endpoint `hello-world` and it will return text `Hello World`.
 
 ```js title="src/controllers/default_controller"
-import { Controller, viewResult, assign, http } from "fortjs";
+import { Controller, viewResult, textResult, assign, http } from "fortjs";
 
 export class DefaultController extends Controller {
 
@@ -146,6 +146,15 @@ For additional details on routes, please refer to the [routes documentation](./r
 ### Bootstrapping
 
 Bootstrapping in Fort.js is straightforward. The minimum requirement involves defining your controller routes and providing them to Fort.js.
+
+```js title=src/routes
+import { DefaultController } from "@/controllers/default_controller";
+
+export const routes = [{
+    path: "/*",
+    controller: DefaultController
+}]
+```
 
 ```js title="src/index"
 import * as path from "path";
