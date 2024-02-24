@@ -1,7 +1,7 @@
 ---
 title: "Cache store"
-keywords: [Fort.js, caching, cache manager, performance optimization, web development, JavaScript framework]
-description: "Explore how to implement caching in your Fort.js applications for improved performance. Learn about the cache manager and best practices for caching strategies."   
+keywords: [Fort.js, cache store, caching, database, cache management, performance optimization, JavaScript framework]
+description: "Explore how to configure and use cache stores in Fort.js to store cache data efficiently. Learn about implementing custom cache stores and integrating with databases or external services."   
 ---
 
 # Cache store
