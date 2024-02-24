@@ -10,6 +10,10 @@ Caching is a technique designed to store frequently used data in your applicatio
 
 Fort.js supports caching, allowing you to cache `GET` endpoints. When you apply caching to an endpoint, Fort.js will store it in the cache for a specified time, resulting in a faster response for your API.
 
+:::info
+By default cache data is stored in memory and Cache store can be configured to store data in any storage like in database or memory database like REDIS etc.
+:::
+
 ## cacheFor
 
 Fort.js provides the cacheFor decorator, which can be used to apply caching to an endpoint. The cacheFor decorator accepts the TTL (time to live) as its first parameter.
