@@ -97,8 +97,6 @@ export class MemorySessionStore implements ISessionStore {
 
 Once you have created a session store, you need to instruct FortJs to use the new session store.
 
-
-
 ```js
 import { Fort } from "fortjs";
 import { UserController } from "./controllers";

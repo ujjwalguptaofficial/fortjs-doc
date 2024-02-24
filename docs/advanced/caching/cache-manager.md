@@ -1,7 +1,7 @@
 ---
 title: "Cache Manager"
-keywords: [Fort.js, caching, cacheFor decorator, performance optimization, web development, JavaScript framework]
-description: "Explore how to implement caching in your Fort.js applications for improved performance. Learn about the cacheFor decorator and best practices for caching strategies."   
+keywords: [Fort.js, caching, cache manager, performance optimization, web development, JavaScript framework]
+description: "Explore how to implement caching in your Fort.js applications for improved performance. Learn about the cache manager and best practices for caching strategies."   
 ---
 
 # Cache Manager
