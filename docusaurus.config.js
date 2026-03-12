@@ -11,7 +11,7 @@ const config = {
   ],
   title: 'FortJs',
   tagline: 'A feature-rich Node.js web framework designed for building powerful, scalable, and maintainable web applications.',
-  url: 'https://ujjwalguptaofficial.github.io/fortjs-doc/',
+  url: 'https://ujjwalguptaofficial.github.io',
   baseUrl: '/fortjs-doc/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
